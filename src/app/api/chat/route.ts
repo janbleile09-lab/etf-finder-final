@@ -143,11 +143,13 @@ export async function POST(req: NextRequest) {
           mapSectorTilt(quizAnswers.sectorTilt),
         );
       } else {
-        scoredCandidates = matched.map((e) => ({
+        scoredCandidates = matched.slice(0, 10).map((e) => ({
           etf: e, score: 100,
           breakdown: { region: 25, distribution: 15, esg: 20, risk: 20, tilt: 20 },
         }));
       }
+      // ONLY take top 10 for prompt
+      scoredCandidates = scoredCandidates.slice(0, 10);
       candidatesText = scoredCandidates.map(describeScoredEtf).join("\n\n---\n\n");
     } else if (quizAnswers && Object.values(quizAnswers).some((v) => v !== null)) {
       // Score ALL ETFs against the quiz answers
@@ -159,14 +161,16 @@ export async function POST(req: NextRequest) {
         mapRisk(quizAnswers.risk),
         mapSectorTilt(quizAnswers.sectorTilt),
       );
+      // ONLY take top 10 for prompt
+      scoredCandidates = scoredCandidates.slice(0, 10);
       candidatesText = scoredCandidates.map(describeScoredEtf).join("\n\n---\n\n");
     } else {
-      // No quiz context — send all ETFs compact
-      scoredCandidates = allEtfs.map((e) => ({
+      // No quiz context — send top 10 ETFs compact
+      scoredCandidates = allEtfs.slice(0, 10).map((e) => ({
         etf: e, score: 100,
         breakdown: { region: 25, distribution: 15, esg: 20, risk: 20, tilt: 20 },
       }));
-      candidatesText = allEtfs.map(describeEtf).join("\n");
+      candidatesText = allEtfs.slice(0, 10).map(describeEtf).join("\n");
     }
 
     // ═══════════════════════════════════════════════════════════════════
@@ -238,7 +242,7 @@ export async function POST(req: NextRequest) {
     }));
 
     const result = streamText({
-      model: nvidia("nvidia/nemotron-3-super-120b-a12b"),
+      model: nvidia.chat("nvidia/nemotron-3-ultra-550b-a55b"),
       system: systemPrompt,
       messages: modelMessages,
       temperature: 0.3,
@@ -247,7 +251,7 @@ export async function POST(req: NextRequest) {
     return result.toUIMessageStreamResponse();
   } catch (error) {
     console.error("Chat API error:", error);
-    return new Response(JSON.stringify({ error: "Failed to process chat" }), {
+    return new Response(JSON.stringify({ error: error instanceof Error ? error.message : String(error) }), {
       status: 500,
       headers: { "Content-Type": "application/json" },
     });
