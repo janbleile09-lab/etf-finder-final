@@ -10,6 +10,10 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Increase function timeout to allow long-running AI streaming responses
+[functions]
+  node_bundler = "esbuild"
+
 # Netlify Edge Functions / Next.js image optimization
 [images]
   remote_images = [
