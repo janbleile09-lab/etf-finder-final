@@ -78,7 +78,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
   const initTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   // useChat v4 / ai v7: uses transport + sendMessage(string)
-  const { messages, sendMessage, stop, status } = useChat({
+  const { messages, sendMessage, stop, status, error } = useChat({
     transport: new DefaultChatTransport({
       api: "/api/chat",
       body: { quizAnswers },
@@ -87,11 +87,11 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
 
   const isLoading = status === "streaming" || status === "submitted";
 
-  // Auto-start: send initial message once on mount (with timeout to handle Strict Mode double-mount)
+  // Auto-start: send initial message once on mount
   useEffect(() => {
     if (hasStarted.current) return;
     hasStarted.current = true;
-
+    
     initTimerRef.current = setTimeout(() => {
       // Embed quiz answers directly in the message so the LLM always sees them
       sendMessage({ text: formatQuizAnswers(quizAnswers) });
@@ -148,8 +148,8 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
   const getMessageText = (message: any): string => {
     if (message.parts && Array.isArray(message.parts)) {
       return message.parts
-        .filter((p: any) => p.type === "text")
-        .map((p: any) => p.text)
+        .filter((p: any) => p.type === "text" || p.type === "reasoning")
+        .map((p: any) => p.type === "reasoning" ? `\n\n> 🤔 ${p.text}\n\n` : p.text)
         .join("");
     }
     return message.content ?? "";
@@ -227,8 +227,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
         <div className="flex flex-col gap-8 max-w-3xl mx-auto w-full">
           <AnimatePresence initial={false}>
             {messages.map((message: any) => {
-              const text = getMessageText(message);
-              if (!text) return null;
+              const text = getMessageText(message) || "[Leere Antwort vom KI-Modell empfangen. Dies deutet auf ein API-Problem hin.]";
               return (
                 <motion.div
                   key={message.id}
@@ -299,6 +298,25 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
                     <span className="h-2 w-2 rounded-full bg-muted-foreground/60 animate-bounce [animation-delay:-0.15s]" />
                     <span className="h-2 w-2 rounded-full bg-muted-foreground/60 animate-bounce" />
                   </div>
+                </div>
+              </motion.div>
+            )}
+
+            {/* Error display */}
+            {error && (
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex gap-4 items-start"
+              >
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-destructive/20 text-destructive">
+                  <Square size={15} />
+                </div>
+                <div className="flex-1 pt-1">
+                  <p className="text-xs font-medium text-destructive mb-2">Systemfehler</p>
+                  <p className="text-sm text-destructive bg-destructive/10 p-3 rounded-md border border-destructive/20 whitespace-pre-wrap">
+                    {error.message || "Es ist ein unerwarteter Fehler aufgetreten. Bitte versuche es später noch einmal."}
+                  </p>
                 </div>
               </motion.div>
             )}
