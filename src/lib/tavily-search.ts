@@ -189,6 +189,12 @@ export async function enrichSingleETF(isin: string): Promise<EnrichedETFData> {
 export async function enrichMultipleETFs(
   isins: string[]
 ): Promise<Map<string, EnrichedETFData>> {
+  const apiKey = process.env.TAVILY_API_KEY;
+  if (!apiKey) {
+    console.warn("TAVILY_API_KEY is missing. Skipping web search enrichment.");
+    return new Map();
+  }
+
   const results = new Map<string, EnrichedETFData>();
 
   // Process sequentially to respect rate limits
