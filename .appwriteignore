@@ -1,0 +1,39 @@
+# Dependencies (wird bei Build via npm install neu installiert)
+node_modules/
+
+# Build-Artefakte
+.next/
+.next 2/
+out/
+.netlify/
+
+# Environment-Dateien (Secrets werden als Site-Variablen gesetzt)
+.env
+.env.local
+.env*.local
+
+# Python / venv
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# OS / Editor
+.DS_Store
+*.pem
+
+# TypeScript Build-Cache
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Debug-/Test-Skripte (nicht Teil der App)
+test-ai.js
+test-ai2.js
+test-chat.js
+test-methods.js
+test-mock.js
+test-nvidia.js
+test-usechat.js
+
+# Appwrite Konfiguration (nicht hochladen)
+appwrite.config.json
