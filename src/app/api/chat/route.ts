@@ -242,7 +242,7 @@ export async function POST(req: NextRequest) {
     }));
 
     const result = streamText({
-      model: nvidia.chat("nvidia/nemotron-3-ultra-550b-a55b"),
+      model: nvidia.chat("meta/llama-3.3-70b-instruct"),
       system: systemPrompt,
       messages: modelMessages,
       temperature: 0.3,
