@@ -189,7 +189,7 @@ export async function POST(req: NextRequest) {
         try {
           const enrichmentPromise = enrichMultipleETFs(topIsins);
           const timeoutPromise = new Promise<Map<string, EnrichedETFData>>((resolve) => {
-            setTimeout(() => resolve(new Map()), 8000);
+            setTimeout(() => resolve(new Map()), 3000);
           });
 
           const enrichmentData = await Promise.race([enrichmentPromise, timeoutPromise]);
