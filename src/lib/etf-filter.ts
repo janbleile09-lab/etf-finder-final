@@ -78,7 +78,7 @@ function scoreRegion(etf: ETF, region: string): number {
  *  15 pts: exact match
  *   0 pts: no match
  */
-function scoreDistribution(etf: ETF, dist: DistributionPolicy): number {
+export function scoreDistribution(etf: ETF, dist: DistributionPolicy): number {
   return etf.distributionPolicy === dist ? 15 : 0;
 }
 
