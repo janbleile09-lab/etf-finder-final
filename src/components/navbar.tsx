@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -41,7 +42,7 @@ export function Navbar() {
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
         <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-5">
           {/* Logo */}
-          <a
+          <Link
             href="/"
             className="flex items-center gap-2 text-sm font-medium tracking-tight text-foreground transition-colors hover:text-foreground/70"
           >
@@ -52,7 +53,7 @@ export function Navbar() {
             >
               ETF Finder
             </motion.span>
-          </a>
+          </Link>
 
           {/* Right area */}
           <nav className="flex items-center gap-2">
