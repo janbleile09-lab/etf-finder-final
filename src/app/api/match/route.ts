@@ -9,8 +9,8 @@ import type { ETF } from "../../../../types/etf";
 import {
   filterCandidates,
   describeEtf,
-  type RiskPreference,
-  type SectorTilt,
+
+
 } from "@/lib/etf-filter";
 
 // ---------------------------------------------------------------------------

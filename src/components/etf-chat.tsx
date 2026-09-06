@@ -381,9 +381,6 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
             </div>
           )}
         </div>
-        <p className="text-[10px] text-center text-muted-foreground/60 mt-3 max-w-3xl mx-auto px-4">
-          Disclaimer: For informational and educational purposes only. Not financial advice. AI-generated insights must be independently verified.
-        </p>
       </div>
 
       <AuthDialog open={authDialogOpen} onOpenChange={setAuthDialogOpen} />
