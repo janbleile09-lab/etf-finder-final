@@ -9,7 +9,7 @@
  * No financial blogs, forums, or social media.
  */
 
-const TAVILY_API_KEY = process.env.TAVILY_API_KEY || "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";
+const TAVILY_API_KEY = process.env.TAVILY_API_KEY;
 const TAVILY_BASE_URL = "https://api.tavily.com/search";
 
 // ---------------------------------------------------------------------------
@@ -108,6 +108,10 @@ async function tavilySearch(
   query: string,
   maxResults: number = 5
 ): Promise<TavilySearchResponse> {
+  if (!TAVILY_API_KEY) {
+    throw new Error("TAVILY_API_KEY is not defined. Cannot perform search.");
+  }
+
   const response = await fetch(TAVILY_BASE_URL, {
     method: "POST",
     headers: {
