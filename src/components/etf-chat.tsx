@@ -145,11 +145,12 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
   };
 
   // Extract text content from a message (UIMessage uses parts in v7)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const getMessageText = (message: any): string => {
     if (message.parts && Array.isArray(message.parts)) {
       return message.parts
-        .filter((p: any) => p.type === "text" || p.type === "reasoning")
-        .map((p: any) => p.type === "reasoning" ? `\n\n> 🤔 ${p.text}\n\n` : p.text)
+        .filter((p: { type: string, text: string }) => p.type === "text" || p.type === "reasoning")
+        .map((p: { type: string, text: string }) => p.type === "reasoning" ? `\n\n> 🤔 ${p.text}\n\n` : p.text)
         .join("");
     }
     return message.content ?? "";
@@ -226,7 +227,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
       <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-6 scrollbar-thin scrollbar-thumb-muted">
         <div className="flex flex-col gap-8 max-w-3xl mx-auto w-full">
           <AnimatePresence initial={false}>
-            {messages.map((message: any) => {
+            {messages.map((message) => {
               const text = getMessageText(message) || "[Leere Antwort vom KI-Modell empfangen. Dies deutet auf ein API-Problem hin.]";
               return (
                 <motion.div

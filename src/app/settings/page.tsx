@@ -82,9 +82,9 @@ export default function SettingsPage() {
                   </p>
                   <div className="prose prose-sm dark:prose-invert prose-p:leading-relaxed max-w-none">
                     {message.role === "user" ? (
-                      (message as any).content
+                      (message as unknown as { content: string }).content
                     ) : (
-                      <ReactMarkdown>{(message as any).content}</ReactMarkdown>
+                      <ReactMarkdown>{(message as unknown as { content: string }).content}</ReactMarkdown>
                     )}
                   </div>
                 </div>

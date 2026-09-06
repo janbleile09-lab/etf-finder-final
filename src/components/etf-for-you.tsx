@@ -663,7 +663,7 @@ export function ETFForYou() {
 
   useEffect(() => {
     // Fetch immediately on mount (show loading skeleton)
-    fetchMarketData(true);
+    setTimeout(() => fetchMarketData(true), 0);
 
     // Then every 10 minutes (silent refresh, no loading skeleton)
     intervalRef.current = setInterval(() => fetchMarketData(), 10 * 60 * 1000);

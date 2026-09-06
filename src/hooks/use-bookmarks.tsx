@@ -55,7 +55,7 @@ export function BookmarkProvider({ children }: { children: ReactNode }) {
     if (authLoading) return;
 
     if (!userId) {
-      setRawBookmarks(new Set());
+      setTimeout(() => setRawBookmarks(new Set()), 0);
       return;
     }
 

@@ -16,7 +16,6 @@ const TWELVE_DATA_BASE = "https://api.twelvedata.com";
  * Exchange suffixes to try when searching by ISIN on Twelve Data.
  * XETRA (.DE), Tradegate (.TRG), Frankfurt (.F), LSE (.L)
  */
-const EXCHANGE_SUFFIXES = [".DE", ".TRG", ".F", ".L"];
 
 export interface MarketDataQuote {
   symbol: string;
@@ -90,7 +89,7 @@ async function findSymbol(apiKey: string, etfName: string): Promise<string | nul
 
     // Prefer XETRA, Tradegate, Frankfurt, or LSE listings
     const preferred = data.data.find(
-      (d: any) =>
+      (d: Record<string, string>) =>
         d.exchange === "XETR" ||
         d.exchange === "TRADEGATE" ||
         d.exchange === "FWB" ||
@@ -238,7 +237,7 @@ export async function fetchTimeSeries(
     if (data.status === "error" || !data.values) return null;
 
     const points: TimeSeriesPoint[] = data.values
-      .map((v: any) => ({
+      .map((v: Record<string, string>) => ({
         datetime: v.datetime,
         open: parseFloat(v.open) || 0,
         high: parseFloat(v.high) || 0,

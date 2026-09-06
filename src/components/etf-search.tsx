@@ -396,7 +396,7 @@ export function ETFSearch({ open, onOpenChange }: ETFSearchProps) {
 
   useEffect(() => {
     if (open) {
-      setRemountKey((k) => k + 1);
+      setTimeout(() => setRemountKey((k) => k + 1), 0);
     }
   }, [open]);
 

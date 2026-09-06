@@ -130,7 +130,7 @@ function useKeyboardNav(
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setFocusIndex(-1);
+    setTimeout(() => setFocusIndex(-1), 0);
   }, [optionsCount]);
 
   useEffect(() => {
