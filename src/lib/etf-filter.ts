@@ -90,7 +90,7 @@ export function scoreDistribution(etf: ETF, dist: DistributionPolicy): number {
  *  10 pts: any ESG when user wants "none" (bonus for having ESG)
  *   0 pts: no ESG when user wants ESG
  */
-export function scoreEsg(etf: ETF, esg: EsgStatus): number {
+function scoreEsg(etf: ETF, esg: EsgStatus): number {
   if (esg === "none") {
     // User doesn't care about ESG — but having it is a bonus
     return etf.esgStatus === "none" ? 20 : 10;

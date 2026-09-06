@@ -1,12 +1,13 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Bookmark } from "lucide-react";
+import { X, Bookmark, ExternalLink } from "lucide-react";
 import { useBookmarks } from "@/hooks/use-bookmarks";
 import { BookmarkButton } from "@/components/bookmark-button";
 import etfs from "../../public/data/etfs.json";
 import type { ETF } from "../../types/etf";
 import { useMemo } from "react";
+import Link from "next/link";
 
 interface SavedEtfsSheetProps {
   open: boolean;
