@@ -1,3 +1,4 @@
+import { describe, test, expect } from "vitest";
 import { scoreEsg } from './etf-filter';
 import { ETF } from '../../types/etf';
 
