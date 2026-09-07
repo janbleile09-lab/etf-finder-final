@@ -9,7 +9,7 @@
  * No financial blogs, forums, or social media.
  */
 
-const TAVILY_API_KEY = process.env.TAVILY_API_KEY || "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";
+const TAVILY_API_KEY = process.env.TAVILY_API_KEY;
 const TAVILY_BASE_URL = "https://api.tavily.com/search";
 
 // ---------------------------------------------------------------------------
@@ -87,12 +87,14 @@ function generateSearchQueries(isin: string): string[] {
 /**
  * Filters search results to only include whitelisted domains.
  */
-function filterByWhitelist(results: TavilySearchResult[]): TavilySearchResult[] {
+function filterByWhitelist(
+  results: TavilySearchResult[],
+): TavilySearchResult[] {
   return results.filter((r) => {
     try {
       const hostname = new URL(r.url).hostname.replace(/^www\./, "");
       return DOMAIN_WHITELIST.some(
-        (domain) => hostname === domain || hostname.endsWith("." + domain)
+        (domain) => hostname === domain || hostname.endsWith("." + domain),
       );
     } catch {
       return false;
@@ -106,8 +108,12 @@ function filterByWhitelist(results: TavilySearchResult[]): TavilySearchResult[] 
 
 async function tavilySearch(
   query: string,
-  maxResults: number = 5
+  maxResults: number = 5,
 ): Promise<TavilySearchResponse> {
+  if (!TAVILY_API_KEY) {
+    throw new Error("TAVILY_API_KEY is not defined. Cannot perform search.");
+  }
+
   const response = await fetch(TAVILY_BASE_URL, {
     method: "POST",
     headers: {
@@ -187,7 +193,7 @@ export async function enrichSingleETF(isin: string): Promise<EnrichedETFData> {
  * Batch enrich multiple ETFs.
  */
 export async function enrichMultipleETFs(
-  isins: string[]
+  isins: string[],
 ): Promise<Map<string, EnrichedETFData>> {
   const apiKey = process.env.TAVILY_API_KEY;
   if (!apiKey) {
@@ -240,7 +246,13 @@ interface ExtractedData {
  */
 function extractDataFromText(text: string): ExtractedData {
   if (!text || text.trim().length === 0) {
-    return { topHoldings: null, aum: null, dailyPrice: null, inceptionDate: null, fundSize: null };
+    return {
+      topHoldings: null,
+      aum: null,
+      dailyPrice: null,
+      inceptionDate: null,
+      fundSize: null,
+    };
   }
 
   const rawAum = extractAUM(text);
@@ -336,11 +348,16 @@ function parseUnitMultiplier(raw: string): number {
  * 4. If a daily price was also extracted from the same text, double-check
  *    that we didn't accidentally capture the price as AUM.
  */
-function validateFundSize(rawAum: string | null, rawPrice: string | null): string | null {
+function validateFundSize(
+  rawAum: string | null,
+  rawPrice: string | null,
+): string | null {
   if (!rawAum) return null;
 
   // Rule 1: Must have a unit indicator (Mio, Mrd, Million, Milliarde, Bn, B)
-  const hasUnit = /Mio\.?|Mrd\.?|Millionen|Milliarden|Bn\b|\bB\b|M\b/i.test(rawAum);
+  const hasUnit = /Mio\.?|Mrd\.?|Millionen|Milliarden|Bn\b|\bB\b|M\b/i.test(
+    rawAum,
+  );
   if (!hasUnit) {
     // Plain number without unit — could be a price, TER, or anything else
     return null;
@@ -356,7 +373,7 @@ function validateFundSize(rawAum: string | null, rawPrice: string | null): strin
   const aumInMio = aumInEUR / 1_000_000;
   if (aumInMio < MIN_PLAUSIBLE_AUM_MIO) {
     console.warn(
-      `AUM validation: ${rawAum.trim()} → ${aumInMio.toFixed(1)} Mio EUR — below minimum threshold of ${MIN_PLAUSIBLE_AUM_MIO} Mio EUR. Rejecting.`
+      `AUM validation: ${rawAum.trim()} → ${aumInMio.toFixed(1)} Mio EUR — below minimum threshold of ${MIN_PLAUSIBLE_AUM_MIO} Mio EUR. Rejecting.`,
     );
     return null;
   }
@@ -367,7 +384,7 @@ function validateFundSize(rawAum: string | null, rawPrice: string | null): strin
     if (priceNum !== null && Math.abs(num - priceNum) < 0.01) {
       // Same value extracted for both AUM and price — likely a false positive
       console.warn(
-        `AUM validation: ${rawAum.trim()} matches daily price ${rawPrice.trim()} — likely a false positive. Rejecting AUM.`
+        `AUM validation: ${rawAum.trim()} matches daily price ${rawPrice.trim()} — likely a false positive. Rejecting AUM.`,
       );
       return null;
     }
@@ -376,7 +393,7 @@ function validateFundSize(rawAum: string | null, rawPrice: string | null): strin
   // Rule 4: Sanity check — no single ETF should have > 500 Mrd EUR AUM
   if (aumInEUR > 500_000_000_000) {
     console.warn(
-      `AUM validation: ${rawAum.trim()} → ${(aumInEUR / 1e9).toFixed(1)} Mrd EUR — exceeds maximum plausible AUM (500 Mrd). Rejecting.`
+      `AUM validation: ${rawAum.trim()} → ${(aumInEUR / 1e9).toFixed(1)} Mrd EUR — exceeds maximum plausible AUM (500 Mrd). Rejecting.`,
     );
     return null;
   }
@@ -409,7 +426,7 @@ function validateDailyPrice(rawPrice: string | null): string | null {
   // Rule 2: Price must be between 1 and 10,000 EUR
   if (num < 1 || num > 10_000) {
     console.warn(
-      `Price validation: ${rawPrice.trim()} → ${num} — outside plausible range (1–10,000). Rejecting.`
+      `Price validation: ${rawPrice.trim()} → ${num} — outside plausible range (1–10,000). Rejecting.`,
     );
     return null;
   }
@@ -440,7 +457,7 @@ function validateInceptionDate(rawDate: string | null): string | null {
 
   if (year < 1990 || year > currentYear) {
     console.warn(
-      `Inception date validation: ${rawDate} → year ${year} outside plausible range (1990–${currentYear}). Rejecting.`
+      `Inception date validation: ${rawDate} → year ${year} outside plausible range (1990–${currentYear}). Rejecting.`,
     );
     return null;
   }
