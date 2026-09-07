@@ -1,8 +1,3 @@
-# ── Netlify Deployment Configuration ─────────────────────────────
-# Next.js 16 on Netlify: The Next.js runtime is auto-detected.
-# API routes become Netlify Functions; SSR pages use the runtime.
-# ─────────────────────────────────────────────────────────────────
-
 [build]
   command   = "npm run build"
   publish   = ".next"
@@ -10,26 +5,5 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# Increase function timeout to allow long-running AI streaming responses
 [functions]
   node_bundler = "esbuild"
-
-# Netlify Edge Functions / Next.js image optimization
-[images]
-  remote_images = [
-    "https://lh3.googleusercontent.com/*"
-  ]
-
-# Redirect all traffic to the Next.js runtime
-[[redirects]]
-  from    = "/_next/image"
-  to      = "/.netlify/images"
-  status  = 200
-  query   = { url = ":url", w = ":w", q = ":q" }
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
