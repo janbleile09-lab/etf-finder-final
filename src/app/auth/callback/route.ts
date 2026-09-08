@@ -4,7 +4,12 @@ import { createServerClient, type CookieOptions } from "@supabase/ssr";
 export async function GET(request: NextRequest) {
   const requestUrl = new URL(request.url);
   const code = requestUrl.searchParams.get("code");
-  const next = requestUrl.searchParams.get("next") ?? "/";
+  let next = requestUrl.searchParams.get("next") ?? "/";
+
+  // Sanitize 'next' to prevent open redirection
+  if (!next.startsWith("/") || next.startsWith("//")) {
+    next = "/";
+  }
 
   // Create the final response object first so we can attach cookies to it
   const response = NextResponse.redirect(`${requestUrl.origin}${next}`);
