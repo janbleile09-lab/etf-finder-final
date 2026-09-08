@@ -11,7 +11,7 @@
   "dependencies": {
     "@ai-sdk/google": "^4.0.39",
     "@ai-sdk/openai": "^4.0.41",
-    "@ai-sdk/react": "^4.0.61",
+    "@ai-sdk/react": "^4.0.96",
     "@base-ui/react": "^1.7.0",
     "@supabase/server": "^1.4.1",
     "@supabase/ssr": "^0.12.4",
