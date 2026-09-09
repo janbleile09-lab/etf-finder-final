@@ -190,7 +190,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
   const allMentionedEtfs = useMemo(() => {
     const seen = new Map<string, { isin: string; name: string }>();
     for (const msg of messages) {
-      const text = (msg as any).content || getMessageText(msg);
+      const text = getMessageText(msg);
       for (const etf of extractEtfs(text)) {
         if (etf.isin && etf.isin !== "N/A" && !seen.has(etf.isin)) {
           seen.set(etf.isin, { isin: etf.isin, name: etf.name });
@@ -232,7 +232,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
           <AnimatePresence initial={false}>
             {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {messages.map((message: any) => {
-              const text = (message as any).content || getMessageText(message) || "[Leere Antwort vom KI-Modell empfangen. Dies deutet auf ein API-Problem hin.]";
+              const text = getMessageText(message) || "[Leere Antwort vom KI-Modell empfangen. Dies deutet auf ein API-Problem hin.]";
               return (
                 <motion.div
                   key={message.id}

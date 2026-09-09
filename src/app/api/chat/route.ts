@@ -242,13 +242,13 @@ export async function POST(req: NextRequest) {
     }));
 
     const result = streamText({
-      model: nvidia.chat("nvidia/nemotron-3-ultra-550b-a55b"),
+      model: nvidia.chat("meta/llama-3.3-70b-instruct"),
       system: systemPrompt,
       messages: modelMessages,
       temperature: 0.3,
     });
 
-    return result.toTextStreamResponse();
+    return result.toUIMessageStreamResponse();
   } catch (error) {
     console.error("Chat API error:", error);
     return new Response(JSON.stringify({ error: error instanceof Error ? error.message : String(error) }), {
