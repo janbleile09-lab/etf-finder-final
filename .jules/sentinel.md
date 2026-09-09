@@ -6,3 +6,7 @@
 **Vulnerability:** The OAuth callback endpoint (`src/app/auth/callback/route.ts`) read the `next` parameter from the URL and blindly appended it to the origin when creating a redirect. An attacker could craft a malicious URL (e.g., `?next=//evil.com`) which would lead to an open redirection since `http://example.com//evil.com` may be interpreted as `http://evil.com/` due to protocol-relative resolution if the browser normalizes it or forwards the user off-site.
 **Learning:** Never trust the `next` or `redirectTo` parameters supplied by a client. Always validate that they represent safe, relative paths within your application.
 **Prevention:** Sanitize the return URL by ensuring it begins with a single forward slash (`/`) and does NOT begin with a double forward slash (`//`). This guarantees it stays a local, relative redirect.
+
+## Avoiding Hardcoded API Keys
+* **Issue:** Hardcoded API keys (e.g., `NVIDIA_API_KEY`) within source code files expose sensitive credentials if the code is shared, pushed to a public repository, or viewed by unauthorized individuals.
+* **Resolution:** Ensure API keys are loaded via environment variables using `.env` files (e.g., `process.env.NVIDIA_API_KEY`) and that the `.env` file is excluded from version control via `.gitignore`.
