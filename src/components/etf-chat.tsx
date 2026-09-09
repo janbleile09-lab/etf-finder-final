@@ -87,7 +87,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
 
   const [messages, setMessages] = useState<CustomMessage[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<Error | null>(null);
+  const [error, setError] = useState<any>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
 
   const stop = useCallback(() => {
@@ -119,7 +119,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
     abortControllerRef.current = controller;
 
     try {
-      const response = await fetch('/api/chat', {
+            const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -135,19 +135,19 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
 
       if (!response.body) throw new Error("No response body");
 
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder("utf-8");
+            const reader = response.body.getReader();
+                  const decoder = new TextDecoder("utf-8");
 
-      const assistantMessageId = (Date.now() + 1).toString();
+            const assistantMessageId = (Date.now() + 1).toString();
       setMessages(prev => [...prev, { id: assistantMessageId, role: "assistant", content: "" }]);
 
       let done = false;
       while (!done) {
         const { value, done: readerDone } = await reader.read();
-        done = readerDone;
+                done = readerDone;
         if (value) {
           const chunk = decoder.decode(value, { stream: true });
-          setMessages(prev => prev.map(msg =>
+                    setMessages(prev => prev.map(msg =>
             msg.id === assistantMessageId
               ? { ...msg, content: msg.content + chunk }
               : msg
@@ -157,6 +157,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
     } catch (err: any) {
       if (err.name !== 'AbortError') {
         setError(err);
+
         console.error("Chat error:", err);
       }
     } finally {
@@ -296,7 +297,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
         <div className="flex flex-col gap-8 max-w-3xl mx-auto w-full">
           <AnimatePresence initial={false}>
             {messages.map((message: any) => {
-              const text = message.content || "[Leere Antwort vom KI-Modell empfangen. Dies deutet auf ein API-Problem hin.]";
+                            const text = message.content || "[Leere Antwort vom KI-Modell empfangen. Dies deutet auf ein API-Problem hin.]";
               return (
                 <motion.div
                   key={message.id}
@@ -384,7 +385,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
                 <div className="flex-1 pt-1">
                   <p className="text-xs font-medium text-destructive mb-2">Systemfehler</p>
                   <p className="text-sm text-destructive bg-destructive/10 p-3 rounded-md border border-destructive/20 whitespace-pre-wrap">
-                    {error.message || "Es ist ein unerwarteter Fehler aufgetreten. Bitte versuche es später noch einmal."}
+                    {error?.message || String(error) || "Es ist ein unerwarteter Fehler aufgetreten. Bitte versuche es später noch einmal."}
                   </p>
                 </div>
               </motion.div>
