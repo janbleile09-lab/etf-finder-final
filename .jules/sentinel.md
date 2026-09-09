@@ -6,3 +6,7 @@
 **Vulnerability:** The OAuth callback endpoint (`src/app/auth/callback/route.ts`) read the `next` parameter from the URL and blindly appended it to the origin when creating a redirect. An attacker could craft a malicious URL (e.g., `?next=//evil.com`) which would lead to an open redirection since `http://example.com//evil.com` may be interpreted as `http://evil.com/` due to protocol-relative resolution if the browser normalizes it or forwards the user off-site.
 **Learning:** Never trust the `next` or `redirectTo` parameters supplied by a client. Always validate that they represent safe, relative paths within your application.
 **Prevention:** Sanitize the return URL by ensuring it begins with a single forward slash (`/`) and does NOT begin with a double forward slash (`//`). This guarantees it stays a local, relative redirect.
+## 2026-09-09 - [MEDIUM] Error Detail Leakage in API Routes
+**Vulnerability:** The API routes `src/app/api/chat/route.ts` and `src/app/auth/callback/route.ts` caught internal exceptions and returned `error.message` directly to the client in JSON responses and URL search params.
+**Learning:** Returning raw error objects or unhandled exception details directly to the client can expose sensitive backend configuration, implementation details, or stack traces. This information could be valuable to an attacker in formulating further exploits.
+**Prevention:** Always log detailed error messages securely on the server-side, but return generic error strings (e.g., "An unexpected error occurred" or "Authentication failed") to the client.

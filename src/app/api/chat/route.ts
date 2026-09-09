@@ -251,7 +251,7 @@ export async function POST(req: NextRequest) {
     return result.toTextStreamResponse();
   } catch (error) {
     console.error("Chat API error:", error);
-    return new Response(JSON.stringify({ error: error instanceof Error ? error.message : String(error) }), {
+    return new Response(JSON.stringify({ error: "An unexpected error occurred." }), {
       status: 500,
       headers: { "Content-Type": "application/json" },
     });
