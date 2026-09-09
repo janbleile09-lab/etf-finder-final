@@ -73,11 +73,16 @@ Nach allen Empfehlungen: "Hinweis: Dies ist keine Anlageberatung. Daten aus der 
 
 function mapRegion(region: string | null): string {
   switch (region) {
-    case "world": return "world";
-    case "usa": return "us";
-    case "europe": return "europe";
-    case "emerging": return "emerging_markets";
-    default: return "world";
+    case "world":
+      return "world";
+    case "usa":
+      return "us";
+    case "europe":
+      return "europe";
+    case "emerging":
+      return "emerging_markets";
+    default:
+      return "world";
   }
 }
 
@@ -97,7 +102,9 @@ function mapRisk(risk: string | null): "low_vol" | "balanced" | "max_div" {
   return "balanced";
 }
 
-function mapSectorTilt(tilt: string | null): "none" | "tech" | "dividend" | "healthcare" {
+function mapSectorTilt(
+  tilt: string | null,
+): "none" | "tech" | "dividend" | "healthcare" {
   if (tilt === "tech") return "tech";
   if (tilt === "dividend") return "dividend";
   if (tilt === "healthcare") return "healthcare";
@@ -113,10 +120,13 @@ export async function POST(req: NextRequest) {
     const { messages, quizAnswers, session } = await req.json();
 
     if (!Array.isArray(messages)) {
-      return new Response(JSON.stringify({ error: "messages must be an array" }), {
-        status: 400,
-        headers: { "Content-Type": "application/json" },
-      });
+      return new Response(
+        JSON.stringify({ error: "messages must be an array" }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        },
+      );
     }
 
     const allEtfs = etfs as unknown as ETF[];
@@ -130,7 +140,9 @@ export async function POST(req: NextRequest) {
 
     if (session?.candidates?.length) {
       // Client sent cached match session
-      const candidateIsins = new Set(session.candidates.map((c: { isin: string }) => c.isin));
+      const candidateIsins = new Set(
+        session.candidates.map((c: { isin: string }) => c.isin),
+      );
       const matched = allEtfs.filter((e) => candidateIsins.has(e.isin));
       // Score these against quiz answers
       if (quizAnswers && Object.values(quizAnswers).some((v) => v !== null)) {
@@ -144,14 +156,26 @@ export async function POST(req: NextRequest) {
         );
       } else {
         scoredCandidates = matched.slice(0, 10).map((e) => ({
-          etf: e, score: 100,
-          breakdown: { region: 25, distribution: 15, esg: 20, risk: 20, tilt: 20 },
+          etf: e,
+          score: 100,
+          breakdown: {
+            region: 25,
+            distribution: 15,
+            esg: 20,
+            risk: 20,
+            tilt: 20,
+          },
         }));
       }
       // ONLY take top 10 for prompt
       scoredCandidates = scoredCandidates.slice(0, 10);
-      candidatesText = scoredCandidates.map(describeScoredEtf).join("\n\n---\n\n");
-    } else if (quizAnswers && Object.values(quizAnswers).some((v) => v !== null)) {
+      candidatesText = scoredCandidates
+        .map(describeScoredEtf)
+        .join("\n\n---\n\n");
+    } else if (
+      quizAnswers &&
+      Object.values(quizAnswers).some((v) => v !== null)
+    ) {
       // Score ALL ETFs against the quiz answers
       scoredCandidates = scoreCandidates(
         allEtfs,
@@ -163,12 +187,21 @@ export async function POST(req: NextRequest) {
       );
       // ONLY take top 10 for prompt
       scoredCandidates = scoredCandidates.slice(0, 10);
-      candidatesText = scoredCandidates.map(describeScoredEtf).join("\n\n---\n\n");
+      candidatesText = scoredCandidates
+        .map(describeScoredEtf)
+        .join("\n\n---\n\n");
     } else {
       // No quiz context — send top 10 ETFs compact
       scoredCandidates = allEtfs.slice(0, 10).map((e) => ({
-        etf: e, score: 100,
-        breakdown: { region: 25, distribution: 15, esg: 20, risk: 20, tilt: 20 },
+        etf: e,
+        score: 100,
+        breakdown: {
+          region: 25,
+          distribution: 15,
+          esg: 20,
+          risk: 20,
+          tilt: 20,
+        },
       }));
       candidatesText = allEtfs.slice(0, 10).map(describeEtf).join("\n");
     }
@@ -188,11 +221,16 @@ export async function POST(req: NextRequest) {
       if (topIsins.length > 0) {
         try {
           const enrichmentPromise = enrichMultipleETFs(topIsins);
-          const timeoutPromise = new Promise<Map<string, EnrichedETFData>>((resolve) => {
-            setTimeout(() => resolve(new Map()), 3000);
-          });
+          const timeoutPromise = new Promise<Map<string, EnrichedETFData>>(
+            (resolve) => {
+              setTimeout(() => resolve(new Map()), 3000);
+            },
+          );
 
-          const enrichmentData = await Promise.race([enrichmentPromise, timeoutPromise]);
+          const enrichmentData = await Promise.race([
+            enrichmentPromise,
+            timeoutPromise,
+          ]);
 
           if (enrichmentData.size > 0) {
             const lines: string[] = [];
@@ -200,11 +238,16 @@ export async function POST(req: NextRequest) {
               const scored = scoredCandidates.find((s) => s.etf.isin === isin);
               if (!scored) continue;
               const e = scored.etf;
-              const parts: string[] = [`Web-Recherche für ${e.name} (${isin}):`];
-              if (data.topHoldings) parts.push(`  Top-Holdings: ${data.topHoldings}`);
+              const parts: string[] = [
+                `Web-Recherche für ${e.name} (${isin}):`,
+              ];
+              if (data.topHoldings)
+                parts.push(`  Top-Holdings: ${data.topHoldings}`);
               if (data.aum) parts.push(`  Fondsvolumen: ${data.aum}`);
-              if (data.dailyPrice) parts.push(`  Tageskurs: ${data.dailyPrice}`);
-              if (data.inceptionDate) parts.push(`  Auflagedatum: ${data.inceptionDate}`);
+              if (data.dailyPrice)
+                parts.push(`  Tageskurs: ${data.dailyPrice}`);
+              if (data.inceptionDate)
+                parts.push(`  Auflagedatum: ${data.inceptionDate}`);
               lines.push(parts.join("\n"));
             }
             enrichmentText = lines.join("\n\n");
@@ -234,15 +277,16 @@ export async function POST(req: NextRequest) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const modelMessages = messages.map((m: any) => ({
       role: m.role as "user" | "assistant" | "system",
-      content: typeof m.content === "string"
-        ? m.content
-        : Array.isArray(m.parts)
-          ? m.parts.map((p: { text?: string }) => p.text ?? "").join("")
-          : "",
+      content:
+        typeof m.content === "string"
+          ? m.content
+          : Array.isArray(m.parts)
+            ? m.parts.map((p: { text?: string }) => p.text ?? "").join("")
+            : "",
     }));
 
     const result = streamText({
-      model: nvidia.chat("meta/llama-3.3-70b-instruct"),
+      model: nvidia.chat("nvidia/nemotron-3-ultra-550b-a55b"),
       system: systemPrompt,
       messages: modelMessages,
       temperature: 0.3,
@@ -251,9 +295,14 @@ export async function POST(req: NextRequest) {
     return result.toUIMessageStreamResponse();
   } catch (error) {
     console.error("Chat API error:", error);
-    return new Response(JSON.stringify({ error: error instanceof Error ? error.message : String(error) }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({
+        error: error instanceof Error ? error.message : String(error),
+      }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
   }
 }
