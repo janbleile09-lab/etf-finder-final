@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState, useMemo } from "react";
-import { useChat } from "@ai-sdk/react";
-import { DefaultChatTransport } from "ai";
+import { useEffect, useRef, useState, useMemo, useCallback } from "react";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, User as UserIcon, Bot, Lock, Square } from "lucide-react";
 import { useAuth } from "@/components/auth/auth-provider";
@@ -67,6 +66,13 @@ function formatQuizAnswers(answers: QuizAnswers): string {
   return lines.join("\n");
 }
 
+
+export type CustomMessage = {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+};
+
 export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
   const { user } = useAuth();
   const [authDialogOpen, setAuthDialogOpen] = useState(false);
@@ -78,14 +84,88 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
   const initTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   // useChat v4 / ai v7: uses transport + sendMessage(string)
-  const { messages, sendMessage, stop, status, error } = useChat({
-    transport: new DefaultChatTransport({
-      api: "/api/chat",
-      body: { quizAnswers },
-    }),
-  });
 
-  const isLoading = status === "streaming" || status === "submitted";
+  const [messages, setMessages] = useState<CustomMessage[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
+  const abortControllerRef = useRef<AbortController | null>(null);
+
+  const stop = useCallback(() => {
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+      abortControllerRef.current = null;
+    }
+    setIsLoading(false);
+  }, []);
+
+  const sendMessage = useCallback(async ({ text }: { text: string }) => {
+    if (!text.trim()) return;
+
+    const newMessage: CustomMessage = { id: Date.now().toString(), role: "user", content: text };
+
+    setMessages(prev => {
+       const next = [...prev, newMessage];
+       executeApiRequest(next, text);
+       return next;
+    });
+
+  }, [quizAnswers]);
+
+  const executeApiRequest = async (currentMessages: CustomMessage[], text: string) => {
+    setIsLoading(true);
+    setError(null);
+
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
+
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: currentMessages.map(m => ({ role: m.role, content: m.content })),
+          quizAnswers
+        }),
+        signal: controller.signal
+      });
+
+      if (!response.ok) {
+        throw new Error(`Server error: ${response.statusText}`);
+      }
+
+      if (!response.body) throw new Error("No response body");
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder("utf-8");
+
+      const assistantMessageId = (Date.now() + 1).toString();
+      setMessages(prev => [...prev, { id: assistantMessageId, role: "assistant", content: "" }]);
+
+      let done = false;
+      while (!done) {
+        const { value, done: readerDone } = await reader.read();
+        done = readerDone;
+        if (value) {
+          const chunk = decoder.decode(value, { stream: true });
+          setMessages(prev => prev.map(msg =>
+            msg.id === assistantMessageId
+              ? { ...msg, content: msg.content + chunk }
+              : msg
+          ));
+        }
+      }
+    } catch (err: any) {
+      if (err.name !== 'AbortError') {
+        setError(err);
+        console.error("Chat error:", err);
+      }
+    } finally {
+      setIsLoading(false);
+      abortControllerRef.current = null;
+    }
+  };
+
+
 
   // Auto-start: send initial message once on mount
   useEffect(() => {
@@ -99,7 +179,6 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
 
     return () => {
       clearTimeout(initTimerRef.current);
-      hasStarted.current = false;
     };
   }, [sendMessage, quizAnswers]);
 
@@ -144,16 +223,6 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
     }
   };
 
-  // Extract text content from a message (UIMessage uses parts in v7)
-  const getMessageText = (message: any): string => {
-    if (message.parts && Array.isArray(message.parts)) {
-      return message.parts
-        .filter((p: any) => p.type === "text" || p.type === "reasoning")
-        .map((p: any) => p.type === "reasoning" ? `\n\n> 🤔 ${p.text}\n\n` : p.text)
-        .join("");
-    }
-    return message.content ?? "";
-  };
 
   // Pre-build a lookup map for O(1) ETF lookups by ISIN
   const etfByIsin = useMemo(() => {
@@ -187,7 +256,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
   const allMentionedEtfs = useMemo(() => {
     const seen = new Map<string, { isin: string; name: string }>();
     for (const msg of messages) {
-      const text = (msg as any).content || getMessageText(msg);
+      const text = msg.content;
       for (const etf of extractEtfs(text)) {
         if (etf.isin && etf.isin !== "N/A" && !seen.has(etf.isin)) {
           seen.set(etf.isin, { isin: etf.isin, name: etf.name });
@@ -227,7 +296,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
         <div className="flex flex-col gap-8 max-w-3xl mx-auto w-full">
           <AnimatePresence initial={false}>
             {messages.map((message: any) => {
-              const text = (message as any).content || getMessageText(message) || "[Leere Antwort vom KI-Modell empfangen. Dies deutet auf ein API-Problem hin.]";
+              const text = message.content || "[Leere Antwort vom KI-Modell empfangen. Dies deutet auf ein API-Problem hin.]";
               return (
                 <motion.div
                   key={message.id}
