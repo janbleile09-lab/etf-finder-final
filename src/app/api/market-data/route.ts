@@ -20,6 +20,13 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    if (etfs.length > 50) {
+      return NextResponse.json(
+        { error: "Too many ETFs requested. Maximum is 50." },
+        { status: 400 },
+      );
+    }
+
     // Filter valid entries
     const validEtfs = etfs.filter(
       (e) =>
