@@ -15,3 +15,14 @@
 **Vulnerability:** The `/api/chat` endpoint lacked authentication checks, allowing unauthorized access to the AI advisor feature. In addition, errors were logged and returned with `error.message`, which could leak sensitive internal information or stack trace details in the response body.
 **Learning:** API routes that require user context or have usage costs must strictly verify authentication. Furthermore, error handling should never leak internal details to the client; raw errors should be logged server-side, but clients should only receive generic error messages.
 **Prevention:** Always use `supabase.auth.getUser()` in protected API routes to verify authentication. Return generic error messages (e.g., "An internal error occurred") to the client, while keeping detailed error logs on the server.
+
+## 2024-05-15 - [CRITICAL] Information Disclosure in Auth Callback and Unbounded Array Lengths in API Routes
+**Vulnerability:**
+1. The `/auth/callback` route was directly returning `error.message` from `exchangeCodeForSession` in a redirect URL parameter, which could leak internal authentication errors or stack traces to the client.
+2. The `/api/market-data` and `/api/chat` routes were accepting arrays (`etfs` and `messages`) without checking their maximum length, allowing potential unbounded processing leading to resource exhaustion (DoS) or third-party API rate limit exhaustion.
+**Learning:**
+1. Never leak raw error messages to the client. Even if it's just an auth error, it can provide attackers with information about the internal state.
+2. Always validate array bounds. It's not enough to check if something is an array or if it's empty; bounding the maximum size is critical to prevent DoS attacks.
+**Prevention:**
+1. Replace raw error messages with generic, static error messages when redirecting clients.
+2. Ensure arrays accepted in the request payload have a defined and enforced maximum length limit.
