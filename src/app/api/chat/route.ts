@@ -143,6 +143,16 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    if (messages.length > 100) {
+      return new Response(
+        JSON.stringify({ error: "Too many messages in conversation" }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        },
+      );
+    }
+
     const allEtfs = etfs as unknown as ETF[];
 
     // ═══════════════════════════════════════════════════════════════════
