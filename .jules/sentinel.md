@@ -15,3 +15,13 @@
 **Vulnerability:** The `/api/chat` endpoint lacked authentication checks, allowing unauthorized access to the AI advisor feature. In addition, errors were logged and returned with `error.message`, which could leak sensitive internal information or stack trace details in the response body.
 **Learning:** API routes that require user context or have usage costs must strictly verify authentication. Furthermore, error handling should never leak internal details to the client; raw errors should be logged server-side, but clients should only receive generic error messages.
 **Prevention:** Always use `supabase.auth.getUser()` in protected API routes to verify authentication. Return generic error messages (e.g., "An internal error occurred") to the client, while keeping detailed error logs on the server.
+
+## 2024-05-15 - [CRITICAL] Error Details Leaked in URL
+**Vulnerability:** The OAuth callback endpoint passed `error.message` directly into the URL query string (`?authError=...`) upon authentication failure. This exposes internal error details to the user and potentially introduces reflected XSS if the frontend renders it unsanitized.
+**Learning:** Error details provided by authentication providers can contain sensitive system information. Passing them directly to the client via URL parameters is a security risk.
+**Prevention:** Always return generic, predefined error codes (e.g., `authentication_failed`) to the client and log the detailed, actual error message securely on the server.
+
+## 2024-05-15 - [MEDIUM] Missing Input Length Limit on API Endpoint
+**Vulnerability:** The `/api/market-data` endpoint accepted an array of ETFs to fetch without enforcing a maximum length. An attacker could send a massive array, causing the server to loop indefinitely, exhausting third-party API rate limits and causing a Denial of Service (DoS).
+**Learning:** Unbound input arrays in API endpoints can be exploited to cause server exhaustion, especially when the input triggers downstream API calls or database operations.
+**Prevention:** Always enforce strict length limits on arrays and string inputs at the API boundary, rejecting requests that exceed plausible thresholds.
