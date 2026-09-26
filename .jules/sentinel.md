@@ -15,3 +15,8 @@
 **Vulnerability:** The `/api/chat` endpoint lacked authentication checks, allowing unauthorized access to the AI advisor feature. In addition, errors were logged and returned with `error.message`, which could leak sensitive internal information or stack trace details in the response body.
 **Learning:** API routes that require user context or have usage costs must strictly verify authentication. Furthermore, error handling should never leak internal details to the client; raw errors should be logged server-side, but clients should only receive generic error messages.
 **Prevention:** Always use `supabase.auth.getUser()` in protected API routes to verify authentication. Return generic error messages (e.g., "An internal error occurred") to the client, while keeping detailed error logs on the server.
+
+## 2024-05-16 - [HIGH] Open Redirection Fix Bypass in Auth Callback
+**Vulnerability:** The previous fix for the open redirection vulnerability in `src/app/auth/callback/route.ts` used `if (!next.startsWith("/") || next.startsWith("//"))`. This was bypassed by providing URL-encoded or backslash characters, such as `/\evil.com` or `/%5cevil.com`. Browsers normalize `/\evil.com` to `//evil.com` when constructing the final URL, resulting in an open redirect to `evil.com`.
+**Learning:** Checking for `//` is insufficient if the browser normalizes `/\` to `//` during URL resolution. Similarly, input parameters must be decoded before applying sanitization rules.
+**Prevention:** Decode the input URL parameter first (e.g., using `decodeURIComponent`) and explicitly check for and reject both double forward slashes (`//`) and slash-backslash combinations (`/\`).
