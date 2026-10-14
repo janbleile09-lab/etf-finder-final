@@ -30,8 +30,9 @@ export default function SettingsPage() {
         .select("*")
         .eq("user_id", user.id)
         .single();
-        
-      if (error && error.code !== "PGRST116") { // Ignore no rows error
+
+      if (error && error.code !== "PGRST116") {
+        // Ignore no rows error
         console.error("Error fetching chat history:", error);
       } else if (data) {
         setHistory(data as ChatHistoryRecord);
@@ -45,35 +46,49 @@ export default function SettingsPage() {
   }, [user, loading, supabase]);
 
   if (loading || isLoadingHistory) {
-    return <div className="p-8 text-center text-muted-foreground animate-pulse">Lade Einstellungen...</div>;
+    return (
+      <div className="p-8 text-center text-muted-foreground animate-pulse">
+        Lade Einstellungen...
+      </div>
+    );
   }
 
   if (!user) {
-    return <div className="p-8 text-center">Bitte melde dich an, um deine Einstellungen und deinen Chat-Verlauf zu sehen.</div>;
+    return (
+      <div className="p-8 text-center">
+        Bitte melde dich an, um deine Einstellungen und deinen Chat-Verlauf zu
+        sehen.
+      </div>
+    );
   }
 
   return (
     <div className="container mx-auto py-10 px-4 max-w-4xl">
       <h1 className="text-3xl font-bold mb-8">Benutzereinstellungen</h1>
-      
+
       <div className="space-y-8">
         <section className="bg-card rounded-xl p-6 border shadow-sm">
           <h2 className="text-xl font-semibold mb-4">Profil</h2>
-          <p className="text-muted-foreground">Eingeloggt als: <span className="font-medium text-foreground">{user.email}</span></p>
+          <p className="text-muted-foreground">
+            Eingeloggt als:{" "}
+            <span className="font-medium text-foreground">{user.email}</span>
+          </p>
         </section>
 
         <section className="bg-card rounded-xl p-6 border shadow-sm">
           <h2 className="text-xl font-semibold mb-4">Chat-Verlauf</h2>
           {!history || history.messages.length === 0 ? (
-            <p className="text-muted-foreground">Noch kein Chat-Verlauf vorhanden.</p>
+            <p className="text-muted-foreground">
+              Noch kein Chat-Verlauf vorhanden.
+            </p>
           ) : (
             <div className="space-y-4 max-h-125 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-muted">
               {history.messages.map((message) => (
-                <div 
-                  key={message.id} 
+                <div
+                  key={message.id}
                   className={`p-4 rounded-lg text-sm ${
-                    message.role === "user" 
-                      ? "bg-primary/10 border border-primary/20 ml-auto max-w-[85%]" 
+                    message.role === "user"
+                      ? "bg-primary/10 border border-primary/20 ml-auto max-w-[85%]"
                       : "bg-muted/50 border max-w-[85%]"
                   }`}
                 >

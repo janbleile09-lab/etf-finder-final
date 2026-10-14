@@ -19,8 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "ETF Finder",
-  description:
-    "Discover and compare ETFs with a clean, minimal interface.",
+  description: "Discover and compare ETFs with a clean, minimal interface.",
 };
 
 export default function RootLayout({
