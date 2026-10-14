@@ -78,10 +78,7 @@
       "return3Y": 14.5,
       "volatility1Y": 14.1
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE0002635281",
@@ -162,10 +159,7 @@
       "return3Y": 13.0,
       "volatility1Y": 14.5
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE0002635299",
@@ -246,10 +240,7 @@
       "return3Y": 15.0,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE0005933931",
@@ -321,10 +312,7 @@
       "return3Y": 23.5,
       "volatility1Y": 16.7
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE0002635273",
@@ -396,10 +384,7 @@
       "return3Y": 23.5,
       "volatility1Y": 16.4
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE0005933923",
@@ -471,10 +456,7 @@
       "return3Y": 22.1,
       "volatility1Y": 16.4
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE0002635265",
@@ -536,9 +518,7 @@
       "return3Y": 15.1,
       "volatility1Y": 13.3
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "DE0005933949",
@@ -619,10 +599,7 @@
       "return3Y": 13.0,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE0005933956",
@@ -703,10 +680,7 @@
       "return3Y": 13.6,
       "volatility1Y": 14.7
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE0005933964",
@@ -768,9 +742,7 @@
       "return3Y": 15.5,
       "volatility1Y": 14.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "DE0005933972",
@@ -842,10 +814,7 @@
       "return3Y": 23.5,
       "volatility1Y": 15.6
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE0005933998",
@@ -926,10 +895,7 @@
       "return3Y": 15.0,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE0005933980",
@@ -1010,10 +976,7 @@
       "return3Y": 13.2,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE0006289390",
@@ -1075,9 +1038,7 @@
       "return3Y": 14.4,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "DE0006289382",
@@ -1139,10 +1100,7 @@
       "return3Y": 15.9,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "DE0006289309",
@@ -1223,10 +1181,7 @@
       "return3Y": 13.9,
       "volatility1Y": 14.6
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE0006289465",
@@ -1244,9 +1199,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "DE0006289499",
@@ -1264,9 +1217,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "DE000A0D8Q07",
@@ -1347,10 +1298,7 @@
       "return3Y": 13.4,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE0006289473",
@@ -1368,9 +1316,7 @@
       "return3Y": 2.1,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "DE000A0D8Q31",
@@ -1388,9 +1334,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "DE000A0D8Q49",
@@ -1452,10 +1396,7 @@
       "return3Y": 11.7,
       "volatility1Y": 11.9
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "DE000A0D8Q23",
@@ -1517,9 +1458,7 @@
       "return3Y": 14.6,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "DE0006289481",
@@ -1537,9 +1476,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "DE000A0D8QZ7",
@@ -1620,10 +1557,7 @@
       "return3Y": 14.4,
       "volatility1Y": 13.6
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0F5UE8",
@@ -1685,10 +1619,7 @@
       "return3Y": 14.8,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "DE000A0F5UH1",
@@ -1848,11 +1779,7 @@
       "return3Y": 41.8,
       "volatility1Y": 19.6
     },
-    "summaryTags": [
-      "ETF",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US Large Cap", "US"]
   },
   {
     "isin": "DE000A0F5UG3",
@@ -1914,9 +1841,7 @@
       "return3Y": 14.6,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "DE000A0F5UK5",
@@ -1997,10 +1922,7 @@
       "return3Y": 13.2,
       "volatility1Y": 14.1
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0F5UJ7",
@@ -2081,10 +2003,7 @@
       "return3Y": 13.2,
       "volatility1Y": 14.1
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0H0728",
@@ -2146,9 +2065,7 @@
       "return3Y": 11.3,
       "volatility1Y": 12.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "DE000A0H0744",
@@ -2210,10 +2127,7 @@
       "return3Y": 11.7,
       "volatility1Y": 11.5
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "DE000A0H08F7",
@@ -2294,10 +2208,7 @@
       "return3Y": 13.7,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0H08E0",
@@ -2378,10 +2289,7 @@
       "return3Y": 13.6,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0H0785",
@@ -2399,9 +2307,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "DE000A0H08D2",
@@ -2463,9 +2369,7 @@
       "return3Y": 14.7,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "DE000A0H08G5",
@@ -2546,10 +2450,7 @@
       "return3Y": 13.4,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0H08J9",
@@ -2630,10 +2531,7 @@
       "return3Y": 14.1,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0H08K7",
@@ -2714,10 +2612,7 @@
       "return3Y": 13.6,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0H08H3",
@@ -2798,10 +2693,7 @@
       "return3Y": 13.7,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0H08M3",
@@ -2882,10 +2774,7 @@
       "return3Y": 12.9,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0H08L5",
@@ -2966,10 +2855,7 @@
       "return3Y": 14.4,
       "volatility1Y": 14.1
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0H08Q4",
@@ -3050,10 +2936,7 @@
       "return3Y": 13.3,
       "volatility1Y": 14.6
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0H08P6",
@@ -3134,10 +3017,7 @@
       "return3Y": 14.2,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0H08R2",
@@ -3218,10 +3098,7 @@
       "return3Y": 15.0,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0H08N1",
@@ -3302,10 +3179,7 @@
       "return3Y": 14.4,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0H08S0",
@@ -3386,10 +3260,7 @@
       "return3Y": 13.2,
       "volatility1Y": 13.6
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0Q4R02",
@@ -3470,10 +3341,7 @@
       "return3Y": 15.0,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0Q4R36",
@@ -3554,10 +3422,7 @@
       "return3Y": 12.9,
       "volatility1Y": 13.6
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0Q4R28",
@@ -3638,10 +3503,7 @@
       "return3Y": 13.0,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0Q4R85",
@@ -3703,10 +3565,7 @@
       "return3Y": 16.2,
       "volatility1Y": 14.1
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "DE000A0Q4R69",
@@ -3778,10 +3637,7 @@
       "return3Y": 22.4,
       "volatility1Y": 16.5
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A0Q4RZ9",
@@ -3799,9 +3655,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "DE000A0Q4R44",
@@ -3882,10 +3736,7 @@
       "return3Y": 14.6,
       "volatility1Y": 14.1
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A2QP323",
@@ -3957,10 +3808,7 @@
       "return3Y": 20.5,
       "volatility1Y": 16.3
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A2QP380",
@@ -4041,10 +3889,7 @@
       "return3Y": 13.9,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A2QP349",
@@ -4116,10 +3961,7 @@
       "return3Y": 22.4,
       "volatility1Y": 16.2
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A2QP331",
@@ -4191,10 +4033,7 @@
       "return3Y": 22.5,
       "volatility1Y": 15.7
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A2QP398",
@@ -4275,10 +4114,7 @@
       "return3Y": 13.3,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A2QP372",
@@ -4359,10 +4195,7 @@
       "return3Y": 13.2,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A2QP4A8",
@@ -4443,10 +4276,7 @@
       "return3Y": 14.9,
       "volatility1Y": 14.5
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A2QP4B6",
@@ -4527,10 +4357,7 @@
       "return3Y": 14.0,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "DE000A2QP4C4",
@@ -4592,10 +4419,7 @@
       "return3Y": 14.6,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00000EF730",
@@ -4676,10 +4500,7 @@
       "return3Y": 15.0,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE0000BH4WF5",
@@ -4697,9 +4518,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE0000P0RPE6",
@@ -4761,10 +4580,7 @@
       "return3Y": 11.5,
       "volatility1Y": 11.6
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets"
-    ]
+    "summaryTags": ["ETF", "Developed Markets"]
   },
   {
     "isin": "IE0000UJ3480",
@@ -4782,9 +4598,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE0000MR4GH9",
@@ -4802,9 +4616,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE0000VITHT2",
@@ -4822,9 +4634,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE0000X2DXK3",
@@ -4842,9 +4652,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000264WWY0",
@@ -4862,9 +4670,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00023EZQ82",
@@ -4926,9 +4732,7 @@
       "return3Y": 14.3,
       "volatility1Y": 13.6
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE0002W8NB38",
@@ -4990,10 +4794,7 @@
       "return3Y": 15.8,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE0002SCQ8X0",
@@ -5055,9 +4856,7 @@
       "return3Y": 14.1,
       "volatility1Y": 14.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE0002VEN3U3",
@@ -5139,11 +4938,7 @@
       "return3Y": 23.0,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00013A2XD6",
@@ -5205,11 +5000,7 @@
       "return3Y": 14.5,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF",
-      "All-World",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "All-World", "Global"]
   },
   {
     "isin": "IE00043L4HU0",
@@ -5227,9 +5018,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE0004L9EID2",
@@ -5247,10 +5036,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE0005042456",
@@ -5312,10 +5098,7 @@
       "return3Y": 15.1,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00076HZIP3",
@@ -5333,9 +5116,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE0006UGU3X3",
@@ -5353,9 +5134,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE0003ZXNJY5",
@@ -5417,10 +5196,7 @@
       "return3Y": 15.5,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE0006PTRUI8",
@@ -5502,9 +5278,7 @@
       "return3Y": 8.0,
       "volatility1Y": 16.6
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00063FT9K6",
@@ -5566,9 +5340,7 @@
       "return3Y": 13.9,
       "volatility1Y": 13.6
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE0008470928",
@@ -5649,10 +5421,7 @@
       "return3Y": 13.6,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE0008UEVOE0",
@@ -5670,9 +5439,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE0007UPSEA3",
@@ -5690,9 +5457,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE0009QS7W62",
@@ -5774,11 +5539,7 @@
       "return3Y": 25.5,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00091SR7N7",
@@ -5796,10 +5557,7 @@
       "return3Y": 11.4,
       "volatility1Y": 11.9
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE0009JOT9U1",
@@ -5817,9 +5575,7 @@
       "return3Y": 40.7,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE0008471009",
@@ -5900,10 +5656,7 @@
       "return3Y": 14.6,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE0009VWHAE6",
@@ -5965,10 +5718,7 @@
       "return3Y": 15.0,
       "volatility1Y": 14.6
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE00093SKUY4",
@@ -5986,9 +5736,7 @@
       "return3Y": 2.1,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000AK4O3W6",
@@ -6006,9 +5754,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000APK27S2",
@@ -6026,10 +5772,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE0009Y1MQJ2",
@@ -6091,10 +5834,7 @@
       "return3Y": 14.6,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets"
-    ]
+    "summaryTags": ["ETF", "Developed Markets"]
   },
   {
     "isin": "IE000BUIVY49",
@@ -6112,9 +5852,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000ANOU8J3",
@@ -6132,10 +5870,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE000AWT6D61",
@@ -6153,9 +5888,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000BI0GCN3",
@@ -6217,9 +5950,7 @@
       "return3Y": 15.2,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000BWITBP9",
@@ -6237,9 +5968,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000CR3ZDF9",
@@ -6257,9 +5986,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000BZXJJ24",
@@ -6277,9 +6004,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000CFH1JX2",
@@ -6341,10 +6066,7 @@
       "return3Y": 15.2,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE000D5R9C23",
@@ -6406,9 +6128,7 @@
       "return3Y": 16.2,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000CR7DJI8",
@@ -6481,12 +6201,7 @@
       "return3Y": 32.2,
       "volatility1Y": 15.4
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE000CR424L6",
@@ -6567,10 +6282,7 @@
       "return3Y": 14.1,
       "volatility1Y": 13.6
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE000CK5G8J7",
@@ -6632,10 +6344,7 @@
       "return3Y": 14.0,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE000C5YJ791",
@@ -6697,10 +6406,7 @@
       "return3Y": 14.1,
       "volatility1Y": 14.7
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE000DVLBQ03",
@@ -6773,12 +6479,7 @@
       "return3Y": 30.5,
       "volatility1Y": 15.2
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE000D8XC064",
@@ -6840,10 +6541,7 @@
       "return3Y": 15.2,
       "volatility1Y": 13.3
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets"
-    ]
+    "summaryTags": ["ETF", "Developed Markets"]
   },
   {
     "isin": "IE000EEJLWG1",
@@ -6905,9 +6603,7 @@
       "return3Y": 14.8,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000D9WMGF0",
@@ -6925,9 +6621,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000E9XXE77",
@@ -7009,9 +6703,7 @@
       "return3Y": 8.5,
       "volatility1Y": 16.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000F6G1DE0",
@@ -7029,9 +6721,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000E0NL9T3",
@@ -7049,9 +6739,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000D8FCSD8",
@@ -7113,9 +6801,7 @@
       "return3Y": 15.7,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000F9IDGB5",
@@ -7197,11 +6883,7 @@
       "return3Y": 24.4,
       "volatility1Y": 12.4
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE000G0E83X3",
@@ -7263,9 +6945,7 @@
       "return3Y": 13.9,
       "volatility1Y": 14.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000FOSCLU1",
@@ -7347,9 +7027,7 @@
       "return3Y": 8.4,
       "volatility1Y": 17.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000GUOATN7",
@@ -7367,9 +7045,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000H1H16W5",
@@ -7431,11 +7107,7 @@
       "return3Y": 15.0,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE000FI414K7",
@@ -7497,9 +7169,7 @@
       "return3Y": 14.2,
       "volatility1Y": 14.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000H22E3N8",
@@ -7517,9 +7187,7 @@
       "return3Y": 1.8,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000GHXL2Q3",
@@ -7537,9 +7205,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000HARJEE2",
@@ -7601,10 +7267,7 @@
       "return3Y": 16.1,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE000H5X52W8",
@@ -7622,9 +7285,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000H92C4B8",
@@ -7642,9 +7303,7 @@
       "return3Y": 12.1,
       "volatility1Y": 12.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000I2WYEU9",
@@ -7662,9 +7321,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000HH3SU50",
@@ -7745,10 +7402,7 @@
       "return3Y": 14.5,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE000I1D7D10",
@@ -7766,9 +7420,7 @@
       "return3Y": 2.2,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000I8KRLL9",
@@ -7830,10 +7482,7 @@
       "return3Y": 14.8,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE000IAXNM41",
@@ -7914,10 +7563,7 @@
       "return3Y": 13.7,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE000I660ZF8",
@@ -7935,9 +7581,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000IHURBR0",
@@ -7955,9 +7599,7 @@
       "return3Y": 2.1,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000JLXYKJ8",
@@ -7975,9 +7617,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000IX54FW5",
@@ -8039,10 +7679,7 @@
       "return3Y": 16.2,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE000IZO7033",
@@ -8060,9 +7697,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000JJPY166",
@@ -8124,9 +7759,7 @@
       "return3Y": 14.1,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000JTPK610",
@@ -8188,11 +7821,7 @@
       "return3Y": 15.0,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF",
-      "All-World",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "All-World", "Global"]
   },
   {
     "isin": "IE000KJPDY61",
@@ -8254,10 +7883,7 @@
       "return3Y": 11.4,
       "volatility1Y": 12.5
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets"
-    ]
+    "summaryTags": ["ETF", "Developed Markets"]
   },
   {
     "isin": "IE000LJ2O0V5",
@@ -8275,9 +7901,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000L5NW549",
@@ -8339,11 +7963,7 @@
       "return3Y": 15.2,
       "volatility1Y": 13.3
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE000LX17BP9",
@@ -8361,9 +7981,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000LXEN6X4",
@@ -8444,10 +8062,7 @@
       "return3Y": 14.9,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE000L2TO2T2",
@@ -8465,9 +8080,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000MAO75G5",
@@ -8548,10 +8161,7 @@
       "return3Y": 13.6,
       "volatility1Y": 14.7
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE000LZ7BZW8",
@@ -8569,9 +8179,7 @@
       "return3Y": 2.1,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000MLMNYS0",
@@ -8644,12 +8252,7 @@
       "return3Y": 31.2,
       "volatility1Y": 15.0
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE000NFR7C63",
@@ -8711,10 +8314,7 @@
       "return3Y": 15.6,
       "volatility1Y": 14.1
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE000NVM56L3",
@@ -8732,9 +8332,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000NBRE3P7",
@@ -8752,9 +8350,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000NHAIBN0",
@@ -8772,9 +8368,7 @@
       "return3Y": 11.1,
       "volatility1Y": 11.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000NXQKHU1",
@@ -8792,9 +8386,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000P1IQS65",
@@ -8856,10 +8448,7 @@
       "return3Y": 16.0,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets"
-    ]
+    "summaryTags": ["ETF", "Developed Markets"]
   },
   {
     "isin": "IE000OKVTDF7",
@@ -8921,10 +8510,7 @@
       "return3Y": 14.6,
       "volatility1Y": 14.6
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE000OVF8Q66",
@@ -9006,10 +8592,7 @@
       "return3Y": 7.9,
       "volatility1Y": 16.3
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE000Q9W2IR3",
@@ -9071,9 +8654,7 @@
       "return3Y": 15.0,
       "volatility1Y": 13.6
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000QOU09J7",
@@ -9135,10 +8716,7 @@
       "return3Y": 14.3,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE000PLCL3C9",
@@ -9156,10 +8734,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE000Q2EQ5K8",
@@ -9177,9 +8752,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000QWO5FT3",
@@ -9241,9 +8814,7 @@
       "return3Y": 15.0,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000R4ZNTN3",
@@ -9325,11 +8896,7 @@
       "return3Y": 22.9,
       "volatility1Y": 13.2
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE000QZ7JON9",
@@ -9391,10 +8958,7 @@
       "return3Y": 15.4,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE000R7HJVO6",
@@ -9456,10 +9020,7 @@
       "return3Y": 15.8,
       "volatility1Y": 14.6
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE000RDRMSD1",
@@ -9521,9 +9082,7 @@
       "return3Y": 14.5,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000R9FA4A0",
@@ -9596,12 +9155,7 @@
       "return3Y": 29.3,
       "volatility1Y": 14.6
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE000RHYOR04",
@@ -9619,9 +9173,7 @@
       "return3Y": 2.1,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000RN58M26",
@@ -9683,9 +9235,7 @@
       "return3Y": 15.4,
       "volatility1Y": 14.6
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000ROSD5J6",
@@ -9747,9 +9297,7 @@
       "return3Y": 14.5,
       "volatility1Y": 14.6
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000SBJO6L2",
@@ -9767,9 +9315,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000SIZJ2B2",
@@ -9787,9 +9333,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000SNLFDR7",
@@ -9807,9 +9351,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000SE6KPV2",
@@ -9827,9 +9369,7 @@
       "return3Y": 1.8,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000T9EOCL3",
@@ -9891,11 +9431,7 @@
       "return3Y": 15.5,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE000SVXJH05",
@@ -9965,11 +9501,7 @@
       "return3Y": 41.6,
       "volatility1Y": 20.7
     },
-    "summaryTags": [
-      "ETF",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US Large Cap", "US"]
   },
   {
     "isin": "IE000U3XZQN5",
@@ -10050,10 +9582,7 @@
       "return3Y": 14.2,
       "volatility1Y": 14.5
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE000U58J0M1",
@@ -10115,10 +9644,7 @@
       "return3Y": 14.9,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE000U7L59A3",
@@ -10180,10 +9706,7 @@
       "return3Y": 14.2,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE000TY854T9",
@@ -10201,9 +9724,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000U9ODG19",
@@ -10265,10 +9786,7 @@
       "return3Y": 15.8,
       "volatility1Y": 14.1
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE000VA628D5",
@@ -10341,12 +9859,7 @@
       "return3Y": 30.0,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE000UY6XF65",
@@ -10364,9 +9877,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000VSFIC94",
@@ -10384,9 +9895,7 @@
       "return3Y": 12.5,
       "volatility1Y": 12.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000VNGJFV0",
@@ -10404,9 +9913,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000WDG5795",
@@ -10468,9 +9975,7 @@
       "return3Y": 15.2,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000WHL2ZK1",
@@ -10532,9 +10037,7 @@
       "return3Y": 11.8,
       "volatility1Y": 12.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000X59ZHE2",
@@ -10596,9 +10099,7 @@
       "return3Y": 14.7,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000Y2BJVK9",
@@ -10616,9 +10117,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000Y247W99",
@@ -10636,9 +10135,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000WA6L436",
@@ -10656,9 +10153,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000YD0IAD2",
@@ -10720,10 +10215,7 @@
       "return3Y": 15.2,
       "volatility1Y": 13.3
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE000U99N3V1",
@@ -10741,9 +10233,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000XFP47S2",
@@ -10761,10 +10251,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE000W336086",
@@ -10782,10 +10269,7 @@
       "return3Y": 1.8,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE000WIQIPT2",
@@ -10803,9 +10287,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000WJWZK35",
@@ -10823,9 +10305,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000YIXESS9",
@@ -10898,12 +10378,7 @@
       "return3Y": 27.8,
       "volatility1Y": 15.0
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE000Z7P04F4",
@@ -10973,11 +10448,7 @@
       "return3Y": 45.2,
       "volatility1Y": 20.4
     },
-    "summaryTags": [
-      "ETF",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US Large Cap", "US"]
   },
   {
     "isin": "IE000Z3S26J2",
@@ -11050,12 +10521,7 @@
       "return3Y": 28.7,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE000ZOI8OK5",
@@ -11073,9 +10539,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000ZBGZQM8",
@@ -11093,9 +10557,7 @@
       "return3Y": 2.1,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000ZQF1PE1",
@@ -11176,10 +10638,7 @@
       "return3Y": 13.7,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE000ZPUEP93",
@@ -11241,9 +10700,7 @@
       "return3Y": 15.9,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE000ZYE17Z0",
@@ -11305,10 +10762,7 @@
       "return3Y": 14.9,
       "volatility1Y": 14.7
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets"
-    ]
+    "summaryTags": ["ETF", "Developed Markets"]
   },
   {
     "isin": "IE000ZX8CQG2",
@@ -11326,9 +10780,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE0031442068",
@@ -11401,12 +10853,7 @@
       "return3Y": 30.0,
       "volatility1Y": 15.4
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE0032895942",
@@ -11424,9 +10871,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE0032523478",
@@ -11444,9 +10889,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B00FV011",
@@ -11464,9 +10907,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B00FV128",
@@ -11528,9 +10969,7 @@
       "return3Y": 14.9,
       "volatility1Y": 13.3
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B02KXK85",
@@ -11592,10 +11031,7 @@
       "return3Y": 15.7,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00B02KXH56",
@@ -11657,9 +11093,7 @@
       "return3Y": 14.0,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B0M62S72",
@@ -11721,9 +11155,7 @@
       "return3Y": 11.7,
       "volatility1Y": 12.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B02KXM00",
@@ -11804,10 +11236,7 @@
       "return3Y": 13.3,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00B0M62Q58",
@@ -11889,11 +11318,7 @@
       "return3Y": 22.8,
       "volatility1Y": 13.0
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00B02KXL92",
@@ -11974,10 +11399,7 @@
       "return3Y": 13.7,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00B0M62V02",
@@ -12039,9 +11461,7 @@
       "return3Y": 14.3,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B0M62X26",
@@ -12059,9 +11479,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B0M62Y33",
@@ -12123,9 +11541,7 @@
       "return3Y": 15.4,
       "volatility1Y": 14.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B0M63391",
@@ -12187,9 +11603,7 @@
       "return3Y": 14.1,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B0M63060",
@@ -12251,9 +11665,7 @@
       "return3Y": 11.4,
       "volatility1Y": 12.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B0M63284",
@@ -12334,9 +11746,7 @@
       "return3Y": 14.2,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B0M63177",
@@ -12418,10 +11828,7 @@
       "return3Y": 7.7,
       "volatility1Y": 16.4
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00B0M63623",
@@ -12483,9 +11890,7 @@
       "return3Y": 14.8,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B0M63516",
@@ -12547,10 +11952,7 @@
       "return3Y": 14.8,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00B0M63730",
@@ -12612,9 +12014,7 @@
       "return3Y": 15.6,
       "volatility1Y": 14.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B14X4M10",
@@ -12676,9 +12076,7 @@
       "return3Y": 14.0,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B14X4N27",
@@ -12759,10 +12157,7 @@
       "return3Y": 13.4,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00B1FZS350",
@@ -12824,10 +12219,7 @@
       "return3Y": 12.2,
       "volatility1Y": 12.2
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets"
-    ]
+    "summaryTags": ["ETF", "Developed Markets"]
   },
   {
     "isin": "IE00B14X4Q57",
@@ -12845,9 +12237,7 @@
       "return3Y": 2.1,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B14X4S71",
@@ -12865,9 +12255,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B14X4T88",
@@ -12929,10 +12317,7 @@
       "return3Y": 12.0,
       "volatility1Y": 12.3
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00B1FZS244",
@@ -12994,9 +12379,7 @@
       "return3Y": 12.2,
       "volatility1Y": 11.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B1FZS467",
@@ -13058,10 +12441,7 @@
       "return3Y": 14.6,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00B1FZS681",
@@ -13079,9 +12459,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B1FZS574",
@@ -13143,9 +12521,7 @@
       "return3Y": 15.4,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B1FZS798",
@@ -13163,9 +12539,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B1FZS913",
@@ -13183,9 +12557,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B1FZSB30",
@@ -13247,9 +12619,7 @@
       "return3Y": 14.5,
       "volatility1Y": 14.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B1FZS806",
@@ -13267,9 +12637,7 @@
       "return3Y": 1.8,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B1FZSD53",
@@ -13331,9 +12699,7 @@
       "return3Y": 15.9,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B1FZSC47",
@@ -13351,9 +12717,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B1TXHL60",
@@ -13415,9 +12779,7 @@
       "return3Y": 15.7,
       "volatility1Y": 14.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B1FZSF77",
@@ -13479,9 +12841,7 @@
       "return3Y": 11.6,
       "volatility1Y": 12.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B1TXK627",
@@ -13543,10 +12903,7 @@
       "return3Y": 14.6,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00B1YZSC51",
@@ -13627,10 +12984,7 @@
       "return3Y": 12.9,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00B1XNHC34",
@@ -13692,10 +13046,7 @@
       "return3Y": 13.9,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00B1XNH568",
@@ -13757,9 +13108,7 @@
       "return3Y": 15.9,
       "volatility1Y": 13.3
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B1W57M07",
@@ -13821,9 +13170,7 @@
       "return3Y": 13.9,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B27YCF74",
@@ -13885,10 +13232,7 @@
       "return3Y": 15.7,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00B1TXLS18",
@@ -13950,9 +13294,7 @@
       "return3Y": 15.6,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B27YCK28",
@@ -14034,10 +13376,7 @@
       "return3Y": 7.5,
       "volatility1Y": 16.3
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00B27YCN58",
@@ -14119,11 +13458,7 @@
       "return3Y": 24.1,
       "volatility1Y": 13.6
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00B2NPKV68",
@@ -14153,10 +13488,7 @@
       "return3Y": 8.5,
       "volatility1Y": 16.9
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00B296QM64",
@@ -14218,10 +13550,7 @@
       "return3Y": 15.4,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE00B27YCP72",
@@ -14303,10 +13632,7 @@
       "return3Y": 8.3,
       "volatility1Y": 17.1
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00B2QWCY14",
@@ -14368,9 +13694,7 @@
       "return3Y": 14.0,
       "volatility1Y": 14.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B2QWDY88",
@@ -14432,9 +13756,7 @@
       "return3Y": 13.9,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B3B8PX14",
@@ -14452,10 +13774,7 @@
       "return3Y": 1.8,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00B2QWDR12",
@@ -14517,9 +13836,7 @@
       "return3Y": 15.5,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B3F81K65",
@@ -14537,10 +13854,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00B3F81G20",
@@ -14622,10 +13936,7 @@
       "return3Y": 8.4,
       "volatility1Y": 17.3
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00B3F81409",
@@ -14643,10 +13954,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00B3DKXQ41",
@@ -14664,9 +13972,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B3F81R35",
@@ -14684,9 +13990,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B3B8Q275",
@@ -14704,9 +14008,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B3FH7618",
@@ -14724,9 +14026,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B3VTML14",
@@ -14744,9 +14044,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B3VTMJ91",
@@ -14764,9 +14062,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B3VTN290",
@@ -14784,9 +14080,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B3VWLG82",
@@ -14848,9 +14142,7 @@
       "return3Y": 14.3,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B3VWMM18",
@@ -14932,9 +14224,7 @@
       "return3Y": 7.4,
       "volatility1Y": 16.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B3VWN393",
@@ -14952,9 +14242,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B3VWM098",
@@ -15016,10 +14304,7 @@
       "return3Y": 15.5,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE00B3VWN518",
@@ -15037,9 +14322,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B3WJKG14",
@@ -15112,12 +14395,7 @@
       "return3Y": 31.1,
       "volatility1Y": 15.7
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE00B42NKQ00",
@@ -15190,12 +14468,7 @@
       "return3Y": 30.7,
       "volatility1Y": 15.1
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE00B428Z604",
@@ -15213,9 +14486,7 @@
       "return3Y": 2.1,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B3ZW0K18",
@@ -15288,12 +14559,7 @@
       "return3Y": 31.2,
       "volatility1Y": 14.9
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE00B42YS929",
@@ -15375,11 +14641,7 @@
       "return3Y": 22.9,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00B43HR379",
@@ -15452,12 +14714,7 @@
       "return3Y": 29.4,
       "volatility1Y": 15.3
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE00B40B8R38",
@@ -15530,12 +14787,7 @@
       "return3Y": 31.7,
       "volatility1Y": 15.4
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE00B42Z5J44",
@@ -15597,9 +14849,7 @@
       "return3Y": 15.0,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B441G979",
@@ -15681,11 +14931,7 @@
       "return3Y": 25.6,
       "volatility1Y": 12.6
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00B4556L06",
@@ -15747,9 +14993,7 @@
       "return3Y": 14.9,
       "volatility1Y": 14.6
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B4JNQZ49",
@@ -15822,12 +15066,7 @@
       "return3Y": 29.0,
       "volatility1Y": 15.5
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE00B4KBBD01",
@@ -15900,12 +15139,7 @@
       "return3Y": 32.4,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE00B44CGS96",
@@ -15923,9 +15157,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B4L5Y983",
@@ -16007,13 +15239,7 @@
       "return3Y": 65.6,
       "volatility1Y": 10.7
     },
-    "summaryTags": [
-      "ETF",
-      "MSCI World",
-      "Global",
-      "Developed Markets",
-      "Core"
-    ],
+    "summaryTags": ["ETF", "MSCI World", "Global", "Developed Markets", "Core"],
     "fundSize": "128828m",
     "inceptionDate": "2009-09-25",
     "replication": "Sampling"
@@ -16097,10 +15323,7 @@
       "return3Y": 14.4,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00B4L5YC18",
@@ -16182,10 +15405,7 @@
       "return3Y": 7.9,
       "volatility1Y": 17.1
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00B4L5YX21",
@@ -16247,9 +15467,7 @@
       "return3Y": 14.3,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B4L5ZG21",
@@ -16267,9 +15485,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B4LN9N13",
@@ -16342,12 +15558,7 @@
       "return3Y": 28.6,
       "volatility1Y": 14.9
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE00B4LHWP62",
@@ -16409,9 +15620,7 @@
       "return3Y": 15.4,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B4L60045",
@@ -16429,9 +15638,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B4L5ZY03",
@@ -16449,9 +15656,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B4M7GH52",
@@ -16513,9 +15718,7 @@
       "return3Y": 14.5,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B4MCHD36",
@@ -16588,12 +15791,7 @@
       "return3Y": 28.8,
       "volatility1Y": 14.8
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE00B4MKCJ84",
@@ -16666,12 +15864,7 @@
       "return3Y": 28.9,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE00B4ND3602",
@@ -16689,12 +15882,7 @@
       "return3Y": 113.5,
       "volatility1Y": 24.7
     },
-    "summaryTags": [
-      "ETC",
-      "Gold",
-      "Precious Metals",
-      "Commodity"
-    ],
+    "summaryTags": ["ETC", "Gold", "Precious Metals", "Commodity"],
     "fundSize": "31334m",
     "inceptionDate": "2011-04-08",
     "replication": "Physical (Physically backed)"
@@ -16759,9 +15947,7 @@
       "return3Y": 15.4,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B4WXJD03",
@@ -16823,9 +16009,7 @@
       "return3Y": 14.2,
       "volatility1Y": 14.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B4WXJJ64",
@@ -16843,9 +16027,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B4PY7Y77",
@@ -16863,9 +16045,7 @@
       "return3Y": 12.0,
       "volatility1Y": 11.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B4WXJH41",
@@ -16883,9 +16063,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B4WXJG34",
@@ -16903,9 +16081,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B52VJ196",
@@ -16986,10 +16162,7 @@
       "return3Y": 14.2,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00B52MJD48",
@@ -17051,9 +16224,7 @@
       "return3Y": 16.0,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B52MJY50",
@@ -17115,9 +16286,7 @@
       "return3Y": 14.2,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B52SFT06",
@@ -17179,10 +16348,7 @@
       "return3Y": 14.6,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE00B52XQP83",
@@ -17244,9 +16410,7 @@
       "return3Y": 14.8,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B52SF786",
@@ -17308,9 +16472,7 @@
       "return3Y": 15.7,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B539F030",
@@ -17372,9 +16534,7 @@
       "return3Y": 14.9,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B5377D42",
@@ -17436,9 +16596,7 @@
       "return3Y": 14.1,
       "volatility1Y": 13.3
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B53HP851",
@@ -17500,10 +16658,7 @@
       "return3Y": 15.8,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00B53L3W79",
@@ -17584,10 +16739,7 @@
       "return3Y": 14.5,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00B53L4350",
@@ -17649,9 +16801,7 @@
       "return3Y": 15.0,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B53SZB19",
@@ -17723,13 +16873,7 @@
       "return3Y": 85.5,
       "volatility1Y": 18.7
     },
-    "summaryTags": [
-      "ETF",
-      "NASDAQ 100",
-      "US Large Cap",
-      "US",
-      "Technology"
-    ],
+    "summaryTags": ["ETF", "NASDAQ 100", "US Large Cap", "US", "Technology"],
     "fundSize": "24318m",
     "inceptionDate": "2010-01-26",
     "replication": "Full replication"
@@ -17794,9 +16938,7 @@
       "return3Y": 15.5,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B53QG562",
@@ -17878,9 +17020,7 @@
       "return3Y": 7.9,
       "volatility1Y": 17.3
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B53QDK08",
@@ -17942,9 +17082,7 @@
       "return3Y": 15.0,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B5BMR087",
@@ -18017,13 +17155,7 @@
       "return3Y": 68.9,
       "volatility1Y": 12.4
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US",
-      "Core"
-    ],
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US", "Core"],
     "fundSize": "135504m",
     "inceptionDate": "2010-05-19",
     "replication": "Full replication"
@@ -18088,10 +17220,7 @@
       "return3Y": 15.0,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00B5V94313",
@@ -18109,9 +17238,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B5M4WH52",
@@ -18129,9 +17256,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B5L8K969",
@@ -18213,10 +17338,7 @@
       "return3Y": 7.8,
       "volatility1Y": 17.6
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00B5W4TY14",
@@ -18278,9 +17400,7 @@
       "return3Y": 15.3,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B652H904",
@@ -18362,10 +17482,7 @@
       "return3Y": 7.5,
       "volatility1Y": 16.4
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00B66F4759",
@@ -18383,9 +17500,7 @@
       "return3Y": 12.5,
       "volatility1Y": 11.6
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B6QGFW01",
@@ -18403,9 +17518,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B5WHFQ43",
@@ -18467,9 +17580,7 @@
       "return3Y": 15.1,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B6R52036",
@@ -18487,9 +17598,7 @@
       "return3Y": 41.4,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B6R51Z18",
@@ -18551,9 +17660,7 @@
       "return3Y": 14.0,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B6R52259",
@@ -18615,11 +17722,7 @@
       "return3Y": 15.5,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF",
-      "All-World",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "All-World", "Global"]
   },
   {
     "isin": "IE00B6R52143",
@@ -18681,9 +17784,7 @@
       "return3Y": 14.3,
       "volatility1Y": 14.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B6SPMN59",
@@ -18756,12 +17857,7 @@
       "return3Y": 31.8,
       "volatility1Y": 15.3
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE00B6TLBW47",
@@ -18791,10 +17887,7 @@
       "return3Y": 8.6,
       "volatility1Y": 16.9
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00B6X2VY59",
@@ -18812,9 +17905,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B7J7TB45",
@@ -18832,10 +17923,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00B74DQ490",
@@ -18853,10 +17941,7 @@
       "return3Y": 11.8,
       "volatility1Y": 11.9
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00B7LGZ558",
@@ -18874,9 +17959,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B7LW6Y90",
@@ -18894,9 +17977,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B86MWN23",
@@ -18977,10 +18058,7 @@
       "return3Y": 14.7,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00B87RLX93",
@@ -18998,9 +18076,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B8FHGS14",
@@ -19062,11 +18138,7 @@
       "return3Y": 15.3,
       "volatility1Y": 13.6
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00B8J37J31",
@@ -19128,9 +18200,7 @@
       "return3Y": 15.5,
       "volatility1Y": 14.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B8KGV557",
@@ -19212,10 +18282,7 @@
       "return3Y": 7.6,
       "volatility1Y": 16.6
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00B988C465",
@@ -19233,10 +18300,7 @@
       "return3Y": 12.4,
       "volatility1Y": 11.8
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00B9M6RS56",
@@ -19254,9 +18318,7 @@
       "return3Y": 1.8,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B87G8S03",
@@ -19274,10 +18336,7 @@
       "return3Y": 2.1,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00B9M04V95",
@@ -19295,9 +18354,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B9M6SJ31",
@@ -19315,10 +18372,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00BCLWRD08",
@@ -19400,9 +18454,7 @@
       "return3Y": 8.0,
       "volatility1Y": 17.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BCLWRB83",
@@ -19420,9 +18472,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BCLWRF22",
@@ -19504,9 +18554,7 @@
       "return3Y": 8.2,
       "volatility1Y": 16.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BCRY6003",
@@ -19524,9 +18572,7 @@
       "return3Y": 12.0,
       "volatility1Y": 12.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BCLWRG39",
@@ -19588,9 +18634,7 @@
       "return3Y": 15.0,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BCRY5Y77",
@@ -19608,9 +18652,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BCRY6557",
@@ -19628,9 +18670,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BCRY6227",
@@ -19648,9 +18688,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BD1F4K20",
@@ -19712,10 +18750,7 @@
       "return3Y": 15.7,
       "volatility1Y": 14.6
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE00BD0B9B76",
@@ -19777,9 +18812,7 @@
       "return3Y": 11.3,
       "volatility1Y": 11.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BD1F4M44",
@@ -19841,10 +18874,7 @@
       "return3Y": 15.4,
       "volatility1Y": 14.6
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE00BD3RYZ16",
@@ -19906,9 +18936,7 @@
       "return3Y": 16.2,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BD3V0B10",
@@ -19970,9 +18998,7 @@
       "return3Y": 15.8,
       "volatility1Y": 14.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BD1F4L37",
@@ -20034,10 +19060,7 @@
       "return3Y": 14.0,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE00BD1F4N50",
@@ -20099,10 +19122,7 @@
       "return3Y": 15.4,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE00BD45KH83",
@@ -20184,10 +19204,7 @@
       "return3Y": 8.3,
       "volatility1Y": 16.4
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00BD8PGZ49",
@@ -20205,9 +19222,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BD8PH067",
@@ -20225,9 +19240,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BDBRDM35",
@@ -20245,10 +19258,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00BD8PH174",
@@ -20266,10 +19276,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00BDFGJ627",
@@ -20287,9 +19294,7 @@
       "return3Y": 2.2,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BD93YH54",
@@ -20362,12 +19367,7 @@
       "return3Y": 28.0,
       "volatility1Y": 15.1
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE00BDDRDW15",
@@ -20385,9 +19385,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BDDRF478",
@@ -20460,12 +19458,7 @@
       "return3Y": 31.7,
       "volatility1Y": 15.4
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE00BDFJYM28",
@@ -20483,9 +19476,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BDFK1573",
@@ -20503,9 +19494,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BDFJYP58",
@@ -20523,9 +19512,7 @@
       "return3Y": 11.3,
       "volatility1Y": 12.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BDFL4P12",
@@ -20587,9 +19574,7 @@
       "return3Y": 11.8,
       "volatility1Y": 11.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BDZVH966",
@@ -20607,9 +19592,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BDQYWQ65",
@@ -20627,9 +19610,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BDQZ5152",
@@ -20647,9 +19628,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BDZVHD04",
@@ -20711,10 +19690,7 @@
       "return3Y": 11.8,
       "volatility1Y": 11.8
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets"
-    ]
+    "summaryTags": ["ETF", "Developed Markets"]
   },
   {
     "isin": "IE00BDZZTM54",
@@ -20875,11 +19851,7 @@
       "return3Y": 41.5,
       "volatility1Y": 19.7
     },
-    "summaryTags": [
-      "ETF",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US Large Cap", "US"]
   },
   {
     "isin": "IE00BF11F458",
@@ -20897,9 +19869,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BF11F565",
@@ -20917,9 +19887,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BF20LF40",
@@ -21000,10 +19968,7 @@
       "return3Y": 15.0,
       "volatility1Y": 14.6
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00BF3N7094",
@@ -21021,9 +19986,7 @@
       "return3Y": 12.7,
       "volatility1Y": 12.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BF2QSQ20",
@@ -21085,10 +20048,7 @@
       "return3Y": 14.7,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE00BF3N7102",
@@ -21106,9 +20066,7 @@
       "return3Y": 12.9,
       "volatility1Y": 12.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BF3N6Y61",
@@ -21126,9 +20084,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BF3N6Z78",
@@ -21146,10 +20102,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00BF4RFH31",
@@ -21231,11 +20184,7 @@
       "return3Y": 24.4,
       "volatility1Y": 12.6
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00BF540Y54",
@@ -21253,10 +20202,7 @@
       "return3Y": 2.1,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00BF3N7219",
@@ -21274,9 +20220,7 @@
       "return3Y": 12.0,
       "volatility1Y": 11.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BF553838",
@@ -21294,9 +20238,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BFF5RX68",
@@ -21358,10 +20300,7 @@
       "return3Y": 13.9,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE00BFF5RZ82",
@@ -21423,10 +20362,7 @@
       "return3Y": 15.2,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE00BF5GB717",
@@ -21444,9 +20380,7 @@
       "return3Y": 2.2,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BFM15T99",
@@ -21508,9 +20442,7 @@
       "return3Y": 14.1,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BFM6TC58",
@@ -21528,9 +20460,7 @@
       "return3Y": 2.1,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BFM6T921",
@@ -21592,10 +20522,7 @@
       "return3Y": 11.4,
       "volatility1Y": 12.1
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets"
-    ]
+    "summaryTags": ["ETF", "Developed Markets"]
   },
   {
     "isin": "IE00BFM6TB42",
@@ -21613,10 +20540,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00BFM6T814",
@@ -21634,9 +20558,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BFM6TD65",
@@ -21666,10 +20588,7 @@
       "return3Y": 8.5,
       "volatility1Y": 16.6
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00BFNM3C07",
@@ -21751,9 +20670,7 @@
       "return3Y": 8.6,
       "volatility1Y": 17.3
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BFNM3B99",
@@ -21835,9 +20752,7 @@
       "return3Y": 7.5,
       "volatility1Y": 16.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BFNM3D14",
@@ -21918,10 +20833,7 @@
       "return3Y": 14.0,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00BFMM8Y81",
@@ -21939,9 +20851,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BFNM3G45",
@@ -22003,10 +20913,7 @@
       "return3Y": 15.6,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE00BFMM9235",
@@ -22024,9 +20931,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BFNM3F38",
@@ -22107,10 +21012,7 @@
       "return3Y": 15.0,
       "volatility1Y": 14.5
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00BFNM3J75",
@@ -22192,11 +21094,7 @@
       "return3Y": 24.8,
       "volatility1Y": 12.5
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00BFNM3H51",
@@ -22258,10 +21156,7 @@
       "return3Y": 15.4,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE00BFNM3L97",
@@ -22323,9 +21218,7 @@
       "return3Y": 16.0,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BFNM3K80",
@@ -22407,11 +21300,7 @@
       "return3Y": 25.4,
       "volatility1Y": 12.8
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00BFNM3M05",
@@ -22473,9 +21362,7 @@
       "return3Y": 15.5,
       "volatility1Y": 14.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BFNM3N12",
@@ -22557,10 +21444,7 @@
       "return3Y": 8.5,
       "volatility1Y": 17.5
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00BFNM3P36",
@@ -22642,10 +21526,7 @@
       "return3Y": 7.4,
       "volatility1Y": 16.8
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00BFXYHY63",
@@ -22663,9 +21544,7 @@
       "return3Y": 2.2,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BFYTYS33",
@@ -22727,11 +21606,7 @@
       "return3Y": 14.2,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00BFZPF546",
@@ -22761,10 +21636,7 @@
       "return3Y": 7.9,
       "volatility1Y": 16.3
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00BG0J4841",
@@ -22826,9 +21698,7 @@
       "return3Y": 14.5,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BG0J4957",
@@ -22846,9 +21716,7 @@
       "return3Y": 12.8,
       "volatility1Y": 11.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BG0J4B71",
@@ -22866,9 +21734,7 @@
       "return3Y": 11.7,
       "volatility1Y": 11.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BG0J4C88",
@@ -22930,9 +21796,7 @@
       "return3Y": 16.0,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BG0SKF03",
@@ -23014,10 +21878,7 @@
       "return3Y": 7.7,
       "volatility1Y": 16.3
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00BG11HV38",
@@ -23079,11 +21940,7 @@
       "return3Y": 15.5,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00BG13YG34",
@@ -23164,10 +22021,7 @@
       "return3Y": 13.8,
       "volatility1Y": 14.6
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00BG13YH41",
@@ -23248,10 +22102,7 @@
       "return3Y": 12.9,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00BG13YJ64",
@@ -23332,10 +22183,7 @@
       "return3Y": 14.7,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00BG13YK79",
@@ -23416,10 +22264,7 @@
       "return3Y": 14.7,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00BG13YL86",
@@ -23500,10 +22345,7 @@
       "return3Y": 14.4,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00BG13YZ23",
@@ -23584,10 +22426,7 @@
       "return3Y": 14.5,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00BG5QQ390",
@@ -23605,9 +22444,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BGCSB447",
@@ -23625,9 +22462,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BGDPWV87",
@@ -23689,9 +22524,7 @@
       "return3Y": 12.0,
       "volatility1Y": 12.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BGDPWW94",
@@ -23772,10 +22605,7 @@
       "return3Y": 13.0,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00BGDQ0L74",
@@ -23856,9 +22686,7 @@
       "return3Y": 13.9,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BGDQ0T50",
@@ -23940,10 +22768,7 @@
       "return3Y": 8.0,
       "volatility1Y": 16.6
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00BGDQ0V72",
@@ -24005,9 +22830,7 @@
       "return3Y": 16.0,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BGL86Z12",
@@ -24069,9 +22892,7 @@
       "return3Y": 14.3,
       "volatility1Y": 13.6
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BGPP6473",
@@ -24089,9 +22910,7 @@
       "return3Y": 2.1,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BGPP6697",
@@ -24109,9 +22928,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BGQ0J979",
@@ -24129,9 +22946,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BGR7L912",
@@ -24149,9 +22964,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BGSF1X88",
@@ -24169,9 +22982,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BH4G7D40",
@@ -24189,9 +23000,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BHZPHZ28",
@@ -24273,9 +23082,7 @@
       "return3Y": 7.5,
       "volatility1Y": 17.3
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BHZPJ015",
@@ -24357,9 +23164,7 @@
       "return3Y": 7.4,
       "volatility1Y": 16.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BHZPJ239",
@@ -24441,10 +23246,7 @@
       "return3Y": 8.2,
       "volatility1Y": 17.1
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00BHZPJ346",
@@ -24506,9 +23308,7 @@
       "return3Y": 14.0,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BHZPJ452",
@@ -24570,9 +23370,7 @@
       "return3Y": 13.8,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BHZPJ569",
@@ -24634,11 +23432,7 @@
       "return3Y": 14.4,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00BHZPJ676",
@@ -24719,10 +23513,7 @@
       "return3Y": 13.8,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "IE00BHZPJ890",
@@ -24784,10 +23575,7 @@
       "return3Y": 15.0,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE00BHZPJ908",
@@ -24849,10 +23637,7 @@
       "return3Y": 15.8,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "IE00BJ5JNY98",
@@ -24934,11 +23719,7 @@
       "return3Y": 24.2,
       "volatility1Y": 13.2
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00BJ5JNZ06",
@@ -25020,11 +23801,7 @@
       "return3Y": 25.4,
       "volatility1Y": 12.6
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00BJ5JP097",
@@ -25106,11 +23883,7 @@
       "return3Y": 22.1,
       "volatility1Y": 12.8
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00BJ5JP105",
@@ -25192,11 +23965,7 @@
       "return3Y": 23.7,
       "volatility1Y": 12.6
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00BJ5JP212",
@@ -25278,11 +24047,7 @@
       "return3Y": 24.7,
       "volatility1Y": 13.0
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00BJ5JP329",
@@ -25364,11 +24129,7 @@
       "return3Y": 25.5,
       "volatility1Y": 13.0
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "IE00BJ5JPG56",
@@ -25430,10 +24191,7 @@
       "return3Y": 15.0,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00BJ5JPH63",
@@ -25451,9 +24209,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BJ5JPJ87",
@@ -25515,9 +24271,7 @@
       "return3Y": 15.9,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BJK55B31",
@@ -25535,9 +24289,7 @@
       "return3Y": 11.2,
       "volatility1Y": 12.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BJK55C48",
@@ -25555,9 +24307,7 @@
       "return3Y": 11.9,
       "volatility1Y": 12.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BJLKK341",
@@ -25639,9 +24389,7 @@
       "return3Y": 7.8,
       "volatility1Y": 17.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BJM0B415",
@@ -25723,9 +24471,7 @@
       "return3Y": 8.0,
       "volatility1Y": 16.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BJP26C72",
@@ -25743,9 +24489,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BJP26D89",
@@ -25763,9 +24507,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BJP26F04",
@@ -25783,9 +24525,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00BJSFQW37",
@@ -25803,10 +24543,7 @@
       "return3Y": 2.1,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00BJSFR200",
@@ -25824,10 +24561,7 @@
       "return3Y": 11.7,
       "volatility1Y": 12.4
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "LU0274208692",
@@ -25909,11 +24643,7 @@
       "return3Y": 22.4,
       "volatility1Y": 12.9
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "LU0274211217",
@@ -25994,10 +24724,7 @@
       "return3Y": 13.7,
       "volatility1Y": 13.6
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "LU0274211480",
@@ -26069,10 +24796,7 @@
       "return3Y": 22.4,
       "volatility1Y": 16.0
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "LU0274212538",
@@ -26134,9 +24858,7 @@
       "return3Y": 15.1,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0274221281",
@@ -26198,9 +24920,7 @@
       "return3Y": 15.3,
       "volatility1Y": 14.6
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0290358497",
@@ -26262,9 +24982,7 @@
       "return3Y": 16.1,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0292095535",
@@ -26345,10 +25063,7 @@
       "return3Y": 14.0,
       "volatility1Y": 13.6
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "LU0292096186",
@@ -26429,11 +25144,7 @@
       "return3Y": 13.6,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF",
-      "Europe",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Europe", "Global"]
   },
   {
     "isin": "LU0292097234",
@@ -26495,10 +25206,7 @@
       "return3Y": 12.1,
       "volatility1Y": 12.6
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "LU0292097317",
@@ -26560,9 +25268,7 @@
       "return3Y": 15.3,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0292097747",
@@ -26624,9 +25330,7 @@
       "return3Y": 15.8,
       "volatility1Y": 13.3
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0292100046",
@@ -26688,9 +25392,7 @@
       "return3Y": 16.0,
       "volatility1Y": 14.6
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0292109187",
@@ -26752,9 +25454,7 @@
       "return3Y": 15.9,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0321464652",
@@ -26816,9 +25516,7 @@
       "return3Y": 15.1,
       "volatility1Y": 14.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0322248146",
@@ -26880,9 +25578,7 @@
       "return3Y": 14.3,
       "volatility1Y": 14.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0322250712",
@@ -26944,9 +25640,7 @@
       "return3Y": 15.0,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0322250985",
@@ -27008,9 +25702,7 @@
       "return3Y": 15.4,
       "volatility1Y": 13.3
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0322253906",
@@ -27091,10 +25783,7 @@
       "return3Y": 14.6,
       "volatility1Y": 14.1
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "LU0328474803",
@@ -27156,9 +25845,7 @@
       "return3Y": 14.7,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0335044896",
@@ -27220,9 +25907,7 @@
       "return3Y": 14.5,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0411075376",
@@ -27294,9 +25979,7 @@
       "return3Y": 23.6,
       "volatility1Y": 16.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0411078552",
@@ -27369,12 +26052,7 @@
       "return3Y": 29.8,
       "volatility1Y": 15.0
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "LU0429458895",
@@ -27436,9 +26114,7 @@
       "return3Y": 14.7,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0429459356",
@@ -27500,9 +26176,7 @@
       "return3Y": 14.0,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0468896575",
@@ -27520,9 +26194,7 @@
       "return3Y": 1.8,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0468897110",
@@ -27540,9 +26212,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0476289466",
@@ -27604,9 +26274,7 @@
       "return3Y": 15.3,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0478205965",
@@ -27624,9 +26292,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0484968812",
@@ -27644,9 +26310,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0614173549",
@@ -27664,9 +26328,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0614173895",
@@ -27684,9 +26346,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0641006290",
@@ -27704,10 +26364,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "LU0641007264",
@@ -27725,10 +26382,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "LU0641007421",
@@ -27746,10 +26400,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "LU0643975591",
@@ -27767,9 +26418,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0659579147",
@@ -27831,9 +26480,7 @@
       "return3Y": 15.5,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0677077884",
@@ -27863,10 +26510,7 @@
       "return3Y": 7.4,
       "volatility1Y": 17.7
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "LU0690964092",
@@ -27884,10 +26528,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "LU0838782315",
@@ -27959,10 +26600,7 @@
       "return3Y": 21.7,
       "volatility1Y": 16.3
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "LU0839027447",
@@ -28024,9 +26662,7 @@
       "return3Y": 15.7,
       "volatility1Y": 13.6
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0846194776",
@@ -28108,9 +26744,7 @@
       "return3Y": 8.1,
       "volatility1Y": 17.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0875160326",
@@ -28172,9 +26806,7 @@
       "return3Y": 14.6,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0927735406",
@@ -28236,9 +26868,7 @@
       "return3Y": 14.2,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0942970103",
@@ -28256,10 +26886,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "LU0942970368",
@@ -28277,10 +26904,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "LU0962071741",
@@ -28342,9 +26966,7 @@
       "return3Y": 12.5,
       "volatility1Y": 11.6
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU0962078753",
@@ -28362,10 +26984,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "LU0994505336",
@@ -28427,9 +27046,7 @@
       "return3Y": 16.1,
       "volatility1Y": 13.6
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU1094612022",
@@ -28447,10 +27064,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "LU1109939865",
@@ -28512,9 +27126,7 @@
       "return3Y": 12.5,
       "volatility1Y": 12.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU1109942653",
@@ -28532,9 +27144,7 @@
       "return3Y": 11.7,
       "volatility1Y": 12.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU1242369327",
@@ -28615,10 +27225,7 @@
       "return3Y": 14.9,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "LU1310477036",
@@ -28680,9 +27287,7 @@
       "return3Y": 14.3,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU1349386927",
@@ -28754,10 +27359,7 @@
       "return3Y": 21.2,
       "volatility1Y": 16.2
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "LU1399300455",
@@ -28819,9 +27421,7 @@
       "return3Y": 15.1,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU1437015735",
@@ -28902,10 +27502,7 @@
       "return3Y": 13.4,
       "volatility1Y": 14.6
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "LU1437018838",
@@ -28967,10 +27564,7 @@
       "return3Y": 15.3,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "LU1598690169",
@@ -29052,9 +27646,7 @@
       "return3Y": 8.0,
       "volatility1Y": 17.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU1681043599",
@@ -29136,11 +27728,7 @@
       "return3Y": 25.1,
       "volatility1Y": 12.5
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "LU1681043912",
@@ -29202,10 +27790,7 @@
       "return3Y": 15.2,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "LU1681044563",
@@ -29287,10 +27872,7 @@
       "return3Y": 7.6,
       "volatility1Y": 17.7
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "LU1681045370",
@@ -29372,10 +27954,7 @@
       "return3Y": 8.4,
       "volatility1Y": 16.5
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "LU1681045537",
@@ -29457,12 +28036,7 @@
       "return3Y": 25.6,
       "volatility1Y": 13.3
     },
-    "summaryTags": [
-      "ETF",
-      "Europe",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Europe", "Developed Markets", "Core"]
   },
   {
     "isin": "LU1681045610",
@@ -29544,12 +28118,7 @@
       "return3Y": 23.4,
       "volatility1Y": 13.2
     },
-    "summaryTags": [
-      "ETF",
-      "Europe",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Europe", "Developed Markets", "Core"]
   },
   {
     "isin": "LU1781541179",
@@ -29631,11 +28200,7 @@
       "return3Y": 23.3,
       "volatility1Y": 12.8
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "LU1875395870",
@@ -29697,9 +28262,7 @@
       "return3Y": 15.5,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU1900068328",
@@ -29761,10 +28324,7 @@
       "return3Y": 15.1,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "LU1900068914",
@@ -29826,10 +28386,7 @@
       "return3Y": 13.8,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "LU1931974692",
@@ -29891,10 +28448,7 @@
       "return3Y": 15.2,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "LU2009147757",
@@ -29967,12 +28521,7 @@
       "return3Y": 28.5,
       "volatility1Y": 14.5
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "LU2023678282",
@@ -30034,10 +28583,7 @@
       "return3Y": 14.8,
       "volatility1Y": 13.6
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "LU2023679090",
@@ -30099,9 +28645,7 @@
       "return3Y": 16.1,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2089238039",
@@ -30182,10 +28726,7 @@
       "return3Y": 13.2,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "LU2089238203",
@@ -30247,10 +28788,7 @@
       "return3Y": 13.8,
       "volatility1Y": 14.0
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "LU2158769930",
@@ -30268,9 +28806,7 @@
       "return3Y": 2.1,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2194449075",
@@ -30332,9 +28868,7 @@
       "return3Y": 14.1,
       "volatility1Y": 14.3
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2233156582",
@@ -30352,9 +28886,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2233156749",
@@ -30416,9 +28948,7 @@
       "return3Y": 14.0,
       "volatility1Y": 14.5
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2263803533",
@@ -30500,11 +29030,7 @@
       "return3Y": 24.1,
       "volatility1Y": 13.1
     },
-    "summaryTags": [
-      "ETF",
-      "Developed Markets",
-      "Core"
-    ]
+    "summaryTags": ["ETF", "Developed Markets", "Core"]
   },
   {
     "isin": "LU2296661775",
@@ -30586,10 +29112,7 @@
       "return3Y": 7.5,
       "volatility1Y": 17.5
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "LU2361257269",
@@ -30619,10 +29142,7 @@
       "return3Y": 8.2,
       "volatility1Y": 16.5
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "LU2385068163",
@@ -30640,10 +29160,7 @@
       "return3Y": 2.1,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "LU2385068593",
@@ -30661,10 +29178,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "LU2456436083",
@@ -30726,10 +29240,7 @@
       "return3Y": 15.9,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "LU2504532487",
@@ -30747,9 +29258,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2504537445",
@@ -30767,9 +29276,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2552296563",
@@ -30787,9 +29294,7 @@
       "return3Y": 12.6,
       "volatility1Y": 12.6
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2581375073",
@@ -30851,10 +29356,7 @@
       "return3Y": 15.5,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF",
-      "US"
-    ]
+    "summaryTags": ["ETF", "US"]
   },
   {
     "isin": "LU2581375156",
@@ -30935,10 +29437,7 @@
       "return3Y": 14.8,
       "volatility1Y": 14.2
     },
-    "summaryTags": [
-      "ETF",
-      "Europe"
-    ]
+    "summaryTags": ["ETF", "Europe"]
   },
   {
     "isin": "LU2581375230",
@@ -31000,9 +29499,7 @@
       "return3Y": 15.2,
       "volatility1Y": 14.6
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2662649412",
@@ -31064,9 +29561,7 @@
       "return3Y": 16.2,
       "volatility1Y": 13.3
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2662649503",
@@ -31128,9 +29623,7 @@
       "return3Y": 16.0,
       "volatility1Y": 13.7
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2662649685",
@@ -31192,9 +29685,7 @@
       "return3Y": 13.9,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2673523218",
@@ -31212,9 +29703,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2673523309",
@@ -31232,9 +29721,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2673523481",
@@ -31252,9 +29739,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2673523564",
@@ -31272,9 +29757,7 @@
       "return3Y": 2.1,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2675291913",
@@ -31356,10 +29839,7 @@
       "return3Y": 8.1,
       "volatility1Y": 17.8
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "LU2755521270",
@@ -31421,9 +29901,7 @@
       "return3Y": 14.5,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2809864296",
@@ -31441,9 +29919,7 @@
       "return3Y": 2.1,
       "volatility1Y": 4.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2809864452",
@@ -31461,9 +29937,7 @@
       "return3Y": 1.9,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2809864619",
@@ -31481,9 +29955,7 @@
       "return3Y": 2.0,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2810185665",
@@ -31501,9 +29973,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU2928641757",
@@ -31565,9 +30035,7 @@
       "return3Y": 14.8,
       "volatility1Y": 13.8
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU3123443510",
@@ -31585,10 +30053,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "LU3152892546",
@@ -31606,9 +30071,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.1
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU3152892629",
@@ -31626,9 +30089,7 @@
       "return3Y": 2.0,
       "volatility1Y": 4.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "LU3284391318",
@@ -31646,10 +30107,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.2
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "LU3386643970",
@@ -31711,9 +30169,7 @@
       "return3Y": 15.4,
       "volatility1Y": 13.9
     },
-    "summaryTags": [
-      "ETF"
-    ]
+    "summaryTags": ["ETF"]
   },
   {
     "isin": "IE00B3RBWM25",
@@ -31775,11 +30231,7 @@
       "return3Y": 13.9,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF",
-      "All-World",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "All-World", "Global"]
   },
   {
     "isin": "IE00BK5BQT80",
@@ -31841,11 +30293,7 @@
       "return3Y": 15.7,
       "volatility1Y": 13.4
     },
-    "summaryTags": [
-      "ETF",
-      "All-World",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "All-World", "Global"]
   },
   {
     "isin": "IE00B3XXRP09",
@@ -31918,12 +30366,7 @@
       "return3Y": 29.5,
       "volatility1Y": 14.4
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE00BFMXXD54",
@@ -31996,12 +30439,7 @@
       "return3Y": 32.1,
       "volatility1Y": 15.0
     },
-    "summaryTags": [
-      "ETF",
-      "S&P 500",
-      "US Large Cap",
-      "US"
-    ]
+    "summaryTags": ["ETF", "S&P 500", "US Large Cap", "US"]
   },
   {
     "isin": "IE00BKM4GZ66",
@@ -32083,10 +30521,7 @@
       "return3Y": 8.5,
       "volatility1Y": 17.7
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00B44Z5B48",
@@ -32148,11 +30583,7 @@
       "return3Y": 16.2,
       "volatility1Y": 13.5
     },
-    "summaryTags": [
-      "ETF",
-      "All-World",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "All-World", "Global"]
   },
   {
     "isin": "IE00B3VVMM84",
@@ -32234,10 +30665,7 @@
       "return3Y": 7.6,
       "volatility1Y": 17.1
     },
-    "summaryTags": [
-      "ETF",
-      "Emerging Markets"
-    ]
+    "summaryTags": ["ETF", "Emerging Markets"]
   },
   {
     "isin": "IE00BG47KH54",
@@ -32255,10 +30683,7 @@
       "return3Y": 2.1,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00BKPT2S34",
@@ -32276,10 +30701,7 @@
       "return3Y": 1.9,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   },
   {
     "isin": "IE00BG47KB92",
@@ -32297,9 +30719,6 @@
       "return3Y": 2.1,
       "volatility1Y": 5.0
     },
-    "summaryTags": [
-      "ETF",
-      "Global"
-    ]
+    "summaryTags": ["ETF", "Global"]
   }
 ]

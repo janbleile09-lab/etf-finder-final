@@ -101,7 +101,11 @@ async function fetchFromYahoo(
 
     const series: HomepageSeries | null =
       pts.length >= 2
-        ? { symbol: m.symbol ?? symbol, currency: m.currency ?? "EUR", points: pts }
+        ? {
+            symbol: m.symbol ?? symbol,
+            currency: m.currency ?? "EUR",
+            points: pts,
+          }
         : null;
 
     return { quote, series };

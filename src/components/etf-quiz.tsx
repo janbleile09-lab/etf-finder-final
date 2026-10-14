@@ -1,17 +1,10 @@
 "use client";
 
 import { useState, useCallback, useEffect, useRef } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useReducedMotion,
-} from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ArrowLeft, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
-import {
-  loadQuizAnswers,
-  saveQuizAnswers,
-} from "@/lib/quiz-storage";
+import { loadQuizAnswers, saveQuizAnswers } from "@/lib/quiz-storage";
 import {
   loadQuizAnswersServer,
   persistQuizAnswersServer,
@@ -51,8 +44,16 @@ const STEPS: StepDefinition[] = [
     options: [
       { value: "world", label: "World", description: "Global diversification" },
       { value: "usa", label: "USA", description: "S&P 500 & US equities" },
-      { value: "europe", label: "Europe", description: "STOXX 600 & EU markets" },
-      { value: "emerging", label: "Emerging Markets", description: "Higher growth potential" },
+      {
+        value: "europe",
+        label: "Europe",
+        description: "STOXX 600 & EU markets",
+      },
+      {
+        value: "emerging",
+        label: "Emerging Markets",
+        description: "Higher growth potential",
+      },
     ],
   },
   {
@@ -60,8 +61,16 @@ const STEPS: StepDefinition[] = [
     question: "Distribution Preference",
     description: "How should dividends be handled?",
     options: [
-      { value: "acc", label: "Accumulating", description: "Dividends automatically reinvested" },
-      { value: "dist", label: "Distributing", description: "Dividends paid out as income" },
+      {
+        value: "acc",
+        label: "Accumulating",
+        description: "Dividends automatically reinvested",
+      },
+      {
+        value: "dist",
+        label: "Distributing",
+        description: "Dividends paid out as income",
+      },
     ],
   },
   {
@@ -70,8 +79,16 @@ const STEPS: StepDefinition[] = [
     description: "Do you want sustainability criteria applied?",
     options: [
       { value: "any", label: "Any", description: "No ESG restrictions" },
-      { value: "article_8", label: "Article 8 / ESG", description: "Promotes environmental & social characteristics" },
-      { value: "article_9", label: "Article 9 / SRI", description: "Sustainable investment objective" },
+      {
+        value: "article_8",
+        label: "Article 8 / ESG",
+        description: "Promotes environmental & social characteristics",
+      },
+      {
+        value: "article_9",
+        label: "Article 9 / SRI",
+        description: "Sustainable investment objective",
+      },
     ],
   },
   {
@@ -79,9 +96,21 @@ const STEPS: StepDefinition[] = [
     question: "Risk Preference",
     description: "How do you want to manage volatility?",
     options: [
-      { value: "low_vol", label: "Low Volatility", description: "Minimise price swings" },
-      { value: "balanced", label: "Balanced", description: "Moderate risk & return" },
-      { value: "max_div", label: "Maximum Diversification", description: "Broadest spread across assets" },
+      {
+        value: "low_vol",
+        label: "Low Volatility",
+        description: "Minimise price swings",
+      },
+      {
+        value: "balanced",
+        label: "Balanced",
+        description: "Moderate risk & return",
+      },
+      {
+        value: "max_div",
+        label: "Maximum Diversification",
+        description: "Broadest spread across assets",
+      },
     ],
   },
   {
@@ -89,10 +118,26 @@ const STEPS: StepDefinition[] = [
     question: "Sector Focus",
     description: "Optional: tilt your portfolio toward a specific theme.",
     options: [
-      { value: "none", label: "No Preference", description: "Balanced across all sectors" },
-      { value: "tech", label: "Technology Tilt", description: "Favour tech-heavy ETFs" },
-      { value: "dividend", label: "Dividend Tilt", description: "Favour ETFs with higher yield / dividend payers" },
-      { value: "healthcare", label: "Healthcare Tilt", description: "Favour healthcare-heavy ETFs" },
+      {
+        value: "none",
+        label: "No Preference",
+        description: "Balanced across all sectors",
+      },
+      {
+        value: "tech",
+        label: "Technology Tilt",
+        description: "Favour tech-heavy ETFs",
+      },
+      {
+        value: "dividend",
+        label: "Dividend Tilt",
+        description: "Favour ETFs with higher yield / dividend payers",
+      },
+      {
+        value: "healthcare",
+        label: "Healthcare Tilt",
+        description: "Favour healthcare-heavy ETFs",
+      },
     ],
   },
 ];
@@ -195,14 +240,10 @@ function OptionCard({
       onFocus={onHover}
       /* ── Snappy spring on hover ──────────────────────────── */
       whileHover={
-        shouldReduceMotion
-          ? undefined
-          : { scale: 1.01, transition: SPRING }
+        shouldReduceMotion ? undefined : { scale: 1.01, transition: SPRING }
       }
       whileTap={
-        shouldReduceMotion
-          ? undefined
-          : { scale: 0.98, transition: SPRING }
+        shouldReduceMotion ? undefined : { scale: 0.98, transition: SPRING }
       }
       className={cn(
         /* Shared */
@@ -214,8 +255,7 @@ function OptionCard({
           ? "border-primary/30 bg-primary/4 shadow-[0_1px_3px_0_rgb(0_0_0/0.04)]"
           : "border-border bg-card shadow-[0_1px_2px_0_rgb(0_0_0/0.03)] hover:border-foreground/15 hover:shadow-[0_1px_3px_0_rgb(0_0_0/0.05)]",
         /* Focus ring */
-        isFocused &&
-          "ring-2 ring-ring/50 ring-offset-1 ring-offset-background",
+        isFocused && "ring-2 ring-ring/50 ring-offset-1 ring-offset-background",
       )}
     >
       {/* Radio indicator */}
@@ -249,15 +289,19 @@ function OptionCard({
 
 function ProgressBar({ current, total }: { current: number; total: number }) {
   return (
-    <div className="flex items-center gap-1.5" role="progressbar" aria-valuenow={current + 1} aria-valuemin={1} aria-valuemax={total}>
+    <div
+      className="flex items-center gap-1.5"
+      role="progressbar"
+      aria-valuenow={current + 1}
+      aria-valuemin={1}
+      aria-valuemax={total}
+    >
       {Array.from({ length: total }).map((_, i) => (
         <div
           key={i}
           className={cn(
             "h-1 rounded-full transition-all duration-300 ease-out",
-            i <= current
-              ? "bg-primary w-6"
-              : "bg-muted w-3",
+            i <= current ? "bg-primary w-6" : "bg-muted w-3",
           )}
         />
       ))}

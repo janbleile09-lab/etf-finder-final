@@ -248,8 +248,11 @@ export async function POST(req: NextRequest) {
 
           if (enrichmentData.size > 0) {
             const lines: string[] = [];
+            const candidatesByIsin = new Map(
+              scoredCandidates.map((s) => [s.etf.isin, s]),
+            );
             for (const [isin, data] of enrichmentData) {
-              const scored = scoredCandidates.find((s) => s.etf.isin === isin);
+              const scored = candidatesByIsin.get(isin);
               if (!scored) continue;
               const e = scored.etf;
               const parts: string[] = [

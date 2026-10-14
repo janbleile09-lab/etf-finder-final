@@ -91,7 +91,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
   useEffect(() => {
     if (hasStarted.current) return;
     hasStarted.current = true;
-    
+
     initTimerRef.current = setTimeout(() => {
       // Embed quiz answers directly in the message so the LLM always sees them
       sendMessage({ text: formatQuizAnswers(quizAnswers) });
@@ -118,11 +118,14 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
           .from("chat_history")
           .upsert(
             { user_id: user.id, messages, quiz_answers: quizAnswers },
-            { onConflict: "user_id" }
+            { onConflict: "user_id" },
           )
           .then(({ error }) => {
             if (error) {
-              console.error("Failed to save chat to Supabase:", JSON.stringify(error, null, 2));
+              console.error(
+                "Failed to save chat to Supabase:",
+                JSON.stringify(error, null, 2),
+              );
             }
           });
       }
@@ -148,12 +151,18 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const getMessageText = (message: any): string => {
     if (message.parts && Array.isArray(message.parts)) {
-      return message.parts
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .filter((p: any) => p.type === "text" || p.type === "reasoning")
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .map((p: any) => p.type === "reasoning" ? `\n\n> 🤔 ${(p as any).text}\n\n` : (p as any).text)
-        .join("");
+      return (
+        message.parts
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          .filter((p: any) => p.type === "text" || p.type === "reasoning")
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          .map((p: any) =>
+            p.type === "reasoning"
+              ? `\n\n> 🤔 ${(p as any).text}\n\n`
+              : (p as any).text,
+          )
+          .join("")
+      );
     }
     return message.content ?? "";
   };
@@ -198,7 +207,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
       }
     }
     return [...seen.values()];
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [messages]);
 
   const { quotes: marketQuotes, loading: marketDataLoading } =
@@ -209,7 +218,9 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
       {/* Header */}
       <div className="flex items-center justify-between border-b px-5 py-4 shrink-0">
         <div>
-          <h2 className="text-lg font-semibold tracking-tight">AI ETF Berater</h2>
+          <h2 className="text-lg font-semibold tracking-tight">
+            AI ETF Berater
+          </h2>
           <p className="text-xs text-muted-foreground">Powered by NVIDIA LLM</p>
         </div>
         <Button
@@ -232,7 +243,9 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
           <AnimatePresence initial={false}>
             {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {messages.map((message: any) => {
-              const text = getMessageText(message) || "[Leere Antwort vom KI-Modell empfangen. Dies deutet auf ein API-Problem hin.]";
+              const text =
+                getMessageText(message) ||
+                "[Leere Antwort vom KI-Modell empfangen. Dies deutet auf ein API-Problem hin.]";
               return (
                 <motion.div
                   key={message.id}
@@ -262,11 +275,15 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
                       {message.role === "user" ? "Du" : "AI Berater"}
                     </p>
                     {message.role === "user" ? (
-                      <p className="text-sm leading-relaxed whitespace-pre-wrap">{text}</p>
+                      <p className="text-sm leading-relaxed whitespace-pre-wrap">
+                        {text}
+                      </p>
                     ) : (
                       <>
                         <div className="prose prose-sm dark:prose-invert max-w-none prose-p:leading-relaxed prose-p:my-2 prose-headings:my-3 prose-ul:my-2 prose-li:my-0.5">
-                          <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
+                          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {text}
+                          </ReactMarkdown>
                         </div>
                         {/* ETF cards for ISINs found in the message */}
                         {extractEtfs(text).map((etf) => (
@@ -297,7 +314,9 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
                   <Bot size={15} />
                 </div>
                 <div className="flex-1 pt-1">
-                  <p className="text-xs font-medium text-muted-foreground mb-2">AI Berater</p>
+                  <p className="text-xs font-medium text-muted-foreground mb-2">
+                    AI Berater
+                  </p>
                   <div className="flex items-center gap-1.5">
                     <span className="h-2 w-2 rounded-full bg-muted-foreground/60 animate-bounce [animation-delay:-0.3s]" />
                     <span className="h-2 w-2 rounded-full bg-muted-foreground/60 animate-bounce [animation-delay:-0.15s]" />
@@ -318,9 +337,12 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
                   <Square size={15} />
                 </div>
                 <div className="flex-1 pt-1">
-                  <p className="text-xs font-medium text-destructive mb-2">Systemfehler</p>
+                  <p className="text-xs font-medium text-destructive mb-2">
+                    Systemfehler
+                  </p>
                   <p className="text-sm text-destructive bg-destructive/10 p-3 rounded-md border border-destructive/20 whitespace-pre-wrap">
-                    {error.message || "Es ist ein unerwarteter Fehler aufgetreten. Bitte versuche es später noch einmal."}
+                    {error.message ||
+                      "Es ist ein unerwarteter Fehler aufgetreten. Bitte versuche es später noch einmal."}
                   </p>
                 </div>
               </motion.div>

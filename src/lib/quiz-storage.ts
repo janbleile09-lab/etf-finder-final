@@ -19,9 +19,7 @@ export interface PersistedQuizAnswers {
   savedAt: string; // ISO-8601
 }
 
-function isComplete(
-  answers: QuizAnswers,
-): answers is Required<QuizAnswers> {
+function isComplete(answers: QuizAnswers): answers is Required<QuizAnswers> {
   return (
     answers.region !== null &&
     answers.distribution !== null &&

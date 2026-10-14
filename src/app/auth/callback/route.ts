@@ -30,16 +30,18 @@ export async function GET(request: NextRequest) {
             });
           },
         },
-      }
+      },
     );
 
     const { error } = await supabase.auth.exchangeCodeForSession(code);
-    
+
     if (error) {
       console.error("Auth callback error:", error.message);
-      return NextResponse.redirect(`${requestUrl.origin}/?authError=${encodeURIComponent(error.message)}`);
+      return NextResponse.redirect(
+        `${requestUrl.origin}/?authError=${encodeURIComponent(error.message)}`,
+      );
     }
-    
+
     return response;
   }
 
