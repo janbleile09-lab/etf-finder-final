@@ -15,3 +15,4 @@
 **Vulnerability:** The `/api/chat` endpoint lacked authentication checks, allowing unauthorized access to the AI advisor feature. In addition, errors were logged and returned with `error.message`, which could leak sensitive internal information or stack trace details in the response body.
 **Learning:** API routes that require user context or have usage costs must strictly verify authentication. Furthermore, error handling should never leak internal details to the client; raw errors should be logged server-side, but clients should only receive generic error messages.
 **Prevention:** Always use `supabase.auth.getUser()` in protected API routes to verify authentication. Return generic error messages (e.g., "An internal error occurred") to the client, while keeping detailed error logs on the server.
+#Sentinel: Replaced Array.find with Map.get for better lookup performance (O(N*M) -> O(N+M)). No security issues found in this performance optimization.
