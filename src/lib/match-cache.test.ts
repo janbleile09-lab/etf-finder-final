@@ -32,10 +32,10 @@ describe('match-cache', () => {
     ],
     session: {
       answers: {
-        region: 'Global',
+        region: 'world',
         distributionPolicy: 'acc',
-        esgStatus: 'none',
-        riskPreference: 'medium'
+        esgStatus: 'any',
+        riskPreference: 'balanced'
       },
       candidates: [
         { isin: 'US123', name: 'Test ETF', summary: 'Summary' }
@@ -43,10 +43,11 @@ describe('match-cache', () => {
       generatedAt: '2023-01-01'
     },
     rawAnswers: {
-      region: 'Global',
-      distributionPolicy: 'acc',
-      esgStatus: 'none',
-      riskPreference: 'medium'
+      region: 'world',
+      distribution: 'acc',
+      esg: 'any',
+      risk: 'balanced',
+      sectorTilt: 'none'
     },
     cachedAt: '2023-01-01'
   };
