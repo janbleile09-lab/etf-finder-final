@@ -4,20 +4,21 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Search,
-  LogOut,
-  Loader2,
-  User,
-  Bookmark,
-} from "lucide-react";
+import { Search, LogOut, Loader2, User, Bookmark } from "lucide-react";
 import { useAuth } from "@/components/auth/auth-provider";
 import { AuthDialog } from "@/components/auth/auth-dialog";
 import { SavedEtfsSheet } from "@/components/saved-etfs-sheet";
 import { ETFSearch } from "@/components/etf-search";
 
 export function Navbar() {
-  const { user, loading, signInWithGoogle, signOut, authDialogOpen, setAuthDialogOpen } = useAuth();
+  const {
+    user,
+    loading,
+    signInWithGoogle,
+    signOut,
+    authDialogOpen,
+    setAuthDialogOpen,
+  } = useAuth();
   const [signingIn, setSigningIn] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [savedSheetOpen, setSavedSheetOpen] = useState(false);
@@ -185,19 +186,16 @@ export function Navbar() {
       </header>
 
       {/* Auth dialog for unauthenticated bookmark attempts */}
-      <AuthDialog
-        open={authDialogOpen}
-        onOpenChange={setAuthDialogOpen}
-      />
+      <AuthDialog open={authDialogOpen} onOpenChange={setAuthDialogOpen} />
 
       {/* ETF Search Dialog */}
       <ETFSearch open={searchOpen} onOpenChange={setSearchOpen} />
 
       {/* Slide-over sheet for saved ETFs */}
       {user && (
-        <SavedEtfsSheet 
-          open={savedSheetOpen} 
-          onOpenChange={setSavedSheetOpen} 
+        <SavedEtfsSheet
+          open={savedSheetOpen}
+          onOpenChange={setSavedSheetOpen}
         />
       )}
     </>

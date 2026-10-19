@@ -70,7 +70,10 @@ const symbolCache = new Map<string, string>();
  * Search for a ticker symbol using the ETF name.
  * Caches results to avoid redundant API calls.
  */
-async function findSymbol(apiKey: string, etfName: string): Promise<string | null> {
+async function findSymbol(
+  apiKey: string,
+  etfName: string,
+): Promise<string | null> {
   const cached = symbolCache.get(etfName);
   if (cached) return cached;
 

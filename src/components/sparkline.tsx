@@ -108,7 +108,9 @@ export function Sparkline({
   // Determine if trend is positive (first vs last close)
   const trend =
     data.points[data.points.length - 1].close >= data.points[0].close;
-  const actualLineColor = trend ? "var(--color-emerald-500, #10b981)" : "var(--color-red-500, #ef4444)";
+  const actualLineColor = trend
+    ? "var(--color-emerald-500, #10b981)"
+    : "var(--color-red-500, #ef4444)";
   const actualFillColor = trend
     ? "var(--color-emerald-500, #10b981)"
     : "var(--color-red-500, #ef4444)";
@@ -122,11 +124,7 @@ export function Sparkline({
       aria-label={`Sparkline chart, trend ${trend ? "up" : "down"}`}
     >
       {/* Area fill */}
-      <path
-        d={pathD.areaPath}
-        fill={actualFillColor}
-        fillOpacity={0.08}
-      />
+      <path d={pathD.areaPath} fill={actualFillColor} fillOpacity={0.08} />
       {/* Line */}
       <path
         d={pathD.linePath}
@@ -137,26 +135,27 @@ export function Sparkline({
         strokeLinejoin="round"
       />
       {/* Dot at the end */}
-      {data.points.length > 0 && (() => {
-        const last = data.points[data.points.length - 1];
-        const closes = data.points.map((p) => p.close);
-        const min = Math.min(...closes);
-        const max = Math.max(...closes);
-        const range = max - min || 1;
-        const padding = 2;
-        const chartW = width - padding * 2;
-        const chartH = height - padding * 2;
-        const cx = padding + chartW;
-        const cy = padding + chartH - ((last.close - min) / range) * chartH;
-        return (
-          <circle
-            cx={cx.toFixed(1)}
-            cy={cy.toFixed(1)}
-            r={2}
-            fill={actualLineColor}
-          />
-        );
-      })()}
+      {data.points.length > 0 &&
+        (() => {
+          const last = data.points[data.points.length - 1];
+          const closes = data.points.map((p) => p.close);
+          const min = Math.min(...closes);
+          const max = Math.max(...closes);
+          const range = max - min || 1;
+          const padding = 2;
+          const chartW = width - padding * 2;
+          const chartH = height - padding * 2;
+          const cx = padding + chartW;
+          const cy = padding + chartH - ((last.close - min) / range) * chartH;
+          return (
+            <circle
+              cx={cx.toFixed(1)}
+              cy={cy.toFixed(1)}
+              r={2}
+              fill={actualLineColor}
+            />
+          );
+        })()}
     </svg>
   );
 }

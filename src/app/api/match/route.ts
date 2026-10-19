@@ -34,7 +34,7 @@ const MatchResultSchema = z.object({
         isin: z.string(),
         name: z.string(),
         rationale: z.string(),
-      })
+      }),
     )
     .min(1)
     .max(3),
@@ -58,7 +58,7 @@ const MatchResultSchema = z.object({
         isin: z.string(),
         name: z.string(),
         summary: z.string(),
-      })
+      }),
     ),
     generatedAt: z.string(),
   }),
@@ -69,21 +69,23 @@ type MatchResult = z.infer<typeof MatchResultSchema>;
 export async function POST(request: NextRequest) {
   try {
     const supabase = await createClient();
-    const { data: { user } } = await supabase.auth.getUser();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
 
     // Rate Limiting
     if (!user) {
       const cookieStore = await cookies();
       const guestSearchesStr = cookieStore.get("guest_searches")?.value || "0";
       const guestSearches = parseInt(guestSearchesStr, 10);
-      
+
       if (guestSearches >= 3) {
         return NextResponse.json(
           { error: "Guest search limit reached", requiresLogin: true },
-          { status: 429 }
+          { status: 429 },
         );
       }
-      
+
       cookieStore.set("guest_searches", (guestSearches + 1).toString(), {
         maxAge: 60 * 60 * 24, // 24 hours
         httpOnly: true,
@@ -91,17 +93,17 @@ export async function POST(request: NextRequest) {
     } else {
       const today = new Date();
       today.setHours(0, 0, 0, 0);
-      
+
       const { count, error } = await supabase
         .from("search_history")
         .select("*", { count: "exact", head: true })
         .eq("user_id", user.id)
         .gte("created_at", today.toISOString());
-        
+
       if (!error && count !== null && count >= 20) {
         return NextResponse.json(
           { error: "Daily search limit reached" },
-          { status: 429 }
+          { status: 429 },
         );
       }
     }
@@ -120,8 +122,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { region, distributionPolicy, esgStatus, riskPreference, sectorTilt } =
-      parsed.data;
+    const {
+      region,
+      distributionPolicy,
+      esgStatus,
+      riskPreference,
+      sectorTilt,
+    } = parsed.data;
     const allEtfs = etfs as unknown as ETF[];
 
     // 2. Deterministic pre-filter (+ risk-based re-ranking + sector tilt)
@@ -161,7 +168,7 @@ ${candidatesText}
 
 Return only the selected ETFs with their ISIN, name, and rationale.`;
 
-    let aiMatches: { isin: string; name: string; rationale: string; }[] = [];
+    let aiMatches: { isin: string; name: string; rationale: string }[] = [];
 
     try {
       const { object } = await generateObject({
@@ -172,11 +179,15 @@ Return only the selected ETFs with their ISIN, name, and rationale.`;
       });
       aiMatches = object.matches;
     } catch (aiError) {
-      console.warn("AI generation failed, falling back to deterministic matches:", aiError);
-      aiMatches = candidates.slice(0, 3).map(c => ({
+      console.warn(
+        "AI generation failed, falling back to deterministic matches:",
+        aiError,
+      );
+      aiMatches = candidates.slice(0, 3).map((c) => ({
         isin: c.isin,
         name: c.name,
-        rationale: "This ETF was selected based on a deterministic match of your quiz filters.",
+        rationale:
+          "This ETF was selected based on a deterministic match of your quiz filters.",
       }));
     }
 
@@ -233,7 +244,7 @@ Return only the selected ETFs with their ISIN, name, and rationale.`;
       await supabase.from("search_history").insert({
         user_id: user.id,
         quiz_answers: parsed.data,
-        matched_isins: aiMatches.map(m => m.isin),
+        matched_isins: aiMatches.map((m) => m.isin),
       });
     }
 

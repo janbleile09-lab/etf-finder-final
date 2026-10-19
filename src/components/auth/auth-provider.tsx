@@ -37,7 +37,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.get("authError")) {
         alert("Login fehlgeschlagen. Grund: " + urlParams.get("authError"));
-        window.history.replaceState({}, document.title, window.location.pathname);
+        window.history.replaceState(
+          {},
+          document.title,
+          window.location.pathname,
+        );
       }
     }
 
@@ -65,7 +69,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     };
   }, [supabase]);
 
-
   const signInWithGoogle = useCallback(async () => {
     // Set a sessionStorage flag so the landing page knows to resume
     // the chat after the OAuth redirect (sessionStorage is cleared
@@ -87,7 +90,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   return (
     <AuthContext.Provider
-      value={{ user, session, loading, signInWithGoogle, signOut, authDialogOpen, setAuthDialogOpen }}
+      value={{
+        user,
+        session,
+        loading,
+        signInWithGoogle,
+        signOut,
+        authDialogOpen,
+        setAuthDialogOpen,
+      }}
     >
       {children}
     </AuthContext.Provider>

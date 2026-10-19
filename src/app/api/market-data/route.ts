@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { fetchQuotes, type MarketDataQuote } from "@/lib/twelvedata";
+import { rateLimit } from "@/lib/rate-limit";
 
 const TWELVE_DATA_API_KEY = process.env.TWELVE_DATA_API_KEY!;
 
@@ -8,6 +9,27 @@ const TWELVE_DATA_API_KEY = process.env.TWELVE_DATA_API_KEY!;
 const CACHE_TTL_MS = 15 * 60 * 1000;
 
 export async function POST(req: NextRequest) {
+  // Apply IP-based rate limiting
+  const ip = req.headers.get("x-forwarded-for") || req.ip || "127.0.0.1";
+  const limitResult = rateLimit(ip, 15, 60 * 1000); // 15 requests per minute
+
+  if (!limitResult.success) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      {
+        status: 429,
+        headers: {
+          "X-RateLimit-Limit": limitResult.limit.toString(),
+          "X-RateLimit-Remaining": limitResult.remaining.toString(),
+          "X-RateLimit-Reset": limitResult.reset.toString(),
+          "Retry-After": Math.ceil(
+            (limitResult.reset - Date.now()) / 1000,
+          ).toString(),
+        },
+      },
+    );
+  }
+
   try {
     const { etfs } = (await req.json()) as {
       etfs: { isin: string; name: string }[];
@@ -31,9 +53,7 @@ export async function POST(req: NextRequest) {
     // Filter valid entries
     const validEtfs = etfs.filter(
       (e) =>
-        typeof e.isin === "string" &&
-        e.isin.length === 12 &&
-        e.isin !== "N/A",
+        typeof e.isin === "string" && e.isin.length === 12 && e.isin !== "N/A",
     );
 
     if (validEtfs.length === 0) {
