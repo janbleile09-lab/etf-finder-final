@@ -203,26 +203,28 @@ export async function enrichMultipleETFs(
 
   const results = new Map<string, EnrichedETFData>();
 
-  // Process sequentially to respect rate limits
-  for (const isin of isins) {
-    try {
-      const data = await enrichSingleETF(isin);
-      results.set(isin, data);
-    } catch (error) {
-      console.warn(`Failed to enrich ${isin}:`, error);
-      // Return a minimal result on failure
-      results.set(isin, {
-        isin,
-        topHoldings: null,
-        aum: null,
-        dailyPrice: null,
-        inceptionDate: null,
-        fundSize: null,
-        sources: [],
-        searchedAt: new Date().toISOString(),
-      });
-    }
-  }
+  // Process in parallel to speed up execution
+  await Promise.all(
+    isins.map(async (isin) => {
+      try {
+        const data = await enrichSingleETF(isin);
+        results.set(isin, data);
+      } catch (error) {
+        console.warn(`Failed to enrich ${isin}:`, error);
+        // Return a minimal result on failure
+        results.set(isin, {
+          isin,
+          topHoldings: null,
+          aum: null,
+          dailyPrice: null,
+          inceptionDate: null,
+          fundSize: null,
+          sources: [],
+          searchedAt: new Date().toISOString(),
+        });
+      }
+    }),
+  );
 
   return results;
 }
