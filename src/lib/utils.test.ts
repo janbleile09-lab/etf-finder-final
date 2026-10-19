@@ -15,7 +15,7 @@ describe('cn utility', () => {
   });
 
   it('ignores falsy values', () => {
-    expect(cn('a', undefined, null, false, '', 'b')).toBe('a b');
+    expect(cn('a', undefined, null, false, '', 0, NaN, 'b')).toBe('a b');
   });
 
   it('resolves tailwind class conflicts correctly', () => {
@@ -26,5 +26,9 @@ describe('cn utility', () => {
 
   it('handles arrays and objects', () => {
     expect(cn(['a', 'b'], { c: true, d: false })).toBe('a b c');
+  });
+
+  it('handles deeply nested arrays', () => {
+    expect(cn(['a', ['b', ['c', 'd']], 'e'])).toBe('a b c d e');
   });
 });
