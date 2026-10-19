@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useMemo, useCallback } from "react";
-import { useChat } from "@ai-sdk/react";
+import { useChat, type UIMessage as Message } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, User as UserIcon, Bot, Lock, Square } from "lucide-react";
@@ -245,8 +245,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
       <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-6 scrollbar-thin scrollbar-thumb-muted">
         <div className="flex flex-col gap-8 max-w-3xl mx-auto w-full">
           <AnimatePresence initial={false}>
-            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-            {messages.map((message: any) => {
+            {messages.map((message: Message) => {
               const text =
                 getMessageText(message) ||
                 "[Leere Antwort vom KI-Modell empfangen. Dies deutet auf ein API-Problem hin.]";
