@@ -16,7 +16,7 @@ const TWELVE_DATA_BASE = "https://api.twelvedata.com";
  * Exchange suffixes to try when searching by ISIN on Twelve Data.
  * XETRA (.DE), Tradegate (.TRG), Frankfurt (.F), LSE (.L)
  */
-const EXCHANGE_SUFFIXES = [".DE", ".TRG", ".F", ".L"];
+
 
 export interface MarketDataQuote {
   symbol: string;
@@ -70,7 +70,10 @@ const symbolCache = new Map<string, string>();
  * Search for a ticker symbol using the ETF name.
  * Caches results to avoid redundant API calls.
  */
-async function findSymbol(apiKey: string, etfName: string): Promise<string | null> {
+async function findSymbol(
+  apiKey: string,
+  etfName: string,
+): Promise<string | null> {
   const cached = symbolCache.get(etfName);
   if (cached) return cached;
 
@@ -90,7 +93,7 @@ async function findSymbol(apiKey: string, etfName: string): Promise<string | nul
 
     // Prefer XETRA, Tradegate, Frankfurt, or LSE listings
     const preferred = data.data.find(
-      (d: any) =>
+      (d: { symbol: string; exchange: string }) =>
         d.exchange === "XETR" ||
         d.exchange === "TRADEGATE" ||
         d.exchange === "FWB" ||
@@ -238,7 +241,7 @@ export async function fetchTimeSeries(
     if (data.status === "error" || !data.values) return null;
 
     const points: TimeSeriesPoint[] = data.values
-      .map((v: any) => ({
+      .map((v: { datetime: string; open: string; high: string; low: string; close: string; volume: string }) => ({
         datetime: v.datetime,
         open: parseFloat(v.open) || 0,
         high: parseFloat(v.high) || 0,
@@ -276,14 +279,73 @@ export async function fetchTimeSeriesForEtfs(
     ).values(),
   ];
 
-  for (const etf of unique) {
-    const data = await fetchTimeSeries(apiKey, etf.isin, etf.name);
-    if (data) {
-      results.set(etf.isin, data);
+  if (unique.length === 0) return results;
+
+  const resolved = await Promise.all(
+    unique.map(async (etf) => {
+      const symbol = await findSymbol(apiKey, etf.name);
+      return { etf, symbol };
+    }),
+  );
+
+  const valid = resolved.filter((r) => r.symbol !== null) as {
+    etf: { isin: string; name: string };
+    symbol: string;
+  }[];
+
+  if (valid.length === 0) return results;
+
+  const symbols = valid.map((v) => v.symbol).join(",");
+  try {
+    const url = `${TWELVE_DATA_BASE}/time_series?symbol=${encodeURIComponent(symbols)}&interval=1day&outputsize=30&apikey=${apiKey}`;
+    const res = await fetch(url);
+    if (!res.ok) return results;
+
+    const data = await res.json();
+    if (data.status === "error") return results;
+
+    const processPoints = (values: { datetime: string; open: string; high: string; low: string; close: string; volume: string }[]): TimeSeriesPoint[] => {
+      return values
+        .map((v: { datetime: string; open: string; high: string; low: string; close: string; volume: string }) => ({
+          datetime: v.datetime,
+          open: parseFloat(v.open) || 0,
+          high: parseFloat(v.high) || 0,
+          low: parseFloat(v.low) || 0,
+          close: parseFloat(v.close) || 0,
+          volume: parseInt(v.volume, 10) || 0,
+        }))
+        .filter((p: TimeSeriesPoint) => p.close > 0)
+        .reverse();
+    };
+
+    if (valid.length === 1) {
+      if (data.values) {
+        const points = processPoints(data.values);
+        if (points.length >= 2) {
+          results.set(valid[0].etf.isin, {
+            symbol: data.meta?.symbol ?? valid[0].symbol,
+            currency: data.meta?.currency ?? "EUR",
+            points,
+          });
+        }
+      }
+    } else {
+      for (const v of valid) {
+        const etfData = data[v.symbol];
+        if (etfData && etfData.status !== "error" && etfData.values) {
+          const points = processPoints(etfData.values);
+          if (points.length >= 2) {
+            results.set(v.etf.isin, {
+              symbol: etfData.meta?.symbol ?? v.symbol,
+              currency: etfData.meta?.currency ?? "EUR",
+              points,
+            });
+          }
+        }
+      }
     }
-    if (unique.length > 1) {
-      await new Promise((r) => setTimeout(r, 200));
-    }
+  } catch {
+    return results;
   }
 
   return results;
