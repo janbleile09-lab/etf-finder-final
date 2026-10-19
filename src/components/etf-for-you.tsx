@@ -280,7 +280,7 @@ function BreakdownSheet({ etf, open, onClose }: BreakdownSheetProps) {
                           {formatPercent(holding.weight)}
                         </span>
                       </li>
-                    )
+                    ),
                   )}
                 </ul>
               </section>
@@ -349,7 +349,7 @@ function BreakdownSheet({ etf, open, onClose }: BreakdownSheetProps) {
                           "text-sm font-semibold tabular-nums",
                           stat.positive
                             ? "text-emerald-600 dark:text-emerald-400"
-                            : "text-foreground"
+                            : "text-foreground",
                         )}
                       >
                         {stat.value}
@@ -419,7 +419,7 @@ function ForYouCard({
       className={cn(
         "relative flex flex-col gap-4 overflow-hidden rounded-xl border border-border/60 bg-card p-5",
         "shadow-[0_1px_2px_0_rgb(0_0_0/0.03)] ring-1 ring-foreground/5",
-        "group"
+        "group",
       )}
     >
       {/* Top accent bar */}
@@ -437,9 +437,7 @@ function ForYouCard({
           <h3 className="text-base font-semibold leading-snug tracking-tight text-foreground mt-1">
             {etf?.name ?? rec.description}
           </h3>
-          <p className="text-[13px] text-muted-foreground">
-            {rec.description}
-          </p>
+          <p className="text-[13px] text-muted-foreground">{rec.description}</p>
         </div>
         <div className="flex items-center gap-1 shrink-0">
           <BookmarkButton
@@ -475,7 +473,7 @@ function ForYouCard({
                 "inline-flex items-center rounded-md border px-2 py-0.5 text-[11px] font-medium",
                 etf.esgStatus === "article_9"
                   ? "border-green-500/20 bg-green-500/6 text-green-700 dark:text-green-400"
-                  : "border-blue-500/20 bg-blue-500/6 text-blue-700 dark:text-blue-400"
+                  : "border-blue-500/20 bg-blue-500/6 text-blue-700 dark:text-blue-400",
               )}
             >
               {etf.esgStatus === "article_9" ? "Article 9" : "Article 8"}
@@ -508,7 +506,11 @@ function ForYouCard({
           {quote ? (
             <>
               <span className="text-base font-semibold tabular-nums text-foreground leading-tight">
-                {quote.currency === "EUR" ? "€" : quote.currency === "USD" ? "$" : ""}
+                {quote.currency === "EUR"
+                  ? "€"
+                  : quote.currency === "USD"
+                    ? "$"
+                    : ""}
                 {quote.price.toFixed(2)}
               </span>
               <span
@@ -593,7 +595,7 @@ function ForYouCard({
             "inline-flex items-center gap-1.5 self-start rounded-lg border border-border/60",
             "bg-muted/30 px-3 py-1.5 text-[13px] font-medium text-foreground/70",
             "transition-colors hover:bg-muted hover:text-foreground",
-            "active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none"
+            "active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none",
           )}
         >
           <Layers className="size-3.5" />
@@ -625,10 +627,14 @@ export function ETFForYou() {
 
   // ── Live market data state ──
   const [quotes, setQuotes] = useState<Map<string, HomepageQuote>>(new Map());
-  const [timeSeriesMap, setTimeSeriesMap] = useState<Map<string, SparklineData>>(new Map());
+  const [timeSeriesMap, setTimeSeriesMap] = useState<
+    Map<string, SparklineData>
+  >(new Map());
   const [marketLoading, setMarketLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | undefined>(
+    undefined,
+  );
 
   const fetchMarketData = useCallback(async (isInitial = false) => {
     try {
@@ -751,8 +757,8 @@ export function ETFForYou() {
             {lastUpdated.toLocaleTimeString("de-DE", {
               hour: "2-digit",
               minute: "2-digit",
-            })}
-            {" "}· Nächstes Update in 10 Min.
+            })}{" "}
+            · Nächstes Update in 10 Min.
           </span>
         ) : (
           <span>Live-Daten werden geladen...</span>
