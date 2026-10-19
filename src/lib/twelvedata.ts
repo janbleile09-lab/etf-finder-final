@@ -70,7 +70,10 @@ const symbolCache = new Map<string, string>();
  * Search for a ticker symbol using the ETF name.
  * Caches results to avoid redundant API calls.
  */
-async function findSymbol(apiKey: string, etfName: string): Promise<string | null> {
+async function findSymbol(
+  apiKey: string,
+  etfName: string,
+): Promise<string | null> {
   const cached = symbolCache.get(etfName);
   if (cached) return cached;
 
@@ -90,7 +93,7 @@ async function findSymbol(apiKey: string, etfName: string): Promise<string | nul
 
     // Prefer XETRA, Tradegate, Frankfurt, or LSE listings
     const preferred = data.data.find(
-      (d: any) =>
+      (d: { exchange: string; symbol: string }) =>
         d.exchange === "XETR" ||
         d.exchange === "TRADEGATE" ||
         d.exchange === "FWB" ||
@@ -183,7 +186,7 @@ export async function fetchQuote(
 }
 
 /**
- * Fetch quotes for multiple ETFs sequentially (respects rate limits).
+ * Fetch quotes for multiple ETFs concurrently (respects rate limits with staggered start).
  */
 export async function fetchQuotes(
   apiKey: string,
@@ -199,16 +202,17 @@ export async function fetchQuotes(
 
   if (unique.length === 0) return results;
 
-  for (const etf of unique) {
+  const promises = unique.map(async (etf, index) => {
+    if (index > 0) {
+      await new Promise((r) => setTimeout(r, index * 200));
+    }
     const result = await fetchQuote(apiKey, etf.isin, etf.name);
     if (result && !("error" in result)) {
       results.set(etf.isin, result);
     }
-    // Small delay to respect rate limits (8/min on free plan)
-    if (unique.length > 1) {
-      await new Promise((r) => setTimeout(r, 200));
-    }
-  }
+  });
+
+  await Promise.all(promises);
 
   return results;
 }
@@ -238,7 +242,7 @@ export async function fetchTimeSeries(
     if (data.status === "error" || !data.values) return null;
 
     const points: TimeSeriesPoint[] = data.values
-      .map((v: any) => ({
+      .map((v: { datetime: string; open: string; high: string; low: string; close: string; volume: string }) => ({
         datetime: v.datetime,
         open: parseFloat(v.open) || 0,
         high: parseFloat(v.high) || 0,
@@ -262,7 +266,7 @@ export async function fetchTimeSeries(
 }
 
 /**
- * Fetch time series for multiple ETFs sequentially.
+ * Fetch time series for multiple ETFs concurrently (respects rate limits with staggered start).
  */
 export async function fetchTimeSeriesForEtfs(
   apiKey: string,
@@ -276,15 +280,17 @@ export async function fetchTimeSeriesForEtfs(
     ).values(),
   ];
 
-  for (const etf of unique) {
+  const promises = unique.map(async (etf, index) => {
+    if (index > 0) {
+      await new Promise((r) => setTimeout(r, index * 200));
+    }
     const data = await fetchTimeSeries(apiKey, etf.isin, etf.name);
     if (data) {
       results.set(etf.isin, data);
     }
-    if (unique.length > 1) {
-      await new Promise((r) => setTimeout(r, 200));
-    }
-  }
+  });
+
+  await Promise.all(promises);
 
   return results;
 }
