@@ -34,13 +34,13 @@ export type EsgStatus = "none" | "article_8" | "article_9";
 
 export interface ScoredETF {
   etf: ETF;
-  score: number;        // 0–100 overall match
+  score: number; // 0–100 overall match
   breakdown: {
-    region: number;     // 0–25
+    region: number; // 0–25
     distribution: number; // 0–15
-    esg: number;        // 0–20
-    risk: number;       // 0–20
-    tilt: number;       // 0–20
+    esg: number; // 0–20
+    risk: number; // 0–20
+    tilt: number; // 0–20
   };
 }
 
@@ -62,10 +62,10 @@ function scoreRegion(etf: ETF, region: string): number {
   // Partial: "World" user wants global, US ETFs are still relevant
   if (region === "world") {
     const usTags = etf.summaryTags.some((t: string) =>
-      REGION_TAGS["us"].includes(t)
+      REGION_TAGS["us"].includes(t),
     );
     const euTags = etf.summaryTags.some((t: string) =>
-      REGION_TAGS["europe"].includes(t)
+      REGION_TAGS["europe"].includes(t),
     );
     if (usTags || euTags) return 15;
   }
@@ -111,11 +111,7 @@ function scoreEsg(etf: ETF, esg: EsgStatus): number {
  *  20 pts: best in class for the user's risk preference
  *  Uses percentile-based scoring within the candidate set.
  */
-function scoreRisk(
-  etf: ETF,
-  risk: RiskPreference,
-  allEtfs: ETF[],
-): number {
+function scoreRisk(etf: ETF, risk: RiskPreference, allEtfs: ETF[]): number {
   const vol = etf.performance.volatility1Y;
   const ret = etf.performance.return1Y;
 
@@ -144,7 +140,8 @@ function scoreRisk(
     }
     case "balanced": {
       // Risk-adjusted return (Sharpe-like)
-      const raScore = (ret - minRet) / retRange - 0.5 * (vol - minVol) / volRange;
+      const raScore =
+        (ret - minRet) / retRange - (0.5 * (vol - minVol)) / volRange;
       // Normalize to 0–20
       const normalized = Math.max(0, Math.min(1, raScore + 0.5));
       return Math.round(normalized * 20);
@@ -245,7 +242,10 @@ export function filterCandidates(
     sectorTilt,
   );
   // Only return ETFs that score >= 60 (reasonable match)
-  return scored.filter((s) => s.score >= 60).map((s) => s.etf).slice(0, 5);
+  return scored
+    .filter((s) => s.score >= 60)
+    .map((s) => s.etf)
+    .slice(0, 5);
 }
 
 // ---------------------------------------------------------------------------
@@ -286,8 +286,10 @@ export function rankByRisk(etfs: ETF[], risk: RiskPreference): ETF[] {
       break;
     case "balanced":
       copy.sort((a, b) => {
-        const scoreA = a.performance.return1Y - 0.5 * a.performance.volatility1Y;
-        const scoreB = b.performance.return1Y - 0.5 * b.performance.volatility1Y;
+        const scoreA =
+          a.performance.return1Y - 0.5 * a.performance.volatility1Y;
+        const scoreB =
+          b.performance.return1Y - 0.5 * b.performance.volatility1Y;
         return scoreB - scoreA;
       });
       break;

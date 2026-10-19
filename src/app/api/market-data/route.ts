@@ -31,9 +31,7 @@ export async function POST(req: NextRequest) {
     // Filter valid entries
     const validEtfs = etfs.filter(
       (e) =>
-        typeof e.isin === "string" &&
-        e.isin.length === 12 &&
-        e.isin !== "N/A",
+        typeof e.isin === "string" && e.isin.length === 12 && e.isin !== "N/A",
     );
 
     if (validEtfs.length === 0) {

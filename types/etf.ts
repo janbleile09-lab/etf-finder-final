@@ -14,8 +14,8 @@ export interface ETF {
   wkn: string;
   name: string;
   ter: number;
-  distributionPolicy: 'acc' | 'dist';
-  esgStatus: 'none' | 'article_8' | 'article_9';
+  distributionPolicy: "acc" | "dist";
+  esgStatus: "none" | "article_8" | "article_9";
   totalHoldings: number;
   sectorAllocation: Record<string, number>;
   countryAllocation: Record<string, number>;

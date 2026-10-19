@@ -62,9 +62,8 @@ export default function Home() {
                 Discover and compare ETFs
               </h1>
               <p className="max-w-md text-base leading-relaxed text-muted-foreground">
-                A clean, minimal interface to explore exchange-traded
-                funds. Answer a few questions to find the right ETF for
-                your portfolio.
+                A clean, minimal interface to explore exchange-traded funds.
+                Answer a few questions to find the right ETF for your portfolio.
               </p>
 
               <motion.button

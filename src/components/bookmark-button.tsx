@@ -21,7 +21,7 @@ export function BookmarkButton({
 }: BookmarkButtonProps) {
   const { user, setAuthDialogOpen } = useAuth();
   const { toggleBookmark, isBookmarked: checkBookmarked } = useBookmarks();
-  
+
   // Use the hook's state if we are logged in, otherwise fallback to the prop for static rendering
   const isBookmarked = user ? checkBookmarked(isin) : initialBookmarked;
 

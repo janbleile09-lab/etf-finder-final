@@ -70,7 +70,10 @@ const symbolCache = new Map<string, string>();
  * Search for a ticker symbol using the ETF name.
  * Caches results to avoid redundant API calls.
  */
-async function findSymbol(apiKey: string, etfName: string): Promise<string | null> {
+async function findSymbol(
+  apiKey: string,
+  etfName: string,
+): Promise<string | null> {
   const cached = symbolCache.get(etfName);
   if (cached) return cached;
 
@@ -108,49 +111,69 @@ async function findSymbol(apiKey: string, etfName: string): Promise<string | nul
 /**
  * Try to fetch a quote from Twelve Data using a symbol.
  */
-async function tryQuote(
+async function tryQuotes(
   apiKey: string,
-  symbol: string,
-): Promise<MarketDataQuote | null> {
-  const url = `${TWELVE_DATA_BASE}/quote?symbol=${encodeURIComponent(symbol)}&apikey=${apiKey}`;
+  symbols: string[],
+): Promise<Map<string, MarketDataQuote>> {
+  const results = new Map<string, MarketDataQuote>();
+  if (!symbols.length) return results;
+
+  // Deduplicate and filter empty symbols
+  const uniqueSymbols = [...new Set(symbols.filter(Boolean))];
+  const symbolString = uniqueSymbols.join(",");
+  const url = `${TWELVE_DATA_BASE}/quote?symbol=${encodeURIComponent(symbolString)}&apikey=${apiKey}`;
 
   try {
     const res = await fetch(url, { next: { revalidate: 300 } });
-    if (!res.ok) return null;
+    if (!res.ok) return results;
 
     const data = await res.json();
 
-    // Invalid symbol or requires paid plan
-    if (data.status === "error" || data.code) return null;
+    // If only one symbol was requested, the API returns a single object.
+    // If multiple symbols, it returns an object keyed by symbol.
+    const isSingleResult = uniqueSymbols.length === 1;
+    const items = isSingleResult ? [data] : Object.values(data);
 
-    // Must have a valid price (close or price field)
-    const price = parseFloat(data.close ?? data.price) || 0;
-    if (price === 0) return null;
+    for (let i = 0; i < items.length; i++) {
+      const item: any = items[i];
+      const requestedSymbol = isSingleResult
+        ? uniqueSymbols[0]
+        : uniqueSymbols[i];
 
-    return {
-      symbol: data.symbol ?? symbol,
-      name: data.name ?? "",
-      price,
-      change: parseFloat(data.change) || 0,
-      change_percent: parseFloat(data.percent_change) || 0,
-      high: parseFloat(data.high) || 0,
-      low: parseFloat(data.low) || 0,
-      open: parseFloat(data.open) || 0,
-      previous_close: parseFloat(data.previous_close) || 0,
-      volume: parseInt(data.volume, 10) || 0,
-      currency: data.currency ?? "EUR",
-      fifty_two_week: {
-        high: parseFloat(data.fifty_two_week?.high) || 0,
-        low: parseFloat(data.fifty_two_week?.low) || 0,
-      },
-      exchange: data.exchange ?? "",
-      type: data.type ?? "ETF",
-      is_market_open: data.is_market_open ?? false,
-      timestamp: data.timestamp ?? Date.now(),
-      updated_at: new Date().toISOString(),
-    };
+      if (!item || item.status === "error" || item.code) continue;
+
+      const price = parseFloat(item.close ?? item.price) || 0;
+      if (price === 0) continue;
+
+      const mappedSymbol = item.symbol ?? requestedSymbol;
+
+      results.set(mappedSymbol, {
+        symbol: mappedSymbol,
+        name: item.name ?? "",
+        price,
+        change: parseFloat(item.change) || 0,
+        change_percent: parseFloat(item.percent_change) || 0,
+        high: parseFloat(item.high) || 0,
+        low: parseFloat(item.low) || 0,
+        open: parseFloat(item.open) || 0,
+        previous_close: parseFloat(item.previous_close) || 0,
+        volume: parseInt(item.volume, 10) || 0,
+        currency: item.currency ?? "EUR",
+        fifty_two_week: {
+          high: parseFloat(item.fifty_two_week?.high) || 0,
+          low: parseFloat(item.fifty_two_week?.low) || 0,
+        },
+        exchange: item.exchange ?? "",
+        type: item.type ?? "ETF",
+        is_market_open: item.is_market_open ?? false,
+        timestamp: item.timestamp ?? Date.now(),
+        updated_at: new Date().toISOString(),
+      });
+    }
+
+    return results;
   } catch {
-    return null;
+    return results;
   }
 }
 
@@ -171,7 +194,8 @@ export async function fetchQuote(
     return { error: true, message: `No ticker found for: ${etfName}` };
   }
 
-  const quote = await tryQuote(apiKey, symbol);
+  const quotes = await tryQuotes(apiKey, [symbol]);
+  const quote = quotes.get(symbol);
   if (!quote) {
     return {
       error: true,
@@ -199,14 +223,44 @@ export async function fetchQuotes(
 
   if (unique.length === 0) return results;
 
+  // Step 1: Find all symbols (with rate limit spacing for search)
+  const symbolMap = new Map<string, string>(); // isin -> symbol
   for (const etf of unique) {
-    const result = await fetchQuote(apiKey, etf.isin, etf.name);
-    if (result && !("error" in result)) {
-      results.set(etf.isin, result);
+    const symbol = await findSymbol(apiKey, etf.name);
+    if (symbol) {
+      symbolMap.set(etf.isin, symbol);
     }
-    // Small delay to respect rate limits (8/min on free plan)
+    // Small delay to respect rate limits (8/min on free plan) for symbol search
     if (unique.length > 1) {
       await new Promise((r) => setTimeout(r, 200));
+    }
+  }
+
+  const symbolsToFetch = [...new Set(symbolMap.values())];
+
+  // Step 2: Fetch quotes in batches (maximum 50 per batch, although we just fetch all if fewer)
+  const quotesMap = new Map<string, MarketDataQuote>();
+  const CHUNK_SIZE = 50;
+  for (let i = 0; i < symbolsToFetch.length; i += CHUNK_SIZE) {
+    const chunk = symbolsToFetch.slice(i, i + CHUNK_SIZE);
+    const chunkQuotes = await tryQuotes(apiKey, chunk);
+    for (const [sym, quote] of chunkQuotes.entries()) {
+      quotesMap.set(sym, quote);
+    }
+    // Slight delay between chunks if multiple
+    if (i + CHUNK_SIZE < symbolsToFetch.length) {
+      await new Promise((r) => setTimeout(r, 200));
+    }
+  }
+
+  // Step 3: Map quotes back to ISIN
+  for (const etf of unique) {
+    const sym = symbolMap.get(etf.isin);
+    if (sym) {
+      const quote = quotesMap.get(sym);
+      if (quote) {
+        results.set(etf.isin, quote);
+      }
     }
   }
 
