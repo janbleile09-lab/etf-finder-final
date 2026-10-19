@@ -1,30 +1,46 @@
-import { describe, it, expect } from 'vitest';
-import { cn } from './utils';
+import { describe, it, expect } from "vitest";
+import { cn } from "./utils";
 
-describe('cn utility', () => {
-  it('merges single classes', () => {
-    expect(cn('a')).toBe('a');
+describe("cn utility", () => {
+  it("handles no arguments", () => {
+    expect(cn()).toBe("");
   });
 
-  it('merges multiple classes', () => {
-    expect(cn('a', 'b', 'c')).toBe('a b c');
+  it("merges single classes", () => {
+    expect(cn("a")).toBe("a");
   });
 
-  it('handles conditional classes', () => {
-    expect(cn('a', true && 'b', false && 'c')).toBe('a b');
+  it("merges multiple classes", () => {
+    expect(cn("a", "b", "c")).toBe("a b c");
   });
 
-  it('ignores falsy values', () => {
-    expect(cn('a', undefined, null, false, '', 'b')).toBe('a b');
+  it("handles conditional classes", () => {
+    expect(cn("a", true && "b", false && "c")).toBe("a b");
   });
 
-  it('resolves tailwind class conflicts correctly', () => {
-    expect(cn('p-4', 'p-8')).toBe('p-8');
-    expect(cn('text-red-500', 'text-blue-500')).toBe('text-blue-500');
-    expect(cn('bg-red-500', 'px-2', 'bg-blue-500')).toBe('px-2 bg-blue-500');
+  it("ignores falsy values", () => {
+    expect(cn("a", undefined, null, false, "", "b")).toBe("a b");
   });
 
-  it('handles arrays and objects', () => {
-    expect(cn(['a', 'b'], { c: true, d: false })).toBe('a b c');
+  it("resolves tailwind class conflicts correctly", () => {
+    expect(cn("p-4", "p-8")).toBe("p-8");
+    expect(cn("text-red-500", "text-blue-500")).toBe("text-blue-500");
+    expect(cn("bg-red-500", "px-2", "bg-blue-500")).toBe("px-2 bg-blue-500");
+  });
+
+  it("handles arrays and objects", () => {
+    expect(cn(["a", "b"], { c: true, d: false })).toBe("a b c");
+  });
+
+  it("handles arbitrary nested arrays", () => {
+    expect(cn(["a", ["b", ["c", "d"]]])).toBe("a b c d");
+  });
+
+  it("handles objects with conditional classes", () => {
+    expect(cn({ a: true, b: false, c: true })).toBe("a c");
+  });
+
+  it("handles combination of strings, arrays and objects", () => {
+    expect(cn("a", ["b", "c"], { d: true, e: false }, "f")).toBe("a b c d f");
   });
 });
