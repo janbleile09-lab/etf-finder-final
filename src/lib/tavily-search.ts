@@ -152,22 +152,25 @@ export async function enrichSingleETF(isin: string): Promise<EnrichedETFData> {
   const allResults: TavilySearchResult[] = [];
   const allSources: string[] = [];
 
-  // Run all queries (sequentially to avoid rate limiting)
-  for (const query of queries) {
+  // Run all queries concurrently for performance
+  const searchPromises = queries.map(async (query) => {
     try {
       const response = await tavilySearch(query, 3);
-      const filtered = filterByWhitelist(response.results);
-      allResults.push(...filtered);
-      for (const r of filtered) {
-        if (!allSources.includes(r.url)) {
-          allSources.push(r.url);
-        }
-      }
+      return filterByWhitelist(response.results);
     } catch (error) {
       console.warn(`Tavily search failed for query "${query}":`, error);
-      // Continue with other queries even if one fails
+      return [];
     }
-  }
+  });
+
+  const resultsArray = await Promise.all(searchPromises);
+
+  resultsArray.flat().forEach(r => {
+    allResults.push(r);
+    if (!allSources.includes(r.url)) {
+      allSources.push(r.url);
+    }
+  });
 
   // Combine all crawled text into one context block
   const combinedText = allResults
