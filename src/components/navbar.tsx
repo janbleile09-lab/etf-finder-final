@@ -1,27 +1,39 @@
 "use client";
 import Link from "next/link";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Search,
-  LogOut,
-  Loader2,
-  User,
-  Bookmark,
-} from "lucide-react";
+import { Search, LogOut, Loader2, User, Bookmark } from "lucide-react";
 import { useAuth } from "@/components/auth/auth-provider";
 import { AuthDialog } from "@/components/auth/auth-dialog";
 import { SavedEtfsSheet } from "@/components/saved-etfs-sheet";
 import { ETFSearch } from "@/components/etf-search";
 
 export function Navbar() {
-  const { user, loading, signInWithGoogle, signOut, authDialogOpen, setAuthDialogOpen } = useAuth();
+  const {
+    user,
+    loading,
+    signInWithGoogle,
+    signOut,
+    authDialogOpen,
+    setAuthDialogOpen,
+  } = useAuth();
   const [signingIn, setSigningIn] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [savedSheetOpen, setSavedSheetOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setSearchOpen((open) => !open);
+      }
+    };
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, []);
 
   async function handleSignIn() {
     setSigningIn(true);
@@ -58,11 +70,15 @@ export function Navbar() {
           {/* Right area */}
           <nav className="flex items-center gap-2">
             <button
-              className="inline-flex size-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-              aria-label="Search"
+              className="inline-flex h-8 items-center justify-center gap-2 rounded-md px-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              aria-label="Search ETFs (⌘K)"
+              title="Search ETFs (⌘K)"
               onClick={() => setSearchOpen(true)}
             >
               <Search className="size-4" />
+              <kbd className="hidden sm:inline-flex pointer-events-none h-5 select-none items-center gap-0.5 rounded border border-border bg-muted/50 px-1.5 font-mono text-[10px] font-medium opacity-100">
+                <span className="text-xs">⌘</span>K
+              </kbd>
             </button>
 
             {/* Auth section */}
@@ -185,19 +201,16 @@ export function Navbar() {
       </header>
 
       {/* Auth dialog for unauthenticated bookmark attempts */}
-      <AuthDialog
-        open={authDialogOpen}
-        onOpenChange={setAuthDialogOpen}
-      />
+      <AuthDialog open={authDialogOpen} onOpenChange={setAuthDialogOpen} />
 
       {/* ETF Search Dialog */}
       <ETFSearch open={searchOpen} onOpenChange={setSearchOpen} />
 
       {/* Slide-over sheet for saved ETFs */}
       {user && (
-        <SavedEtfsSheet 
-          open={savedSheetOpen} 
-          onOpenChange={setSavedSheetOpen} 
+        <SavedEtfsSheet
+          open={savedSheetOpen}
+          onOpenChange={setSavedSheetOpen}
         />
       )}
     </>
