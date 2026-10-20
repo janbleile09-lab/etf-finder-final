@@ -106,6 +106,15 @@ function scoreEsg(etf: ETF, esg: EsgStatus): number {
   return 0;
 }
 
+export interface EtfStats {
+  minVol: number;
+  maxVol: number;
+  minRet: number;
+  maxRet: number;
+  minHoldings: number;
+  maxHoldings: number;
+}
+
 /**
  * Score how well an ETF matches risk preference.
  *  20 pts: best in class for the user's risk preference
@@ -114,37 +123,29 @@ function scoreEsg(etf: ETF, esg: EsgStatus): number {
 function scoreRisk(
   etf: ETF,
   risk: RiskPreference,
-  allEtfs: ETF[],
+  stats: EtfStats,
 ): number {
   const vol = etf.performance.volatility1Y;
   const ret = etf.performance.return1Y;
 
-  // Find min/max in the full set for normalization
-  const minVol = Math.min(...allEtfs.map((e) => e.performance.volatility1Y));
-  const maxVol = Math.max(...allEtfs.map((e) => e.performance.volatility1Y));
-  const maxRet = Math.max(...allEtfs.map((e) => e.performance.return1Y));
-  const minRet = Math.min(...allEtfs.map((e) => e.performance.return1Y));
-
-  const volRange = maxVol - minVol || 1;
-  const retRange = maxRet - minRet || 1;
+  const volRange = stats.maxVol - stats.minVol || 1;
+  const retRange = stats.maxRet - stats.minRet || 1;
 
   switch (risk) {
     case "low_vol": {
       // Lower volatility = higher score
-      const volScore = 1 - (vol - minVol) / volRange; // 0–1 (1 = lowest vol)
+      const volScore = 1 - (vol - stats.minVol) / volRange; // 0–1 (1 = lowest vol)
       return Math.round(volScore * 20);
     }
     case "max_div": {
       // More holdings = higher score
-      const maxHoldings = Math.max(...allEtfs.map((e) => e.totalHoldings));
-      const minHoldings = Math.min(...allEtfs.map((e) => e.totalHoldings));
-      const hRange = maxHoldings - minHoldings || 1;
-      const hScore = (etf.totalHoldings - minHoldings) / hRange;
+      const hRange = stats.maxHoldings - stats.minHoldings || 1;
+      const hScore = (etf.totalHoldings - stats.minHoldings) / hRange;
       return Math.round(hScore * 20);
     }
     case "balanced": {
       // Risk-adjusted return (Sharpe-like)
-      const raScore = (ret - minRet) / retRange - 0.5 * (vol - minVol) / volRange;
+      const raScore = (ret - stats.minRet) / retRange - 0.5 * (vol - stats.minVol) / volRange;
       // Normalize to 0–20
       const normalized = Math.max(0, Math.min(1, raScore + 0.5));
       return Math.round(normalized * 20);
@@ -194,11 +195,43 @@ export function scoreCandidates(
   riskPreference: RiskPreference,
   sectorTilt: SectorTilt,
 ): ScoredETF[] {
+  if (allEtfs.length === 0) return [];
+
+  // Pre-calculate min/max in a single O(N) pass instead of O(N²) inside scoreRisk
+  let minVol = Infinity;
+  let maxVol = -Infinity;
+  let minRet = Infinity;
+  let maxRet = -Infinity;
+  let minHoldings = Infinity;
+  let maxHoldings = -Infinity;
+
+  for (const etf of allEtfs) {
+    const vol = etf.performance.volatility1Y;
+    const ret = etf.performance.return1Y;
+    const holdings = etf.totalHoldings;
+
+    if (vol < minVol) minVol = vol;
+    if (vol > maxVol) maxVol = vol;
+    if (ret < minRet) minRet = ret;
+    if (ret > maxRet) maxRet = ret;
+    if (holdings < minHoldings) minHoldings = holdings;
+    if (holdings > maxHoldings) maxHoldings = holdings;
+  }
+
+  const stats: EtfStats = {
+    minVol,
+    maxVol,
+    minRet,
+    maxRet,
+    minHoldings,
+    maxHoldings,
+  };
+
   const scored = allEtfs.map((etf) => {
     const regionScore = scoreRegion(etf, region);
     const distScore = scoreDistribution(etf, distributionPolicy);
     const esgScore = scoreEsg(etf, esgStatus);
-    const riskScore = scoreRisk(etf, riskPreference, allEtfs);
+    const riskScore = scoreRisk(etf, riskPreference, stats);
     const tiltScore = scoreTilt(etf, sectorTilt);
 
     const total = regionScore + distScore + esgScore + riskScore + tiltScore;
