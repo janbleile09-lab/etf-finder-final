@@ -24,6 +24,14 @@ const DISTRIBUTION_LABELS: Record<string, string> = {
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 const allETFs = etfs as unknown as ETF[];
 
+// Optimization: Pre-compute search strings once at module load time
+// instead of performing 3x toLowerCase() calls per ETF on every keystroke.
+// Expected Impact: Reduces per-keystroke string allocations by ~1800.
+const searchIndex = allETFs.map((etf) => ({
+  etf,
+  searchStr: `${etf.name.toLowerCase()} ${etf.isin.toLowerCase()} ${etf.wkn.toLowerCase()}`,
+}));
+
 /* ── Inner search content (remounts via key when dialog opens) ─ */
 
 function SearchContent({ onClose }: { onClose: () => void }) {
@@ -42,13 +50,9 @@ function SearchContent({ onClose }: { onClose: () => void }) {
   const results = useMemo(() => {
     if (!query.trim()) return [];
     const q = query.toLowerCase().trim();
-    return allETFs
-      .filter(
-        (etf) =>
-          etf.name.toLowerCase().includes(q) ||
-          etf.isin.toLowerCase().includes(q) ||
-          etf.wkn.toLowerCase().includes(q)
-      )
+    return searchIndex
+      .filter((item) => item.searchStr.includes(q))
+      .map((item) => item.etf)
       .slice(0, 15);
   }, [query]);
 
@@ -68,7 +72,7 @@ function SearchContent({ onClose }: { onClose: () => void }) {
   }, []);
 
   const expandedETF = expandedIsin
-    ? allETFs.find((e) => e.isin === expandedIsin) ?? null
+    ? (allETFs.find((e) => e.isin === expandedIsin) ?? null)
     : null;
 
   /* ── Keyboard ─────────────────────────────────────────── */
@@ -83,7 +87,9 @@ function SearchContent({ onClose }: { onClose: () => void }) {
           break;
         case "ArrowUp":
           e.preventDefault();
-          handleIndexChange(safeIndex > 0 ? safeIndex - 1 : Math.max(len - 1, 0));
+          handleIndexChange(
+            safeIndex > 0 ? safeIndex - 1 : Math.max(len - 1, 0),
+          );
           break;
         case "Enter":
           e.preventDefault();
@@ -99,7 +105,14 @@ function SearchContent({ onClose }: { onClose: () => void }) {
           break;
       }
     },
-    [results, safeIndex, expandedIsin, onClose, toggleExpand, handleIndexChange]
+    [
+      results,
+      safeIndex,
+      expandedIsin,
+      onClose,
+      toggleExpand,
+      handleIndexChange,
+    ],
   );
 
   /* ── Render ───────────────────────────────────────────── */
@@ -166,7 +179,11 @@ function SearchContent({ onClose }: { onClose: () => void }) {
                   </p>
                   <div className="flex items-center gap-2 mt-1">
                     <span className="text-[11px] text-muted-foreground tabular-nums">
-                      {etf.isin && etf.isin !== "N/A" ? etf.isin : etf.wkn ? `WKN ${etf.wkn}` : ""}
+                      {etf.isin && etf.isin !== "N/A"
+                        ? etf.isin
+                        : etf.wkn
+                          ? `WKN ${etf.wkn}`
+                          : ""}
                     </span>
                     {etf.wkn && etf.isin && etf.isin !== "N/A" && (
                       <span className="text-[11px] text-muted-foreground/60 tabular-nums">
@@ -207,8 +224,9 @@ function SearchContent({ onClose }: { onClose: () => void }) {
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-0.5 text-[11px] font-medium text-blue-700 dark:bg-blue-950 dark:text-blue-300">
                           <Layers className="size-3" />
-                          {DISTRIBUTION_LABELS[expandedETF.distributionPolicy] ??
-                            expandedETF.distributionPolicy}
+                          {DISTRIBUTION_LABELS[
+                            expandedETF.distributionPolicy
+                          ] ?? expandedETF.distributionPolicy}
                         </span>
                         {expandedETF.esgStatus !== "none" && (
                           <span className="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-0.5 text-[11px] font-medium text-green-700 dark:bg-green-950 dark:text-green-300">
