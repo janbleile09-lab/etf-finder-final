@@ -52,12 +52,14 @@ export function SavedEtfsSheet({ open, onOpenChange }: SavedEtfsSheetProps) {
             <div className="flex items-center justify-between border-b border-border px-5 py-4">
               <div className="flex items-center gap-2">
                 <Bookmark className="size-5 text-primary" />
-                <h2 className="text-lg font-semibold tracking-tight">Saved ETFs</h2>
+                <h2 className="text-lg font-semibold tracking-tight">
+                  Saved ETFs
+                </h2>
               </div>
               <button
                 onClick={() => onOpenChange(false)}
-                className="inline-flex size-8 items-center justify-center rounded-full text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
-                aria-label="Close"
+                className="inline-flex size-8 items-center justify-center rounded-full text-muted-foreground hover:bg-muted hover:text-foreground transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+                aria-label="Schließen"
               >
                 <X className="size-4" />
               </button>
@@ -68,8 +70,12 @@ export function SavedEtfsSheet({ open, onOpenChange }: SavedEtfsSheetProps) {
               {savedEtfs.length === 0 ? (
                 <div className="flex h-full flex-col items-center justify-center gap-2 text-center text-muted-foreground">
                   <Bookmark className="size-8 opacity-20" />
-                  <p className="text-sm font-medium text-foreground">No saved ETFs</p>
-                  <p className="text-xs">Your bookmarked ETFs will appear here.</p>
+                  <p className="text-sm font-medium text-foreground">
+                    No saved ETFs
+                  </p>
+                  <p className="text-xs">
+                    Your bookmarked ETFs will appear here.
+                  </p>
                 </div>
               ) : (
                 <div className="flex flex-col gap-3">
@@ -93,7 +99,7 @@ export function SavedEtfsSheet({ open, onOpenChange }: SavedEtfsSheetProps) {
                           className="shrink-0"
                         />
                       </div>
-                      
+
                       <div className="flex items-center gap-2 mt-2">
                         <span className="inline-flex items-center rounded-md border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-medium text-emerald-700 dark:text-emerald-400">
                           TER {etf.ter}%
