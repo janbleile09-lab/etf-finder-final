@@ -28,7 +28,8 @@ export function Toast({ message, type = "saved", onDismiss }: ToastProps) {
           <span className="text-foreground">{message}</span>
           <button
             onClick={onDismiss}
-            className="ml-1 inline-flex size-5 items-center justify-center rounded text-muted-foreground transition-colors hover:text-foreground"
+            className="ml-1 inline-flex size-5 items-center justify-center rounded text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            aria-label="Schließen"
           >
             <X className="size-3" />
           </button>
