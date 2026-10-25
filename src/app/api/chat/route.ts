@@ -143,6 +143,17 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Limit array size to prevent DoS attacks
+    if (messages.length > 50) {
+      return new Response(
+        JSON.stringify({ error: "Too many messages in history." }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        },
+      );
+    }
+
     const allEtfs = etfs as unknown as ETF[];
 
     // ═══════════════════════════════════════════════════════════════════
@@ -288,16 +299,22 @@ export async function POST(req: NextRequest) {
       systemPrompt += `\n\n## NUTZER-PRÄFERENZEN:\n- Region: ${quizAnswers.region}\n- Ausschüttung: ${quizAnswers.distribution}\n- ESG: ${quizAnswers.esg}\n- Risiko: ${quizAnswers.risk}\n- Sektor-Fokus: ${quizAnswers.sectorTilt}`;
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const modelMessages = messages.map((m: any) => ({
-      role: m.role as "user" | "assistant" | "system",
-      content:
-        typeof m.content === "string"
-          ? m.content
-          : Array.isArray(m.parts)
-            ? m.parts.map((p: { text?: string }) => p.text ?? "").join("")
-            : "",
-    }));
+    const modelMessages = messages
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .filter((m: any) => m.role === "user" || m.role === "assistant")
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .map((m: any) => {
+        const rawContent =
+          typeof m.content === "string"
+            ? m.content
+            : Array.isArray(m.parts)
+              ? m.parts.map((p: { text?: string }) => p.text ?? "").join("")
+              : "";
+        return {
+          role: m.role as "user" | "assistant",
+          content: rawContent.slice(0, 4000), // Truncate content to mitigate injection / overflow risks
+        };
+      });
 
     const result = streamText({
       model: nvidia.chat("nvidia/nemotron-3-ultra-550b-a55b"),
