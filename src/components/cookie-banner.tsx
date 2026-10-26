@@ -63,7 +63,7 @@ export function CookieBanner() {
         </p>
         <button
           onClick={handleAccept}
-          className="inline-flex h-8 shrink-0 items-center rounded-md bg-primary px-4 text-xs font-medium text-primary-foreground transition-colors hover:bg-primary/80"
+          className="inline-flex h-8 shrink-0 items-center rounded-md bg-primary px-4 text-xs font-medium text-primary-foreground transition-colors hover:bg-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         >
           Verstanden
         </button>

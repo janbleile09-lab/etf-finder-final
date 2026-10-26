@@ -35,7 +35,10 @@ function formatVolume(vol: number): string {
   return vol.toLocaleString("de-DE");
 }
 
-function formatChange(change: number, percent: number): { text: string; isPositive: boolean; isZero: boolean } {
+function formatChange(
+  change: number,
+  percent: number,
+): { text: string; isPositive: boolean; isZero: boolean } {
   const isPositive = change > 0;
   const isZero = change === 0;
   const sign = isPositive ? "+" : "";
@@ -46,7 +49,11 @@ function formatChange(change: number, percent: number): { text: string; isPositi
   };
 }
 
-export function ETFChatCard({ etf, marketData, marketDataLoading }: ETFChatCardProps) {
+export function ETFChatCard({
+  etf,
+  marketData,
+  marketDataLoading,
+}: ETFChatCardProps) {
   const [expanded, setExpanded] = useState(false);
 
   const changeInfo = marketData
@@ -60,14 +67,25 @@ export function ETFChatCard({ etf, marketData, marketDataLoading }: ETFChatCardP
         role="button"
         tabIndex={0}
         onClick={() => setExpanded(!expanded)}
-        onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setExpanded(!expanded); } }}
-        className="w-full text-left px-3 py-2.5 flex items-start justify-between gap-2 hover:bg-muted/30 transition-colors cursor-pointer"
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setExpanded(!expanded);
+          }
+        }}
+        className="w-full text-left px-3 py-2.5 flex items-start justify-between gap-2 hover:bg-muted/30 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-lg"
       >
         <div className="min-w-0 flex-1">
-          <p className="text-xs font-medium text-foreground truncate">{etf.name}</p>
+          <p className="text-xs font-medium text-foreground truncate">
+            {etf.name}
+          </p>
           <div className="flex items-center gap-2 mt-0.5">
             <span className="text-[10px] text-muted-foreground tabular-nums">
-              {etf.isin && etf.isin !== "N/A" ? etf.isin : etf.wkn ? `WKN ${etf.wkn}` : ""}
+              {etf.isin && etf.isin !== "N/A"
+                ? etf.isin
+                : etf.wkn
+                  ? `WKN ${etf.wkn}`
+                  : ""}
             </span>
             {etf.wkn && etf.isin && etf.isin !== "N/A" && (
               <span className="text-[10px] text-muted-foreground/60 tabular-nums">
@@ -140,19 +158,25 @@ export function ETFChatCard({ etf, marketData, marketDataLoading }: ETFChatCardP
 
                   <div className="grid grid-cols-3 gap-2">
                     <div>
-                      <p className="text-[9px] text-muted-foreground">Eröffnung</p>
+                      <p className="text-[9px] text-muted-foreground">
+                        Eröffnung
+                      </p>
                       <p className="text-[11px] font-semibold tabular-nums">
                         {formatPrice(marketData.open, marketData.currency)}
                       </p>
                     </div>
                     <div>
-                      <p className="text-[9px] text-muted-foreground">Tagestief</p>
+                      <p className="text-[9px] text-muted-foreground">
+                        Tagestief
+                      </p>
                       <p className="text-[11px] font-semibold tabular-nums">
                         {formatPrice(marketData.low, marketData.currency)}
                       </p>
                     </div>
                     <div>
-                      <p className="text-[9px] text-muted-foreground">Tageshoch</p>
+                      <p className="text-[9px] text-muted-foreground">
+                        Tageshoch
+                      </p>
                       <p className="text-[11px] font-semibold tabular-nums">
                         {formatPrice(marketData.high, marketData.currency)}
                       </p>
@@ -161,23 +185,35 @@ export function ETFChatCard({ etf, marketData, marketDataLoading }: ETFChatCardP
 
                   <div className="grid grid-cols-3 gap-2">
                     <div>
-                      <p className="text-[9px] text-muted-foreground">52W Hoch</p>
+                      <p className="text-[9px] text-muted-foreground">
+                        52W Hoch
+                      </p>
                       <p className="text-[11px] font-semibold tabular-nums text-emerald-600">
                         {marketData.fifty_two_week.high > 0
-                          ? formatPrice(marketData.fifty_two_week.high, marketData.currency)
+                          ? formatPrice(
+                              marketData.fifty_two_week.high,
+                              marketData.currency,
+                            )
                           : "—"}
                       </p>
                     </div>
                     <div>
-                      <p className="text-[9px] text-muted-foreground">52W Tief</p>
+                      <p className="text-[9px] text-muted-foreground">
+                        52W Tief
+                      </p>
                       <p className="text-[11px] font-semibold tabular-nums text-red-500">
                         {marketData.fifty_two_week.low > 0
-                          ? formatPrice(marketData.fifty_two_week.low, marketData.currency)
+                          ? formatPrice(
+                              marketData.fifty_two_week.low,
+                              marketData.currency,
+                            )
                           : "—"}
                       </p>
                     </div>
                     <div>
-                      <p className="text-[9px] text-muted-foreground">Volumen</p>
+                      <p className="text-[9px] text-muted-foreground">
+                        Volumen
+                      </p>
                       <p className="text-[11px] font-semibold tabular-nums">
                         {formatVolume(marketData.volume)}
                       </p>
@@ -188,8 +224,12 @@ export function ETFChatCard({ etf, marketData, marketDataLoading }: ETFChatCardP
                   {marketData.high > marketData.low && marketData.price > 0 && (
                     <div>
                       <div className="flex justify-between text-[9px] text-muted-foreground mb-0.5">
-                        <span>{formatPrice(marketData.low, marketData.currency)}</span>
-                        <span>{formatPrice(marketData.high, marketData.currency)}</span>
+                        <span>
+                          {formatPrice(marketData.low, marketData.currency)}
+                        </span>
+                        <span>
+                          {formatPrice(marketData.high, marketData.currency)}
+                        </span>
                       </div>
                       <div className="h-1 rounded-full bg-muted overflow-hidden">
                         <motion.div
@@ -205,9 +245,14 @@ export function ETFChatCard({ etf, marketData, marketDataLoading }: ETFChatCardP
                               ),
                             )}%`,
                           }}
-                          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                          transition={{
+                            duration: 0.6,
+                            ease: [0.16, 1, 0.3, 1],
+                          }}
                           className={`h-full rounded-full ${
-                            changeInfo?.isPositive ? "bg-emerald-500" : "bg-red-500"
+                            changeInfo?.isPositive
+                              ? "bg-emerald-500"
+                              : "bg-red-500"
                           }`}
                         />
                       </div>
@@ -216,10 +261,14 @@ export function ETFChatCard({ etf, marketData, marketDataLoading }: ETFChatCardP
 
                   {marketData.updated_at && (
                     <p className="text-[9px] text-muted-foreground/60 text-right">
-                      Stand: {new Date(marketData.updated_at).toLocaleTimeString("de-DE", {
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      })}
+                      Stand:{" "}
+                      {new Date(marketData.updated_at).toLocaleTimeString(
+                        "de-DE",
+                        {
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        },
+                      )}
                     </p>
                   )}
                 </div>
@@ -229,7 +278,8 @@ export function ETFChatCard({ etf, marketData, marketDataLoading }: ETFChatCardP
               <div className="flex items-center gap-2 flex-wrap pt-1">
                 <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-medium text-blue-700 dark:bg-blue-950 dark:text-blue-300">
                   <Layers className="size-2.5" />
-                  {DISTRIBUTION_LABELS[etf.distributionPolicy] ?? etf.distributionPolicy}
+                  {DISTRIBUTION_LABELS[etf.distributionPolicy] ??
+                    etf.distributionPolicy}
                 </span>
                 {etf.esgStatus !== "none" && (
                   <span className="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-0.5 text-[10px] font-medium text-green-700 dark:bg-green-950 dark:text-green-300">
@@ -245,10 +295,14 @@ export function ETFChatCard({ etf, marketData, marketDataLoading }: ETFChatCardP
               {etf.performance && (
                 <div className="grid grid-cols-3 gap-1.5">
                   <div className="rounded-md bg-muted/50 p-1.5 text-center">
-                    <p className="text-[9px] text-muted-foreground">1Y Return</p>
+                    <p className="text-[9px] text-muted-foreground">
+                      1Y Return
+                    </p>
                     <p
                       className={`text-[11px] font-semibold tabular-nums ${
-                        etf.performance.return1Y >= 0 ? "text-emerald-600" : "text-red-500"
+                        etf.performance.return1Y >= 0
+                          ? "text-emerald-600"
+                          : "text-red-500"
                       }`}
                     >
                       {etf.performance.return1Y > 0 ? "+" : ""}
@@ -256,10 +310,14 @@ export function ETFChatCard({ etf, marketData, marketDataLoading }: ETFChatCardP
                     </p>
                   </div>
                   <div className="rounded-md bg-muted/50 p-1.5 text-center">
-                    <p className="text-[9px] text-muted-foreground">3Y Return</p>
+                    <p className="text-[9px] text-muted-foreground">
+                      3Y Return
+                    </p>
                     <p
                       className={`text-[11px] font-semibold tabular-nums ${
-                        etf.performance.return3Y >= 0 ? "text-emerald-600" : "text-red-500"
+                        etf.performance.return3Y >= 0
+                          ? "text-emerald-600"
+                          : "text-red-500"
                       }`}
                     >
                       {etf.performance.return3Y > 0 ? "+" : ""}
@@ -267,7 +325,9 @@ export function ETFChatCard({ etf, marketData, marketDataLoading }: ETFChatCardP
                     </p>
                   </div>
                   <div className="rounded-md bg-muted/50 p-1.5 text-center">
-                    <p className="text-[9px] text-muted-foreground">Volatility</p>
+                    <p className="text-[9px] text-muted-foreground">
+                      Volatility
+                    </p>
                     <p className="text-[11px] font-semibold text-foreground tabular-nums">
                       {etf.performance.volatility1Y}%
                     </p>
@@ -278,7 +338,9 @@ export function ETFChatCard({ etf, marketData, marketDataLoading }: ETFChatCardP
               {/* Top sectors */}
               {etf.sectorAllocation && (
                 <div>
-                  <p className="text-[10px] font-medium text-muted-foreground mb-1">Top Sectors</p>
+                  <p className="text-[10px] font-medium text-muted-foreground mb-1">
+                    Top Sectors
+                  </p>
                   <div className="space-y-0.5">
                     {Object.entries(etf.sectorAllocation)
                       .sort(([, a], [, b]) => b - a)
@@ -292,7 +354,10 @@ export function ETFChatCard({ etf, marketData, marketDataLoading }: ETFChatCardP
                             <motion.div
                               initial={{ width: 0 }}
                               animate={{ width: `${Math.min(weight, 100)}%` }}
-                              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                              transition={{
+                                duration: 0.5,
+                                ease: [0.16, 1, 0.3, 1],
+                              }}
                               className="h-full rounded-full bg-primary/60"
                             />
                           </div>
