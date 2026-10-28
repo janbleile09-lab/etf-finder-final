@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
   let next = requestUrl.searchParams.get("next") ?? "/";
 
   // Sanitize 'next' to prevent open redirection
-  if (!next.startsWith("/") || next.startsWith("//")) {
+  if (!next.startsWith("/") || next.startsWith("//") || next.startsWith("/\\")) {
     next = "/";
   }
 

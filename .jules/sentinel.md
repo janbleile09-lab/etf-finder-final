@@ -4,3 +4,7 @@
 **Vulnerability:** The API handler in `src/app/api/chat/route.ts` did not limit the length of the `messages` array, the length of individual messages, or the allowed message roles (allowing arbitrary `system` messages).
 **Learning:** LLM endpoints that process external message arrays are susceptible to Resource Exhaustion/Denial of Service (DoS) and Prompt Injection attacks if payload sizes and message roles are unconstrained.
 **Prevention:** Implement array size bounds (e.g. `messages.length > 50`), filter out unauthorized roles (only allow `user` and `assistant`), and defensively truncate input text before passing it to AI SDK generation functions.
+## 2026-10-28 - Prevent Open Redirect via Backslash Bypass
+**Issue:** Open Redirect via next parameter using /\example.com
+**Learning:** Browsers and URL parsers normalize backslashes to forward slashes, allowing bypass of simplistic open redirect filters like startsWith("//").
+**Prevention:** explicitly filter out paths starting with /\ in addition to //.
