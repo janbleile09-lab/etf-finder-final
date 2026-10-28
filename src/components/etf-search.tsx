@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, useMemo, useCallback } from "react";
+import { useState, useRef, useEffect, useMemo, useCallback, useDeferredValue } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X, Layers, ChevronRight } from "lucide-react";
 import etfs from "../../public/data/etfs.json";
@@ -35,6 +35,7 @@ const allETFs = (etfs as unknown as ETF[]).map((etf) => ({
 
 function SearchContent({ onClose }: { onClose: () => void }) {
   const [query, setQuery] = useState("");
+  const deferredQuery = useDeferredValue(query);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [expandedIsin, setExpandedIsin] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -47,10 +48,10 @@ function SearchContent({ onClose }: { onClose: () => void }) {
 
   // Filter ETFs by query
   const results = useMemo(() => {
-    if (!query.trim()) return [];
-    const q = query.toLowerCase().trim();
+    if (!deferredQuery.trim()) return [];
+    const q = deferredQuery.toLowerCase().trim();
     return allETFs.filter((etf) => etf._searchString.includes(q)).slice(0, 15);
-  }, [query]);
+  }, [deferredQuery]);
 
   // Clamp selectedIndex
   const safeIndex = Math.min(selectedIndex, Math.max(results.length - 1, 0));
@@ -151,11 +152,11 @@ function SearchContent({ onClose }: { onClose: () => void }) {
         ref={listRef}
         className="max-h-90 overflow-y-auto overscroll-contain"
       >
-        {query.trim() && results.length === 0 ? (
+        {deferredQuery.trim() && results.length === 0 ? (
           <div className="flex flex-col items-center gap-2 py-12 text-center">
             <Search className="size-6 text-muted-foreground/40" />
             <p className="text-sm text-muted-foreground">
-              No ETFs found for &quot;{query}&quot;
+              No ETFs found for &quot;{deferredQuery}&quot;
             </p>
           </div>
         ) : (
