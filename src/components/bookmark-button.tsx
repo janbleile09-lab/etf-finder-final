@@ -53,6 +53,7 @@ export function BookmarkButton({
       className={cn(
         "relative inline-flex size-8 items-center justify-center rounded-full cursor-pointer",
         "transition-colors duration-150",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
         isBookmarked
           ? "text-rose-500 hover:text-rose-600"
           : "text-muted-foreground hover:text-foreground",
