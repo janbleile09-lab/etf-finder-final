@@ -21,7 +21,7 @@ export function BookmarkButton({
 }: BookmarkButtonProps) {
   const { user, setAuthDialogOpen } = useAuth();
   const { toggleBookmark, isBookmarked: checkBookmarked } = useBookmarks();
-  
+
   // Use the hook's state if we are logged in, otherwise fallback to the prop for static rendering
   const isBookmarked = user ? checkBookmarked(isin) : initialBookmarked;
 
@@ -51,7 +51,7 @@ export function BookmarkButton({
       whileTap={{ scale: 1.25 }}
       transition={{ type: "spring", stiffness: 500, damping: 20 }}
       className={cn(
-        "relative inline-flex size-8 items-center justify-center rounded-full cursor-pointer",
+        "relative inline-flex size-8 items-center justify-center rounded-full cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
         "transition-colors duration-150",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
         isBookmarked
@@ -59,7 +59,9 @@ export function BookmarkButton({
           : "text-muted-foreground hover:text-foreground",
         className,
       )}
-      aria-label={isBookmarked ? "Remove bookmark" : "Add bookmark"}
+      aria-label={
+        isBookmarked ? "Lesezeichen entfernen" : "Lesezeichen hinzufügen"
+      }
     >
       <AnimatePresence mode="wait">
         <motion.span

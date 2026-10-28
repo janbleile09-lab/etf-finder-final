@@ -138,8 +138,8 @@ function SearchContent({ onClose }: { onClose: () => void }) {
               setQuery("");
               setSelectedIndex(0);
             }}
-            className="shrink-0 rounded-md p-0.5 text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="Clear search"
+            className="shrink-0 rounded-md p-0.5 text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            aria-label="Suche leeren"
           >
             <X className="size-3.5" />
           </button>

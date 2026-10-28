@@ -4,20 +4,21 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Search,
-  LogOut,
-  Loader2,
-  User,
-  Bookmark,
-} from "lucide-react";
+import { Search, LogOut, Loader2, User, Bookmark } from "lucide-react";
 import { useAuth } from "@/components/auth/auth-provider";
 import { AuthDialog } from "@/components/auth/auth-dialog";
 import { SavedEtfsSheet } from "@/components/saved-etfs-sheet";
 import { ETFSearch } from "@/components/etf-search";
 
 export function Navbar() {
-  const { user, loading, signInWithGoogle, signOut, authDialogOpen, setAuthDialogOpen } = useAuth();
+  const {
+    user,
+    loading,
+    signInWithGoogle,
+    signOut,
+    authDialogOpen,
+    setAuthDialogOpen,
+  } = useAuth();
   const [signingIn, setSigningIn] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [savedSheetOpen, setSavedSheetOpen] = useState(false);
@@ -58,8 +59,8 @@ export function Navbar() {
           {/* Right area */}
           <nav className="flex items-center gap-2">
             <button
-              className="inline-flex size-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-              aria-label="Search"
+              className="inline-flex size-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              aria-label="Suche"
               onClick={() => setSearchOpen(true)}
             >
               <Search className="size-4" />
@@ -75,8 +76,8 @@ export function Navbar() {
               <div className="relative">
                 <button
                   onClick={() => setMenuOpen((prev) => !prev)}
-                  className="inline-flex size-8 items-center justify-center overflow-hidden rounded-full ring-1 ring-border transition-shadow hover:ring-foreground/20"
-                  aria-label="User menu"
+                  className="inline-flex size-8 items-center justify-center overflow-hidden rounded-full ring-1 ring-border transition-shadow hover:ring-foreground/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  aria-label="Benutzermenü"
                 >
                   {user.user_metadata?.avatar_url ? (
                     <Image
@@ -185,19 +186,16 @@ export function Navbar() {
       </header>
 
       {/* Auth dialog for unauthenticated bookmark attempts */}
-      <AuthDialog
-        open={authDialogOpen}
-        onOpenChange={setAuthDialogOpen}
-      />
+      <AuthDialog open={authDialogOpen} onOpenChange={setAuthDialogOpen} />
 
       {/* ETF Search Dialog */}
       <ETFSearch open={searchOpen} onOpenChange={setSearchOpen} />
 
       {/* Slide-over sheet for saved ETFs */}
       {user && (
-        <SavedEtfsSheet 
-          open={savedSheetOpen} 
-          onOpenChange={setSavedSheetOpen} 
+        <SavedEtfsSheet
+          open={savedSheetOpen}
+          onOpenChange={setSavedSheetOpen}
         />
       )}
     </>
