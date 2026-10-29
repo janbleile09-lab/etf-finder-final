@@ -89,7 +89,8 @@ export function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
 
               <button
                 onClick={() => onOpenChange(false)}
-                className="mt-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                className="mt-1 px-1 rounded-sm text-xs text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                aria-label="Maybe later (Close dialog)"
               >
                 Maybe later
               </button>
