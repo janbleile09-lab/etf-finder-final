@@ -375,7 +375,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
                 <button
                   type="button"
                   onClick={() => stop()}
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted text-foreground hover:bg-muted/80 transition-colors"
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted text-foreground hover:bg-muted/80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   title="Stopp"
                   aria-label="Stopp"
                 >
@@ -386,7 +386,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
                   type="button"
                   onClick={handleSend}
                   disabled={!inputValue.trim()}
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground transition-all hover:scale-105 active:scale-95 disabled:opacity-40 disabled:hover:scale-100"
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground transition-all hover:scale-105 active:scale-95 disabled:opacity-40 disabled:hover:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   title="Senden"
                   aria-label="Senden"
                 >
