@@ -368,6 +368,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Frag etwas zu deinen ETF-Empfehlungen..."
+                aria-label="Frag etwas zu deinen ETF-Empfehlungen..."
                 disabled={isLoading}
                 className="flex-1 bg-transparent py-2 text-sm outline-none placeholder:text-muted-foreground disabled:opacity-50"
               />
