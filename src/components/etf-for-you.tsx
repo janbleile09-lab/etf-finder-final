@@ -244,7 +244,7 @@ function BreakdownSheet({ etf, open, onClose }: BreakdownSheetProps) {
               </div>
               <button
                 onClick={onClose}
-                className="inline-flex size-8 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground active:scale-95"
+                className="inline-flex size-8 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 aria-label="Schließen"
               >
                 <X className="size-4" />
