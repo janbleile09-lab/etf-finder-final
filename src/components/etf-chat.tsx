@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useMemo, useCallback } from "react";
+import React, { useEffect, useRef, useState, useMemo, useCallback } from "react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { motion, AnimatePresence } from "framer-motion";
@@ -52,6 +52,14 @@ const SECTOR_LABELS: Record<string, string> = {
   dividend: "Dividenden",
   healthcare: "Gesundheitswesen",
 };
+
+const MemoizedMarkdown = React.memo(function MemoizedMarkdown({ text }: { text: string }) {
+  return (
+    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+      {text}
+    </ReactMarkdown>
+  );
+});
 
 function formatQuizAnswers(answers: QuizAnswers): string {
   const lines: string[] = [
@@ -285,9 +293,7 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
                     ) : (
                       <>
                         <div className="prose prose-sm dark:prose-invert max-w-none prose-p:leading-relaxed prose-p:my-2 prose-headings:my-3 prose-ul:my-2 prose-li:my-0.5">
-                          <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                            {text}
-                          </ReactMarkdown>
+                          <MemoizedMarkdown text={text} />
                         </div>
                         {/* ETF cards for ISINs found in the message */}
                         {extractEtfs(text).map((etf) => (
