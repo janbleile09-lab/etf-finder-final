@@ -148,7 +148,7 @@ export function Navbar() {
                 whileTap={{ scale: 0.98 }}
                 onClick={handleSignIn}
                 disabled={signingIn}
-                className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-border bg-card px-3 text-xs font-medium text-foreground transition-colors hover:bg-muted disabled:opacity-60 active:scale-[0.98]"
+                className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-border bg-card px-3 text-xs font-medium text-foreground transition-colors hover:bg-muted disabled:opacity-60 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
                 {signingIn ? (
                   <Loader2 className="size-3.5 animate-spin" />
