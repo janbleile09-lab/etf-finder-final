@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useMemo, useCallback, memo } from "react";
 import { useChat } from "@ai-sdk/react";
-import { DefaultChatTransport, type Message } from "ai";
+import { DefaultChatTransport, type UIMessage as Message } from "ai";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, User as UserIcon, Bot, Lock, Square } from "lucide-react";
 import { useAuth } from "@/components/auth/auth-provider";
