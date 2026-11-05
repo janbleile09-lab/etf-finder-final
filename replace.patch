@@ -1,0 +1,226 @@
+<<<<<<< SEARCH
+function formatQuizAnswers(answers: QuizAnswers): string {
+  const lines: string[] = [
+    "Meine Quiz-Antworten:",
+    `- Region: ${REGION_LABELS[answers.region ?? ""] ?? answers.region}`,
+    `- Ausschüttung: ${DISTRIBUTION_LABELS[answers.distribution ?? ""] ?? answers.distribution}`,
+    `- Nachhaltigkeit (ESG): ${ESG_LABELS[answers.esg ?? ""] ?? answers.esg}`,
+    `- Risiko: ${RISK_LABELS[answers.risk ?? ""] ?? answers.risk}`,
+    `- Sektor-Fokus: ${SECTOR_LABELS[answers.sectorTilt ?? ""] ?? answers.sectorTilt}`,
+    "",
+    "Basierend auf diesen Antworten, welche ETFs aus deiner Datenbank empfiehlst du mir?",
+  ];
+  return lines.join("\n");
+}
+
+export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
+=======
+function formatQuizAnswers(answers: QuizAnswers): string {
+  const lines: string[] = [
+    "Meine Quiz-Antworten:",
+    `- Region: ${REGION_LABELS[answers.region ?? ""] ?? answers.region}`,
+    `- Ausschüttung: ${DISTRIBUTION_LABELS[answers.distribution ?? ""] ?? answers.distribution}`,
+    `- Nachhaltigkeit (ESG): ${ESG_LABELS[answers.esg ?? ""] ?? answers.esg}`,
+    `- Risiko: ${RISK_LABELS[answers.risk ?? ""] ?? answers.risk}`,
+    `- Sektor-Fokus: ${SECTOR_LABELS[answers.sectorTilt ?? ""] ?? answers.sectorTilt}`,
+    "",
+    "Basierend auf diesen Antworten, welche ETFs aus deiner Datenbank empfiehlst du mir?",
+  ];
+  return lines.join("\n");
+}
+
+import React from "react";
+import type { MarketDataQuote } from "@/lib/twelvedata";
+
+// Extract message text to prevent recalculation inside render loop
+function getRawMessageText(message: any): string {
+  if (message.parts && Array.isArray(message.parts)) {
+    return message.parts
+      .filter((p: any) => p.type === "text" || p.type === "reasoning")
+      .map((p: any) =>
+        p.type === "reasoning" ? `\n\n> 🤔 ${p.text}\n\n` : p.text,
+      )
+      .join("");
+  }
+  return message.content ?? "";
+}
+
+interface ChatMessageItemProps {
+  message: any;
+  marketQuotes: Map<string, MarketDataQuote>;
+  marketDataLoading: boolean;
+  extractEtfs: (text: string) => ETF[];
+}
+
+const ChatMessageItem = React.memo(
+  ({
+    message,
+    marketQuotes,
+    marketDataLoading,
+    extractEtfs,
+  }: ChatMessageItemProps) => {
+    // We compute text once per message content change.
+    const text = useMemo(
+      () =>
+        getRawMessageText(message) ||
+        "[Leere Antwort vom KI-Modell empfangen. Dies deutet auf ein API-Problem hin.]",
+      [message],
+    );
+
+    // Extract ETFs once per text change
+    const extractedEtfs = useMemo(() => extractEtfs(text), [text, extractEtfs]);
+
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", stiffness: 280, damping: 26 }}
+        className="flex gap-4 items-start"
+      >
+        {/* Avatar */}
+        <div
+          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
+            message.role === "user"
+              ? "bg-primary text-primary-foreground"
+              : "bg-muted border border-border/60"
+          }`}
+        >
+          {message.role === "user" ? (
+            <UserIcon size={15} />
+          ) : (
+            <Bot size={15} />
+          )}
+        </div>
+
+        {/* Content */}
+        <div className="flex-1 min-w-0 pt-1">
+          <p className="text-xs font-medium text-muted-foreground mb-2">
+            {message.role === "user" ? "Du" : "AI Berater"}
+          </p>
+          {message.role === "user" ? (
+            <p className="text-sm leading-relaxed whitespace-pre-wrap">
+              {text}
+            </p>
+          ) : (
+            <>
+              <div className="prose prose-sm dark:prose-invert max-w-none prose-p:leading-relaxed prose-p:my-2 prose-headings:my-3 prose-ul:my-2 prose-li:my-0.5">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {text}
+                </ReactMarkdown>
+              </div>
+              {/* ETF cards for ISINs found in the message */}
+              {extractedEtfs.map((etf) => (
+                <ETFChatCard
+                  key={etf.isin}
+                  etf={etf}
+                  marketData={marketQuotes.get(etf.isin) ?? null}
+                  marketDataLoading={marketDataLoading}
+                />
+              ))}
+            </>
+          )}
+        </div>
+      </motion.div>
+    );
+  },
+  // Custom equality check: only re-render if message.content/parts change or relevant market quotes change.
+  // This avoids deep re-renders when marketQuotes map changes for OTHER ETFs.
+  (prevProps, nextProps) => {
+    // message equality (shallow check on object ref is not enough for useChat)
+    const prevText = getRawMessageText(prevProps.message);
+    const nextText = getRawMessageText(nextProps.message);
+    if (prevText !== nextText) return false;
+    if (prevProps.message.role !== nextProps.message.role) return false;
+    if (prevProps.marketDataLoading !== nextProps.marketDataLoading)
+      return false;
+
+    // We check if marketQuotes for the ETFs extracted in this message have changed
+    const extractedEtfs = prevProps.extractEtfs(prevText);
+    for (const etf of extractedEtfs) {
+      if (
+        prevProps.marketQuotes.get(etf.isin) !==
+        nextProps.marketQuotes.get(etf.isin)
+      ) {
+        return false;
+      }
+    }
+
+    return true;
+  },
+);
+ChatMessageItem.displayName = "ChatMessageItem";
+
+export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+            {messages.map((message: any) => {
+              const text =
+                getMessageText(message) ||
+                "[Leere Antwort vom KI-Modell empfangen. Dies deutet auf ein API-Problem hin.]";
+              return (
+                <motion.div
+                  key={message.id}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ type: "spring", stiffness: 280, damping: 26 }}
+                  className="flex gap-4 items-start"
+                >
+                  {/* Avatar */}
+                  <div
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
+                      message.role === "user"
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-muted border border-border/60"
+                    }`}
+                  >
+                    {message.role === "user" ? (
+                      <UserIcon size={15} />
+                    ) : (
+                      <Bot size={15} />
+                    )}
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 min-w-0 pt-1">
+                    <p className="text-xs font-medium text-muted-foreground mb-2">
+                      {message.role === "user" ? "Du" : "AI Berater"}
+                    </p>
+                    {message.role === "user" ? (
+                      <p className="text-sm leading-relaxed whitespace-pre-wrap">
+                        {text}
+                      </p>
+                    ) : (
+                      <>
+                        <div className="prose prose-sm dark:prose-invert max-w-none prose-p:leading-relaxed prose-p:my-2 prose-headings:my-3 prose-ul:my-2 prose-li:my-0.5">
+                          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {text}
+                          </ReactMarkdown>
+                        </div>
+                        {/* ETF cards for ISINs found in the message */}
+                        {extractEtfs(text).map((etf) => (
+                          <ETFChatCard
+                            key={etf.isin}
+                            etf={etf}
+                            marketData={marketQuotes.get(etf.isin) ?? null}
+                            marketDataLoading={marketDataLoading}
+                          />
+                        ))}
+                      </>
+                    )}
+                  </div>
+                </motion.div>
+              );
+            })}
+=======
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+            {messages.map((message: any) => (
+              <ChatMessageItem
+                key={message.id}
+                message={message}
+                marketQuotes={marketQuotes}
+                marketDataLoading={marketDataLoading}
+                extractEtfs={extractEtfs}
+              />
+            ))}
+>>>>>>> REPLACE
