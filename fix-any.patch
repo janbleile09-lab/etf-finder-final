@@ -1,0 +1,45 @@
+<<<<<<< SEARCH
+// Extract message text to prevent recalculation inside render loop
+function getRawMessageText(message: any): string {
+  if (message.parts && Array.isArray(message.parts)) {
+    return message.parts
+      .filter((p: any) => p.type === "text" || p.type === "reasoning")
+      .map((p: any) =>
+        p.type === "reasoning" ? `\n\n> 🤔 ${p.text}\n\n` : p.text,
+      )
+      .join("");
+  }
+  return message.content ?? "";
+}
+
+interface ChatMessageItemProps {
+  message: any;
+  marketQuotes: Map<string, MarketDataQuote>;
+  marketDataLoading: boolean;
+  extractEtfs: (text: string) => ETF[];
+}
+=======
+// Extract message text to prevent recalculation inside render loop
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function getRawMessageText(message: any): string {
+  if (message.parts && Array.isArray(message.parts)) {
+    return message.parts
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .filter((p: any) => p.type === "text" || p.type === "reasoning")
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .map((p: any) =>
+        p.type === "reasoning" ? `\n\n> 🤔 ${p.text}\n\n` : p.text,
+      )
+      .join("");
+  }
+  return message.content ?? "";
+}
+
+interface ChatMessageItemProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  message: any;
+  marketQuotes: Map<string, MarketDataQuote>;
+  marketDataLoading: boolean;
+  extractEtfs: (text: string) => ETF[];
+}
+>>>>>>> REPLACE
