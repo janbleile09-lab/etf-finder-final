@@ -5,3 +5,7 @@
 ## 2026-10-26 - Keyboard Focus Indicators for Custom Interactive Elements
 **Learning:** Custom interactive elements (like framer-motion spans or unstyled buttons) often lack default focus rings, creating an accessibility issue for keyboard users.
 **Action:** Ensure all interactive elements include clear focus indicators by default, for example by adding `focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2` classes.
+
+## 2026-11-07 - Added ARIA attributes to ETF Cards and Search Panels
+**Learning:** Custom expandable panels require explicit ARIA roles to support screen readers, specifically tying the trigger and the content together.
+**Action:** Use `aria-expanded`, `aria-controls`, `id`, `role='region'`, and `aria-label` for all custom disclosure patterns.

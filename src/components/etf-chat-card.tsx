@@ -1,8 +1,8 @@
 "use client";
 
+import { useState, useId } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, Layers, Activity } from "lucide-react";
-import { useState } from "react";
 import { BookmarkButton } from "@/components/bookmark-button";
 import type { ETF } from "../../types/etf";
 import type { MarketDataQuote } from "@/lib/twelvedata";
@@ -55,6 +55,7 @@ export function ETFChatCard({
   marketDataLoading,
 }: ETFChatCardProps) {
   const [expanded, setExpanded] = useState(false);
+  const contentId = useId();
 
   const changeInfo = marketData
     ? formatChange(marketData.change, marketData.change_percent)
@@ -66,6 +67,8 @@ export function ETFChatCard({
       <div
         role="button"
         tabIndex={0}
+        aria-expanded={expanded}
+        aria-controls={contentId}
         onClick={() => setExpanded(!expanded)}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
@@ -139,6 +142,9 @@ export function ETFChatCard({
       <AnimatePresence initial={false}>
         {expanded && (
           <motion.div
+            id={contentId}
+            role="region"
+            aria-label={`Details für ${etf.name}`}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
