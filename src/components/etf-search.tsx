@@ -1,6 +1,13 @@
 "use client";
 
-import { useState, useRef, useEffect, useMemo, useCallback, useDeferredValue } from "react";
+import {
+  useState,
+  useRef,
+  useEffect,
+  useMemo,
+  useCallback,
+  useDeferredValue,
+} from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X, Layers, ChevronRight } from "lucide-react";
 import etfs from "../../public/data/etfs.json";
@@ -163,6 +170,8 @@ function SearchContent({ onClose }: { onClose: () => void }) {
           results.map((etf, i) => (
             <button
               key={etf.isin + "-" + i}
+              aria-expanded={expandedIsin === etf.isin}
+              aria-controls={`search-details-${etf.isin}-${i}`}
               onClick={() => toggleExpand(etf.isin)}
               onMouseEnter={() => setSelectedIndex(i)}
               className={`w-full text-left px-4 py-3 transition-colors border-b border-border/50 last:border-b-0 ${
@@ -210,6 +219,9 @@ function SearchContent({ onClose }: { onClose: () => void }) {
               <AnimatePresence initial={false}>
                 {expandedIsin === etf.isin && expandedETF && (
                   <motion.div
+                    id={`search-details-${etf.isin}-${i}`}
+                    role="region"
+                    aria-label={`Details für ${etf.name}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
