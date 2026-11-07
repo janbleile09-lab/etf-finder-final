@@ -6,3 +6,6 @@
 ## 2024-10-26 - useDeferredValue for Heavy Search Filtering
 **Learning:** Even with pre-computed search strings, filtering a large dataset inline on every keystroke can block the main thread in React, causing perceived lag during typing.
 **Action:** Use `useDeferredValue` for input search states when filtering large lists. This allows the input to update immediately for responsiveness, while the expensive filtering operation yields to the background, running only when the main thread is unblocked.
+## 2026-11-07 - Prevent O(N) re-renders for chat messages
+**Learning:** Extracting expensive inline operations (ReactMarkdown parsing and regex execution) into separate components wrapped in React.memo() prevents severe O(N) re-renders when sharing a parent with frequently updated state (like an input field).
+**Action:** Extract chat message rendering to a MemoizedChatMessage component when handling lists of markdown messages.
