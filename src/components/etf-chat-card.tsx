@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useId } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, Layers, Activity } from "lucide-react";
 import { BookmarkButton } from "@/components/bookmark-button";
 import type { ETF } from "../../types/etf";
