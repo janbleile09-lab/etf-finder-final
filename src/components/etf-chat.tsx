@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useMemo, useCallback } from "react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, User as UserIcon, Bot, Lock, Square } from "lucide-react";
 import { useAuth } from "@/components/auth/auth-provider";
@@ -66,6 +67,69 @@ function formatQuizAnswers(answers: QuizAnswers): string {
   ];
   return lines.join("\n");
 }
+
+// Memoized component to prevent re-rendering expensive markdown and extracts on every keystroke
+const MemoizedChatMessage = React.memo(function MemoizedChatMessage({
+  message,
+  text,
+  extractEtfs,
+  marketQuotes,
+  marketDataLoading,
+}: {
+  message: import("ai").UIMessage;
+  text: string;
+  extractEtfs: (text: string) => ETF[];
+  marketQuotes: Map<string, import("@/lib/twelvedata").MarketDataQuote>;
+  marketDataLoading: boolean;
+}) {
+  const etfs = useMemo(() => extractEtfs(text), [extractEtfs, text]);
+
+  return (
+    <motion.div
+      key={message.id}
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", stiffness: 280, damping: 26 }}
+      className="flex gap-4 items-start"
+    >
+      {/* Avatar */}
+      <div
+        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
+          message.role === "user"
+            ? "bg-primary text-primary-foreground"
+            : "bg-muted border border-border/60"
+        }`}
+      >
+        {message.role === "user" ? <UserIcon size={15} /> : <Bot size={15} />}
+      </div>
+
+      {/* Content */}
+      <div className="flex-1 min-w-0 pt-1">
+        <p className="text-xs font-medium text-muted-foreground mb-2">
+          {message.role === "user" ? "Du" : "AI Berater"}
+        </p>
+        {message.role === "user" ? (
+          <p className="text-sm leading-relaxed whitespace-pre-wrap">{text}</p>
+        ) : (
+          <>
+            <div className="prose prose-sm dark:prose-invert max-w-none prose-p:leading-relaxed prose-p:my-2 prose-headings:my-3 prose-ul:my-2 prose-li:my-0.5">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
+            </div>
+            {/* ETF cards for ISINs found in the message */}
+            {etfs.map((etf) => (
+              <ETFChatCard
+                key={etf.isin}
+                etf={etf}
+                marketData={marketQuotes.get(etf.isin) ?? null}
+                marketDataLoading={marketDataLoading}
+              />
+            ))}
+          </>
+        )}
+      </div>
+    </motion.div>
+  );
+});
 
 export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
   const { user } = useAuth();
@@ -251,57 +315,14 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
                 getMessageText(message) ||
                 "[Leere Antwort vom KI-Modell empfangen. Dies deutet auf ein API-Problem hin.]";
               return (
-                <motion.div
+                <MemoizedChatMessage
                   key={message.id}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ type: "spring", stiffness: 280, damping: 26 }}
-                  className="flex gap-4 items-start"
-                >
-                  {/* Avatar */}
-                  <div
-                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
-                      message.role === "user"
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-muted border border-border/60"
-                    }`}
-                  >
-                    {message.role === "user" ? (
-                      <UserIcon size={15} />
-                    ) : (
-                      <Bot size={15} />
-                    )}
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 min-w-0 pt-1">
-                    <p className="text-xs font-medium text-muted-foreground mb-2">
-                      {message.role === "user" ? "Du" : "AI Berater"}
-                    </p>
-                    {message.role === "user" ? (
-                      <p className="text-sm leading-relaxed whitespace-pre-wrap">
-                        {text}
-                      </p>
-                    ) : (
-                      <>
-                        <div className="prose prose-sm dark:prose-invert max-w-none prose-p:leading-relaxed prose-p:my-2 prose-headings:my-3 prose-ul:my-2 prose-li:my-0.5">
-                          <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                            {text}
-                          </ReactMarkdown>
-                        </div>
-                        {/* ETF cards for ISINs found in the message */}
-                        {extractEtfs(text).map((etf) => (
-                          <ETFChatCard
-                            key={etf.isin}
-                            etf={etf}
-                            marketData={marketQuotes.get(etf.isin) ?? null}
-                            marketDataLoading={marketDataLoading}
-                          />
-                        ))}
-                      </>
-                    )}
-                  </div>
-                </motion.div>
+                  message={message}
+                  text={text}
+                  extractEtfs={extractEtfs}
+                  marketQuotes={marketQuotes}
+                  marketDataLoading={marketDataLoading}
+                />
               );
             })}
 
