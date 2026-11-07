@@ -76,7 +76,7 @@ const MemoizedChatMessage = React.memo(function MemoizedChatMessage({
   marketQuotes,
   marketDataLoading,
 }: {
-  message: import("@ai-sdk/react").Message;
+  message: import("ai").UIMessage;
   text: string;
   extractEtfs: (text: string) => ETF[];
   marketQuotes: Map<string, import("@/lib/twelvedata").MarketDataQuote>;
