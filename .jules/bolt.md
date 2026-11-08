@@ -10,3 +10,6 @@
 **Learning:** Having an expensive inline mapping of custom components, complex operations like parsing text with ReactMarkdown, or running multiple regex searches in the same component tree that frequently updates via keystrokes (like typing in a chat input field) forces major UI stutter due to severe O(N) re-renders, causing noticeable input latency.
 
 **Action:** Always extract expensive inline operations and heavy mapping functionality into separate components, and wrap them in `React.memo()`. Derive complex mapped references locally in the child via `useMemo()` instead of passing them into the child as a prop, as passing inline arrays from maps causes reference instability that breaks shallow equality checks.
+## 2026-11-08 - Optimize Sequential Fetch
+**Learning:** Using staggered `Promise.all` instead of sequential `await` in loops significantly reduces overall latency while still respecting API rate limits.
+**Action:** Extracted the sequential `fetchQuote` loop into mapped promises with index-based delays to parallelize network I/O in `twelvedata.ts`.
