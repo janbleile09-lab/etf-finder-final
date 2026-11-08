@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useMemo, useCallback } from "react";
+import { useEffect, useRef, useState, useMemo, useCallback, memo } from "react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { motion, AnimatePresence } from "framer-motion";
@@ -66,6 +66,40 @@ function formatQuizAnswers(answers: QuizAnswers): string {
   ];
   return lines.join("\n");
 }
+
+const MemoizedBotMessageContent = memo(function MemoizedBotMessageContent({
+  text,
+  marketQuotes,
+  marketDataLoading,
+  extractEtfs
+}: {
+  text: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  marketQuotes: Map<string, any>;
+  marketDataLoading: boolean;
+  extractEtfs: (text: string) => ETF[];
+}) {
+  const etfs = useMemo(() => extractEtfs(text), [extractEtfs, text]);
+
+  return (
+    <>
+      <div className="prose prose-sm dark:prose-invert max-w-none prose-p:leading-relaxed prose-p:my-2 prose-headings:my-3 prose-ul:my-2 prose-li:my-0.5">
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          {text}
+        </ReactMarkdown>
+      </div>
+      {/* ETF cards for ISINs found in the message */}
+      {etfs.map((etf) => (
+        <ETFChatCard
+          key={etf.isin}
+          etf={etf}
+          marketData={marketQuotes.get(etf.isin) ?? null}
+          marketDataLoading={marketDataLoading}
+        />
+      ))}
+    </>
+  );
+});
 
 export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
   const { user } = useAuth();
@@ -283,22 +317,12 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
                         {text}
                       </p>
                     ) : (
-                      <>
-                        <div className="prose prose-sm dark:prose-invert max-w-none prose-p:leading-relaxed prose-p:my-2 prose-headings:my-3 prose-ul:my-2 prose-li:my-0.5">
-                          <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                            {text}
-                          </ReactMarkdown>
-                        </div>
-                        {/* ETF cards for ISINs found in the message */}
-                        {extractEtfs(text).map((etf) => (
-                          <ETFChatCard
-                            key={etf.isin}
-                            etf={etf}
-                            marketData={marketQuotes.get(etf.isin) ?? null}
-                            marketDataLoading={marketDataLoading}
-                          />
-                        ))}
-                      </>
+                      <MemoizedBotMessageContent
+                        text={text}
+                        marketQuotes={marketQuotes}
+                        marketDataLoading={marketDataLoading}
+                        extractEtfs={extractEtfs}
+                      />
                     )}
                   </div>
                 </motion.div>
