@@ -163,6 +163,9 @@ function SearchContent({ onClose }: { onClose: () => void }) {
           results.map((etf, i) => (
             <button
               key={etf.isin + "-" + i}
+              id={`btn-${etf.isin}-${i}`}
+              aria-expanded={expandedIsin === etf.isin}
+              aria-controls={`panel-${etf.isin}-${i}`}
               onClick={() => toggleExpand(etf.isin)}
               onMouseEnter={() => setSelectedIndex(i)}
               className={`w-full text-left px-4 py-3 transition-colors border-b border-border/50 last:border-b-0 ${
@@ -210,6 +213,9 @@ function SearchContent({ onClose }: { onClose: () => void }) {
               <AnimatePresence initial={false}>
                 {expandedIsin === etf.isin && expandedETF && (
                   <motion.div
+                    id={`panel-${etf.isin}-${i}`}
+                    role="region"
+                    aria-labelledby={`btn-${etf.isin}-${i}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
