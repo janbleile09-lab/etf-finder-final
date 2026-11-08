@@ -202,14 +202,18 @@ export async function fetchQuotes(
 
   if (unique.length === 0) return results;
 
-  for (const etf of unique) {
-    const result = await fetchQuote(apiKey, etf.isin, etf.name);
-    if (result && !("error" in result)) {
-      results.set(etf.isin, result);
+  const promises = unique.map(async (etf, index) => {
+    if (index > 0) {
+      await new Promise((r) => setTimeout(r, index * 200));
     }
-    // Small delay to respect rate limits (8/min on free plan)
-    if (unique.length > 1) {
-      await new Promise((r) => setTimeout(r, 200));
+    const result = await fetchQuote(apiKey, etf.isin, etf.name);
+    return { isin: etf.isin, result };
+  });
+
+  const resolved = await Promise.all(promises);
+  for (const res of resolved) {
+    if (res.result && !("error" in res.result)) {
+      results.set(res.isin, res.result);
     }
   }
 
