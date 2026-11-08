@@ -150,7 +150,12 @@ async function tavilySearch(
 export async function enrichSingleETF(isin: string): Promise<EnrichedETFData> {
   const queries = generateSearchQueries(isin);
   const allResults: TavilySearchResult[] = [];
-  const allSources: string[] = [];
+
+  // ⚡ Bolt Performance Optimization:
+  // Using a Set instead of an Array for membership checking reduces the time
+  // complexity from O(N) per insertion to O(1). This speeds up deduplication,
+  // especially when crawling many results with overlapping sources.
+  const allSources = new Set<string>();
 
   // Run all queries (sequentially to avoid rate limiting)
   for (const query of queries) {
@@ -159,9 +164,7 @@ export async function enrichSingleETF(isin: string): Promise<EnrichedETFData> {
       const filtered = filterByWhitelist(response.results);
       allResults.push(...filtered);
       for (const r of filtered) {
-        if (!allSources.includes(r.url)) {
-          allSources.push(r.url);
-        }
+        allSources.add(r.url);
       }
     } catch (error) {
       console.warn(`Tavily search failed for query "${query}":`, error);
@@ -184,7 +187,7 @@ export async function enrichSingleETF(isin: string): Promise<EnrichedETFData> {
     dailyPrice: data.dailyPrice,
     inceptionDate: data.inceptionDate,
     fundSize: data.fundSize,
-    sources: allSources,
+    sources: Array.from(allSources),
     searchedAt: new Date().toISOString(),
   };
 }
