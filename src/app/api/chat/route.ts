@@ -9,7 +9,7 @@ import {
   describeEtf,
   type ScoredETF,
 } from "@/lib/etf-filter";
-import { enrichMultipleETFs, type EnrichedETFData } from "@/lib/tavily-search";
+import { enrichMultipleETFs } from "@/lib/tavily-search";
 
 // Allow streaming responses up to 60 seconds
 export const maxDuration = 60;
@@ -246,7 +246,7 @@ export async function POST(req: NextRequest) {
       if (topIsins.length > 0) {
         try {
           const enrichmentPromise = enrichMultipleETFs(topIsins);
-          const timeoutPromise = new Promise<Map<string, EnrichedETFData>>(
+          const timeoutPromise = new Promise<Awaited<ReturnType<typeof enrichMultipleETFs>>>(
             (resolve) => {
               setTimeout(() => resolve(new Map()), 3000);
             },
