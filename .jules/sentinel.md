@@ -8,3 +8,7 @@
 **Issue:** Open Redirect via next parameter using /\example.com
 **Learning:** Browsers and URL parsers normalize backslashes to forward slashes, allowing bypass of simplistic open redirect filters like startsWith("//").
 **Prevention:** explicitly filter out paths starting with /\ in addition to //.
+## 2026-11-08 - Prevent Prompt Injection in System Prompts
+**Vulnerability:** Unvalidated user inputs (quizAnswers) were concatenated directly into the system prompt, allowing prompt injection.
+**Learning:** Even internal helper objects from API requests must be sanitized before being used in LLM system prompts.
+**Prevention:** Always map or parse user inputs to strict enums or safe strings before including them in prompts.
