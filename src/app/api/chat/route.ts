@@ -296,7 +296,7 @@ export async function POST(req: NextRequest) {
     }
 
     if (quizAnswers && Object.values(quizAnswers).some((v) => v !== null)) {
-      systemPrompt += `\n\n## NUTZER-PRÄFERENZEN:\n- Region: ${quizAnswers.region}\n- Ausschüttung: ${quizAnswers.distribution}\n- ESG: ${quizAnswers.esg}\n- Risiko: ${quizAnswers.risk}\n- Sektor-Fokus: ${quizAnswers.sectorTilt}`;
+      systemPrompt += `\n\n## NUTZER-PRÄFERENZEN:\n- Region: ${mapRegion(quizAnswers.region)}\n- Ausschüttung: ${mapDistribution(quizAnswers.distribution)}\n- ESG: ${mapEsg(quizAnswers.esg)}\n- Risiko: ${mapRisk(quizAnswers.risk)}\n- Sektor-Fokus: ${mapSectorTilt(quizAnswers.sectorTilt)}`;
     }
 
     const modelMessages = messages
