@@ -13,3 +13,7 @@
 ## 2024-05-18 - Concurrent API Requests
 **Learning:** Sequential network requests in loops heavily block execution time.
 **Action:** Replaced a sequential `for` loop of API requests with `Promise.all` and concurrent `Array.map` to perform requests in parallel, cutting elapsed time by up to ~3x (1500ms -> 500ms).
+
+## 2025-01-20 - Memoizing Chat Message Components
+**Learning:** Inline component rendering within large lists or frequently updating components causes significant re-renders, especially with expensive operations like Markdown parsing.
+**Action:** Extract list item rendering logic into separate components and wrap them in React.memo() to prevent unnecessary O(N) re-renders during state updates like typing in an input field.
