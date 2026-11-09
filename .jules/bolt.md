@@ -10,3 +10,6 @@
 **Learning:** Having an expensive inline mapping of custom components, complex operations like parsing text with ReactMarkdown, or running multiple regex searches in the same component tree that frequently updates via keystrokes (like typing in a chat input field) forces major UI stutter due to severe O(N) re-renders, causing noticeable input latency.
 
 **Action:** Always extract expensive inline operations and heavy mapping functionality into separate components, and wrap them in `React.memo()`. Derive complex mapped references locally in the child via `useMemo()` instead of passing them into the child as a prop, as passing inline arrays from maps causes reference instability that breaks shallow equality checks.
+## 2024-05-18 - Concurrent API Requests
+**Learning:** Sequential network requests in loops heavily block execution time.
+**Action:** Replaced a sequential `for` loop of API requests with `Promise.all` and concurrent `Array.map` to perform requests in parallel, cutting elapsed time by up to ~3x (1500ms -> 500ms).
