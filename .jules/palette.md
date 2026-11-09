@@ -9,3 +9,7 @@
 ## 2026-10-27 - Unique IDs for ARIA in dynamic lists
 **Learning:** Custom disclosure patterns within dynamic lists (like .map loops) must use globally unique IDs to prevent DOM ID collisions for aria-controls and aria-labelledby.
 **Action:** Ensure generated id and aria-controls values utilize unique identifiers (such as indices or ISIN) when implementing custom interactive elements in dynamic lists.
+
+## 2024-05-18 - Add global search shortcut
+**Learning:** Adding a global Cmd+K shortcut significantly improves navigation speed, but the shortcut must be visually discoverable (via a <kbd> hint in the navbar) to actually be utilized by users.
+**Action:** Always pair global keyboard shortcuts with visible UI hints, especially for core actions like search.
