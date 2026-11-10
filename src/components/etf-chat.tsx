@@ -101,6 +101,77 @@ const MemoizedBotMessageContent = memo(function MemoizedBotMessageContent({
   );
 });
 
+/**
+ * ⚡ Bolt Performance Optimization:
+ * Wrapped the chat message in React.memo() to prevent O(N) re-renders
+ * across all chat messages whenever the user types in the input field.
+ * Expected Impact: Reduces main-thread blocking on keystroke, significantly
+ * improving typing responsiveness in large chat histories.
+ */
+const MemoizedChatMessage = memo(function MemoizedChatMessage({
+  message,
+  getMessageText,
+  extractEtfs,
+  marketQuotes,
+  marketDataLoading,
+}: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  message: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  getMessageText: (message: any) => string;
+  extractEtfs: (text: string) => ETF[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  marketQuotes: Map<string, any>;
+  marketDataLoading: boolean;
+}) {
+  const text =
+    getMessageText(message) ||
+    "[Leere Antwort vom KI-Modell empfangen. Dies deutet auf ein API-Problem hin.]";
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", stiffness: 280, damping: 26 }}
+      className="flex gap-4 items-start"
+    >
+      {/* Avatar */}
+      <div
+        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
+          message.role === "user"
+            ? "bg-primary text-primary-foreground"
+            : "bg-muted border border-border/60"
+        }`}
+      >
+        {message.role === "user" ? (
+          <UserIcon size={15} />
+        ) : (
+          <Bot size={15} />
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="flex-1 min-w-0 pt-1">
+        <p className="text-xs font-medium text-muted-foreground mb-2">
+          {message.role === "user" ? "Du" : "AI Berater"}
+        </p>
+        {message.role === "user" ? (
+          <p className="text-sm leading-relaxed whitespace-pre-wrap">
+            {text}
+          </p>
+        ) : (
+          <MemoizedBotMessageContent
+            text={text}
+            marketQuotes={marketQuotes}
+            marketDataLoading={marketDataLoading}
+            extractEtfs={extractEtfs}
+          />
+        )}
+      </div>
+    </motion.div>
+  );
+});
+
 export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
   const { user } = useAuth();
   const [authDialogOpen, setAuthDialogOpen] = useState(false);
@@ -280,54 +351,16 @@ export function ETFChat({ quizAnswers, onReset }: ETFChatProps) {
         <div className="flex flex-col gap-8 max-w-3xl mx-auto w-full">
           <AnimatePresence initial={false}>
             {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-            {messages.map((message: any) => {
-              const text =
-                getMessageText(message) ||
-                "[Leere Antwort vom KI-Modell empfangen. Dies deutet auf ein API-Problem hin.]";
-              return (
-                <motion.div
-                  key={message.id}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ type: "spring", stiffness: 280, damping: 26 }}
-                  className="flex gap-4 items-start"
-                >
-                  {/* Avatar */}
-                  <div
-                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
-                      message.role === "user"
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-muted border border-border/60"
-                    }`}
-                  >
-                    {message.role === "user" ? (
-                      <UserIcon size={15} />
-                    ) : (
-                      <Bot size={15} />
-                    )}
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 min-w-0 pt-1">
-                    <p className="text-xs font-medium text-muted-foreground mb-2">
-                      {message.role === "user" ? "Du" : "AI Berater"}
-                    </p>
-                    {message.role === "user" ? (
-                      <p className="text-sm leading-relaxed whitespace-pre-wrap">
-                        {text}
-                      </p>
-                    ) : (
-                      <MemoizedBotMessageContent
-                        text={text}
-                        marketQuotes={marketQuotes}
-                        marketDataLoading={marketDataLoading}
-                        extractEtfs={extractEtfs}
-                      />
-                    )}
-                  </div>
-                </motion.div>
-              );
-            })}
+            {messages.map((message: any) => (
+              <MemoizedChatMessage
+                key={message.id}
+                message={message}
+                getMessageText={getMessageText}
+                extractEtfs={extractEtfs}
+                marketQuotes={marketQuotes}
+                marketDataLoading={marketDataLoading}
+              />
+            ))}
 
             {/* Loading indicator */}
             {isLoading && (
