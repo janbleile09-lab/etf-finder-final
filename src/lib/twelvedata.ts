@@ -17,7 +17,6 @@ const TWELVE_DATA_BASE = "https://api.twelvedata.com";
  * XETRA (.DE), Tradegate (.TRG), Frankfurt (.F), LSE (.L)
  */
 
-
 export interface MarketDataQuote {
   symbol: string;
   name: string;
@@ -202,16 +201,18 @@ export async function fetchQuotes(
 
   if (unique.length === 0) return results;
 
-  for (const etf of unique) {
-    const result = await fetchQuote(apiKey, etf.isin, etf.name);
-    if (result && !("error" in result)) {
-      results.set(etf.isin, result);
-    }
-    // Small delay to respect rate limits (8/min on free plan)
-    if (unique.length > 1) {
-      await new Promise((r) => setTimeout(r, 200));
-    }
-  }
+  await Promise.all(
+    unique.map(async (etf, index) => {
+      // Staggered delay to respect rate limits (8/min on free plan)
+      if (index > 0) {
+        await new Promise((r) => setTimeout(r, index * 200));
+      }
+      const result = await fetchQuote(apiKey, etf.isin, etf.name);
+      if (result && !("error" in result)) {
+        results.set(etf.isin, result);
+      }
+    }),
+  );
 
   return results;
 }
@@ -241,14 +242,23 @@ export async function fetchTimeSeries(
     if (data.status === "error" || !data.values) return null;
 
     const points: TimeSeriesPoint[] = data.values
-      .map((v: { datetime: string; open: string; high: string; low: string; close: string; volume: string }) => ({
-        datetime: v.datetime,
-        open: parseFloat(v.open) || 0,
-        high: parseFloat(v.high) || 0,
-        low: parseFloat(v.low) || 0,
-        close: parseFloat(v.close) || 0,
-        volume: parseInt(v.volume, 10) || 0,
-      }))
+      .map(
+        (v: {
+          datetime: string;
+          open: string;
+          high: string;
+          low: string;
+          close: string;
+          volume: string;
+        }) => ({
+          datetime: v.datetime,
+          open: parseFloat(v.open) || 0,
+          high: parseFloat(v.high) || 0,
+          low: parseFloat(v.low) || 0,
+          close: parseFloat(v.close) || 0,
+          volume: parseInt(v.volume, 10) || 0,
+        }),
+      )
       .filter((p: TimeSeriesPoint) => p.close > 0)
       .reverse(); // chronological order
 
@@ -304,16 +314,34 @@ export async function fetchTimeSeriesForEtfs(
     const data = await res.json();
     if (data.status === "error") return results;
 
-    const processPoints = (values: { datetime: string; open: string; high: string; low: string; close: string; volume: string }[]): TimeSeriesPoint[] => {
+    const processPoints = (
+      values: {
+        datetime: string;
+        open: string;
+        high: string;
+        low: string;
+        close: string;
+        volume: string;
+      }[],
+    ): TimeSeriesPoint[] => {
       return values
-        .map((v: { datetime: string; open: string; high: string; low: string; close: string; volume: string }) => ({
-          datetime: v.datetime,
-          open: parseFloat(v.open) || 0,
-          high: parseFloat(v.high) || 0,
-          low: parseFloat(v.low) || 0,
-          close: parseFloat(v.close) || 0,
-          volume: parseInt(v.volume, 10) || 0,
-        }))
+        .map(
+          (v: {
+            datetime: string;
+            open: string;
+            high: string;
+            low: string;
+            close: string;
+            volume: string;
+          }) => ({
+            datetime: v.datetime,
+            open: parseFloat(v.open) || 0,
+            high: parseFloat(v.high) || 0,
+            low: parseFloat(v.low) || 0,
+            close: parseFloat(v.close) || 0,
+            volume: parseInt(v.volume, 10) || 0,
+          }),
+        )
         .filter((p: TimeSeriesPoint) => p.close > 0)
         .reverse();
     };
