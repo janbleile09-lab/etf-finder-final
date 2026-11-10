@@ -17,3 +17,6 @@
 ## 2025-01-20 - Memoizing Chat Message Components
 **Learning:** Inline component rendering within large lists or frequently updating components causes significant re-renders, especially with expensive operations like Markdown parsing.
 **Action:** Extract list item rendering logic into separate components and wrap them in React.memo() to prevent unnecessary O(N) re-renders during state updates like typing in an input field.
+## 2025-02-14 - Concurrent API Requests with Staggered Timeouts
+**Learning:** Sequential network requests in a `for` loop heavily block execution time, especially when fetching data for multiple items.
+**Action:** When fetching data from rate-limited APIs (like Twelve Data), use a staggered `Promise.all` approach with incremental timeouts (e.g., `index * 200`) instead of a blocking sequential loop to optimize network I/O while respecting rate limits.
