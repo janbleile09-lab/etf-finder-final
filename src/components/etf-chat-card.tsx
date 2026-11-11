@@ -64,7 +64,10 @@ export function ETFChatCard({
     <div className="mt-2 rounded-lg border border-border/60 bg-background/60 overflow-hidden">
       {/* Header row */}
       <div
+        id={`btn-${etf.isin}`}
         role="button"
+        aria-expanded={expanded}
+        aria-controls={`panel-${etf.isin}`}
         tabIndex={0}
         onClick={() => setExpanded(!expanded)}
         onKeyDown={(e) => {
@@ -139,6 +142,9 @@ export function ETFChatCard({
       <AnimatePresence initial={false}>
         {expanded && (
           <motion.div
+            id={`panel-${etf.isin}`}
+            role="region"
+            aria-labelledby={`btn-${etf.isin}`}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
