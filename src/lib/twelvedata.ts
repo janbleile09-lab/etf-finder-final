@@ -202,16 +202,19 @@ export async function fetchQuotes(
 
   if (unique.length === 0) return results;
 
-  for (const etf of unique) {
-    const result = await fetchQuote(apiKey, etf.isin, etf.name);
-    if (result && !("error" in result)) {
-      results.set(etf.isin, result);
-    }
-    // Small delay to respect rate limits (8/min on free plan)
-    if (unique.length > 1) {
-      await new Promise((r) => setTimeout(r, 200));
-    }
-  }
+  // Staggered concurrent requests to respect rate limits while avoiding blocking sequential execution
+  await Promise.all(
+    unique.map(async (etf, index) => {
+      // Small delay based on index to respect rate limits (8/min on free plan)
+      if (index > 0) {
+        await new Promise((r) => setTimeout(r, index * 200));
+      }
+      const result = await fetchQuote(apiKey, etf.isin, etf.name);
+      if (result && !("error" in result)) {
+        results.set(etf.isin, result);
+      }
+    })
+  );
 
   return results;
 }
