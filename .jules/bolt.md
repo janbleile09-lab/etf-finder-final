@@ -17,3 +17,6 @@
 ## 2025-01-20 - Memoizing Chat Message Components
 **Learning:** Inline component rendering within large lists or frequently updating components causes significant re-renders, especially with expensive operations like Markdown parsing.
 **Action:** Extract list item rendering logic into separate components and wrap them in React.memo() to prevent unnecessary O(N) re-renders during state updates like typing in an input field.
+## 2024-11-12 - Concurrent API Requests with Staggering
+**Learning:** Using a sequential `for` loop with `await` for multiple independent API calls blocks the event loop and significantly increases total response time, even if individual calls have rate-limit delays.
+**Action:** Use a staggered `Promise.all` approach by mapping over the array and introducing a per-index timeout. This allows requests to run concurrently while still respecting the API provider's rate limits (e.g., 200ms spacing).
